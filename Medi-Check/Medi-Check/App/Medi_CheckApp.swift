@@ -11,7 +11,7 @@ import SwiftUI
 struct Medi_CheckApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }

@@ -16,9 +16,10 @@
 		F30A42432AECF8B700AD59F9 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42422AECF8B700AD59F9 /* TestExtension.swift */; };
 		F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42452AECF92700AD59F9 /* TestUseCase.swift */; };
 		F30A424A2AECF96E00AD59F9 /* TestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42492AECF96E00AD59F9 /* TestRepository.swift */; };
-		F30A424E2AECFB3F00AD59F9 /* TestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A424D2AECFB3F00AD59F9 /* TestRepository.swift */; };
+		F30A424E2AECFB3F00AD59F9 /* TestResponseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A424D2AECFB3F00AD59F9 /* TestResponseRepository.swift */; };
+		F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314B64B2AED05E700AEB652 /* Extension+Color.swift */; };
 		F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */; };
-		F3694B342AD5713E00D23E99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B332AD5713E00D23E99 /* ContentView.swift */; };
+		F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B332AD5713E00D23E99 /* SplashView.swift */; };
 		F3694B362AD5713F00D23E99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3694B352AD5713F00D23E99 /* Assets.xcassets */; };
 		F3694B392AD5713F00D23E99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3694B382AD5713F00D23E99 /* Preview Assets.xcassets */; };
 		F3694B432AD5713F00D23E99 /* Medi_CheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B422AD5713F00D23E99 /* Medi_CheckTests.swift */; };
@@ -53,10 +54,11 @@
 		F30A42422AECF8B700AD59F9 /* TestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtension.swift; sourceTree = "<group>"; };
 		F30A42452AECF92700AD59F9 /* TestUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUseCase.swift; sourceTree = "<group>"; };
 		F30A42492AECF96E00AD59F9 /* TestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRepository.swift; sourceTree = "<group>"; };
-		F30A424D2AECFB3F00AD59F9 /* TestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRepository.swift; sourceTree = "<group>"; };
+		F30A424D2AECFB3F00AD59F9 /* TestResponseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResponseRepository.swift; sourceTree = "<group>"; };
+		F314B64B2AED05E700AEB652 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		F3694B2E2AD5713E00D23E99 /* Medi-Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medi-Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_CheckApp.swift; sourceTree = "<group>"; };
-		F3694B332AD5713E00D23E99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F3694B332AD5713E00D23E99 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		F3694B352AD5713F00D23E99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3694B382AD5713F00D23E99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3694B3E2AD5713F00D23E99 /* Medi-CheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Medi-CheckTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,7 +191,7 @@
 		F30A42392AECF65300AD59F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F3694B332AD5713E00D23E99 /* ContentView.swift */,
+				F3694B332AD5713E00D23E99 /* SplashView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				F30A42422AECF8B700AD59F9 /* TestExtension.swift */,
+				F314B64B2AED05E700AEB652 /* Extension+Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,7 +257,7 @@
 		F30A424C2AECFA6F00AD59F9 /* ResponseStorage */ = {
 			isa = PBXGroup;
 			children = (
-				F30A424D2AECFB3F00AD59F9 /* TestRepository.swift */,
+				F30A424D2AECFB3F00AD59F9 /* TestResponseRepository.swift */,
 			);
 			path = ResponseStorage;
 			sourceTree = "<group>";
@@ -454,11 +457,12 @@
 				F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */,
 				F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */,
 				F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */,
-				F3694B342AD5713E00D23E99 /* ContentView.swift in Sources */,
+				F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */,
 				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
 				F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */,
 				F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */,
-				F30A424E2AECFB3F00AD59F9 /* TestRepository.swift in Sources */,
+				F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */,
+				F30A424E2AECFB3F00AD59F9 /* TestResponseRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
