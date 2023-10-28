@@ -14,15 +14,14 @@ struct SplashView: View {
         NavigationStack {
             ZStack {
                 Color.MediCheckMainColor.edgesIgnoringSafeArea(.all)
-                VStack {
+                VStack(spacing: 0) {
                     Image("MediCheck")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: screenWidth * 0.5, height: screenHeight * 0.5)
-                    Text("Medi-Check")
-                        .font(.title)
-                        .foregroundStyle(Color.white)
-                        .bold()
+                        .frame(width: screenWidth * 0.3, height: screenWidth * 0.3)
+                    StrokeText(text: "Medi-Check", width: 1, color: Color.black)
+                        .foregroundColor(.white)
+                        .font(.system(size: screenWidth * 0.05, weight: .bold))
                 }
             }
         }
