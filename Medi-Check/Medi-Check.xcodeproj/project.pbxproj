@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A422B2AECEF7000AD59F9 /* DefaultRepository.swift */; };
+		F30A42312AECF46B00AD59F9 /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42302AECF46B00AD59F9 /* TestEntity.swift */; };
+		F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42322AECF53A00AD59F9 /* RepositoryTask.swift */; };
+		F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42352AECF61900AD59F9 /* APIEndpoints.swift */; };
+		F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A423A2AECF66200AD59F9 /* TestViewModel.swift */; };
+		F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A423F2AECF7E300AD59F9 /* TestProtocol.swift */; };
+		F30A42432AECF8B700AD59F9 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42422AECF8B700AD59F9 /* TestExtension.swift */; };
+		F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42452AECF92700AD59F9 /* TestUseCase.swift */; };
+		F30A424A2AECF96E00AD59F9 /* TestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42492AECF96E00AD59F9 /* TestRepository.swift */; };
+		F30A424E2AECFB3F00AD59F9 /* TestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A424D2AECFB3F00AD59F9 /* TestRepository.swift */; };
 		F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */; };
 		F3694B342AD5713E00D23E99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B332AD5713E00D23E99 /* ContentView.swift */; };
 		F3694B362AD5713F00D23E99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3694B352AD5713F00D23E99 /* Assets.xcassets */; };
@@ -34,6 +44,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F30A422B2AECEF7000AD59F9 /* DefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRepository.swift; sourceTree = "<group>"; };
+		F30A42302AECF46B00AD59F9 /* TestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEntity.swift; sourceTree = "<group>"; };
+		F30A42322AECF53A00AD59F9 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
+		F30A42352AECF61900AD59F9 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		F30A423A2AECF66200AD59F9 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		F30A423F2AECF7E300AD59F9 /* TestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProtocol.swift; sourceTree = "<group>"; };
+		F30A42422AECF8B700AD59F9 /* TestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtension.swift; sourceTree = "<group>"; };
+		F30A42452AECF92700AD59F9 /* TestUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUseCase.swift; sourceTree = "<group>"; };
+		F30A42492AECF96E00AD59F9 /* TestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRepository.swift; sourceTree = "<group>"; };
+		F30A424D2AECFB3F00AD59F9 /* TestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRepository.swift; sourceTree = "<group>"; };
 		F3694B2E2AD5713E00D23E99 /* Medi-Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medi-Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_CheckApp.swift; sourceTree = "<group>"; };
 		F3694B332AD5713E00D23E99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +91,174 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F30A42222AECEDFA00AD59F9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F30A423C2AECF7AE00AD59F9 /* Utils */,
+				F30A42372AECF62F00AD59F9 /* OnBoarding */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F30A42242AECEE2400AD59F9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F30A42472AECF93A00AD59F9 /* Interfaces */,
+				F30A42442AECF90200AD59F9 /* UseCases */,
+				F30A422F2AECF44E00AD59F9 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F30A42252AECEE2800AD59F9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F30A424B2AECFA5400AD59F9 /* PersistentStorage */,
+				F30A42342AECF5DF00AD59F9 /* Network */,
+				F30A42292AECEF0800AD59F9 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F30A42282AECEE4300AD59F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3694B352AD5713F00D23E99 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F30A42292AECEF0800AD59F9 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				F30A422A2AECEF1B00AD59F9 /* Utils */,
+				F30A422B2AECEF7000AD59F9 /* DefaultRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		F30A422A2AECEF1B00AD59F9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F30A42322AECF53A00AD59F9 /* RepositoryTask.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F30A422F2AECF44E00AD59F9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F30A42302AECF46B00AD59F9 /* TestEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F30A42342AECF5DF00AD59F9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F30A42352AECF61900AD59F9 /* APIEndpoints.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F30A42372AECF62F00AD59F9 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				F30A42392AECF65300AD59F9 /* View */,
+				F30A42382AECF64A00AD59F9 /* ViewModel */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		F30A42382AECF64A00AD59F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F30A423A2AECF66200AD59F9 /* TestViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F30A42392AECF65300AD59F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F3694B332AD5713E00D23E99 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F30A423C2AECF7AE00AD59F9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F30A423E2AECF7CB00AD59F9 /* Protocols */,
+				F30A423D2AECF7C400AD59F9 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F30A423D2AECF7C400AD59F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F30A42422AECF8B700AD59F9 /* TestExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F30A423E2AECF7CB00AD59F9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F30A423F2AECF7E300AD59F9 /* TestProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F30A42442AECF90200AD59F9 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F30A42452AECF92700AD59F9 /* TestUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F30A42472AECF93A00AD59F9 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				F30A42482AECF94A00AD59F9 /* Repositories */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		F30A42482AECF94A00AD59F9 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				F30A42492AECF96E00AD59F9 /* TestRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		F30A424B2AECFA5400AD59F9 /* PersistentStorage */ = {
+			isa = PBXGroup;
+			children = (
+				F30A424C2AECFA6F00AD59F9 /* ResponseStorage */,
+			);
+			path = PersistentStorage;
+			sourceTree = "<group>";
+		};
+		F30A424C2AECFA6F00AD59F9 /* ResponseStorage */ = {
+			isa = PBXGroup;
+			children = (
+				F30A424D2AECFB3F00AD59F9 /* TestRepository.swift */,
+			);
+			path = ResponseStorage;
+			sourceTree = "<group>";
+		};
 		F3694B252AD5713E00D23E99 = {
 			isa = PBXGroup;
 			children = (
@@ -94,9 +282,11 @@
 		F3694B302AD5713E00D23E99 /* Medi-Check */ = {
 			isa = PBXGroup;
 			children = (
-				F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */,
-				F3694B332AD5713E00D23E99 /* ContentView.swift */,
-				F3694B352AD5713F00D23E99 /* Assets.xcassets */,
+				F30A42282AECEE4300AD59F9 /* Resources */,
+				F30A42252AECEE2800AD59F9 /* Data */,
+				F30A42242AECEE2400AD59F9 /* Domain */,
+				F30A42232AECEE1B00AD59F9 /* Presentation */,
+				F30A42222AECEDFA00AD59F9 /* App */,
 				F3694B372AD5713F00D23E99 /* Preview Content */,
 			);
 			path = "Medi-Check";
@@ -257,8 +447,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30A424A2AECF96E00AD59F9 /* TestRepository.swift in Sources */,
+				F30A42312AECF46B00AD59F9 /* TestEntity.swift in Sources */,
+				F30A42432AECF8B700AD59F9 /* TestExtension.swift in Sources */,
+				F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */,
+				F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */,
+				F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */,
+				F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */,
 				F3694B342AD5713E00D23E99 /* ContentView.swift in Sources */,
+				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
 				F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */,
+				F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */,
+				F30A424E2AECFB3F00AD59F9 /* TestRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +622,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Medi-Check/Preview Content\"";
+				DEVELOPMENT_TEAM = U5F437QJA7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -450,6 +651,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Medi-Check/Preview Content\"";
+				DEVELOPMENT_TEAM = U5F437QJA7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
