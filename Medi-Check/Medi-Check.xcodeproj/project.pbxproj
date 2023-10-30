@@ -18,6 +18,8 @@
 		F30A424A2AECF96E00AD59F9 /* TestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42492AECF96E00AD59F9 /* TestRepository.swift */; };
 		F30A424E2AECFB3F00AD59F9 /* TestResponseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A424D2AECFB3F00AD59F9 /* TestResponseRepository.swift */; };
 		F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314B64B2AED05E700AEB652 /* Extension+Color.swift */; };
+		F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */; };
+		F342A3712AED21E400DBA689 /* OnBoardingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A3702AED21E400DBA689 /* OnBoardingBackgroundView.swift */; };
 		F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */; };
 		F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B332AD5713E00D23E99 /* SplashView.swift */; };
 		F3694B362AD5713F00D23E99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3694B352AD5713F00D23E99 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		F30A42492AECF96E00AD59F9 /* TestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRepository.swift; sourceTree = "<group>"; };
 		F30A424D2AECFB3F00AD59F9 /* TestResponseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResponseRepository.swift; sourceTree = "<group>"; };
 		F314B64B2AED05E700AEB652 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		F342A3702AED21E400DBA689 /* OnBoardingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingBackgroundView.swift; sourceTree = "<group>"; };
 		F3694B2E2AD5713E00D23E99 /* Medi-Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medi-Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_CheckApp.swift; sourceTree = "<group>"; };
 		F3694B332AD5713E00D23E99 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F342A3682AED1EE800DBA689 /* SplashView */,
 				F30A423C2AECF7AE00AD59F9 /* Utils */,
 				F30A42372AECF62F00AD59F9 /* OnBoarding */,
 			);
@@ -191,7 +196,8 @@
 		F30A42392AECF65300AD59F9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F3694B332AD5713E00D23E99 /* SplashView.swift */,
+				F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */,
+				F342A3702AED21E400DBA689 /* OnBoardingBackgroundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 		F30A423C2AECF7AE00AD59F9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F30A42422AECF8B700AD59F9 /* StrokeText.swift */,
 				F30A423E2AECF7CB00AD59F9 /* Protocols */,
 				F30A423D2AECF7C400AD59F9 /* Extensions */,
 			);
@@ -208,7 +215,6 @@
 		F30A423D2AECF7C400AD59F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F30A42422AECF8B700AD59F9 /* StrokeText.swift */,
 				F314B64B2AED05E700AEB652 /* Extension+Color.swift */,
 			);
 			path = Extensions;
@@ -260,6 +266,22 @@
 				F30A424D2AECFB3F00AD59F9 /* TestResponseRepository.swift */,
 			);
 			path = ResponseStorage;
+			sourceTree = "<group>";
+		};
+		F342A3682AED1EE800DBA689 /* SplashView */ = {
+			isa = PBXGroup;
+			children = (
+				F342A3692AED1EF300DBA689 /* View */,
+			);
+			path = SplashView;
+			sourceTree = "<group>";
+		};
+		F342A3692AED1EF300DBA689 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F3694B332AD5713E00D23E99 /* SplashView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F3694B252AD5713E00D23E99 = {
@@ -458,7 +480,9 @@
 				F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */,
 				F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */,
 				F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */,
+				F342A3712AED21E400DBA689 /* OnBoardingBackgroundView.swift in Sources */,
 				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
+				F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */,
 				F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */,
 				F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */,
 				F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */,
@@ -626,7 +650,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Medi-Check/Preview Content\"";
-				DEVELOPMENT_TEAM = U5F437QJA7;
+				DEVELOPMENT_TEAM = G64N5NJ4Q6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -655,7 +679,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Medi-Check/Preview Content\"";
-				DEVELOPMENT_TEAM = U5F437QJA7;
+				DEVELOPMENT_TEAM = G64N5NJ4Q6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
