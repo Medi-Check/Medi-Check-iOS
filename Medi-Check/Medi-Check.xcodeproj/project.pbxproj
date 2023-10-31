@@ -19,7 +19,7 @@
 		F30A424E2AECFB3F00AD59F9 /* TestResponseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A424D2AECFB3F00AD59F9 /* TestResponseRepository.swift */; };
 		F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314B64B2AED05E700AEB652 /* Extension+Color.swift */; };
 		F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */; };
-		F342A3712AED21E400DBA689 /* OnBoardingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A3702AED21E400DBA689 /* OnBoardingBackgroundView.swift */; };
+		F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A3702AED21E400DBA689 /* FirstBackgroundView.swift */; };
 		F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */; };
 		F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B332AD5713E00D23E99 /* SplashView.swift */; };
 		F3694B362AD5713F00D23E99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3694B352AD5713F00D23E99 /* Assets.xcassets */; };
@@ -59,7 +59,7 @@
 		F30A424D2AECFB3F00AD59F9 /* TestResponseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResponseRepository.swift; sourceTree = "<group>"; };
 		F314B64B2AED05E700AEB652 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
-		F342A3702AED21E400DBA689 /* OnBoardingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingBackgroundView.swift; sourceTree = "<group>"; };
+		F342A3702AED21E400DBA689 /* FirstBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBackgroundView.swift; sourceTree = "<group>"; };
 		F3694B2E2AD5713E00D23E99 /* Medi-Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medi-Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_CheckApp.swift; sourceTree = "<group>"; };
 		F3694B332AD5713E00D23E99 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -108,6 +108,7 @@
 		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F3926A9C2AF12B3F00106387 /* BackgroundView */,
 				F342A3682AED1EE800DBA689 /* SplashView */,
 				F30A423C2AECF7AE00AD59F9 /* Utils */,
 				F30A42372AECF62F00AD59F9 /* OnBoarding */,
@@ -197,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */,
-				F342A3702AED21E400DBA689 /* OnBoardingBackgroundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,6 +342,22 @@
 			path = "Medi-CheckUITests";
 			sourceTree = "<group>";
 		};
+		F3926A9C2AF12B3F00106387 /* BackgroundView */ = {
+			isa = PBXGroup;
+			children = (
+				F3926A9D2AF12B4D00106387 /* View */,
+			);
+			path = BackgroundView;
+			sourceTree = "<group>";
+		};
+		F3926A9D2AF12B4D00106387 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F342A3702AED21E400DBA689 /* FirstBackgroundView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -480,7 +496,7 @@
 				F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */,
 				F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */,
 				F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */,
-				F342A3712AED21E400DBA689 /* OnBoardingBackgroundView.swift in Sources */,
+				F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */,
 				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
 				F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */,
 				F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */,

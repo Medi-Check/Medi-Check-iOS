@@ -12,7 +12,7 @@ struct OnBoardingView: View {
     
     var body: some View {
         ZStack {
-            OnBoardingBackgroundView()
+            FirstBackgroundView()
             TabView(selection: $indexOfTitle) {
                 
             }
