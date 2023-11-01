@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnBoardingView: View {
     @State private var indexOfTitle: Int = 0
+    @State private var buttonText: String = "다음"
     
     var body: some View {
         GeometryReader { geometry in
@@ -28,24 +29,26 @@ struct OnBoardingView: View {
                         
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
-                    Button {
+                    
                         if 0 <= indexOfTitle && indexOfTitle < 2 {
-                            indexOfTitle += 1
-                        } else if indexOfTitle >= 2 {
-                            
+                            Button {
+                                indexOfTitle += 1
+                            } label: {
+                                BasicButtonLabel(text: "다음", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
+                                    .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                                    .background(Color.MediCheckMainColor)
+                            }
+                        } else if 2 <= indexOfTitle {
+                            Button {
+                                indexOfTitle = 2
+                            } label: {
+                                BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
+                                    .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                                    .background(Color.MediCheckMainColor)
+                            }
                         }
-                    } label: {
-                        if 0 <= indexOfTitle && indexOfTitle < 2 {
-                            BasicButtonLabel(text: "다음", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
-                                .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
-                                .background(Color.MediCheckMainColor)
-                        } else if indexOfTitle <= 2 {
-                            BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
-                                .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
-                                .background(Color.MediCheckMainColor)
-                            
-                        }
-                    }
+                    
+
                 }
             }
         }
