@@ -30,7 +30,6 @@ struct SplashView: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         withAnimation(.easeInOut(duration: 1)) {
                             isOnBoardingViewVisible = true
-                            print(isOnBoardingViewVisible)
                         }
                     }
                 }

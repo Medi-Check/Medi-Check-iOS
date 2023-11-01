@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct InputFamilyCodeView: View {
-    @State var familyCode: String
+    @State var familyCode: String = ""
+    @State private var isInputEmailViewPresented = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -33,22 +34,17 @@ struct InputFamilyCodeView: View {
                         Rectangle()
                             .frame(height: 1.5)
                         
-                        HStack {
-                            Button {
-                                
-                            } label: {
-                                Text("코드 발급")
-                            }
-                            
-                            Text(" / ")
-                            
-                            Button {
-                                
-                            } label: {
-                                Text("코드 재전송")
-                            }
+                        
+                        Button {
+                            isInputEmailViewPresented = true
+                        } label: {
+                            Text("코드 발급 & 재전송")
                         }
                         .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.04, landscapeIPhone: geoWidth * 0.025, portraitIPad: geoWidth * 0.015, landscapeIPad: geoWidth * 0.015), weight: .bold))
+                        .navigationDestination(isPresented: $isInputEmailViewPresented) {
+                            InputEmailView()
+                        }
+                        
                     }
                     .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.85, landscapeIPhone: geoWidth * 0.63, portraitIPad: geoWidth * 0.5, landscapeIPad: geoWidth * 0.5), alignment: .leading)
                     .foregroundStyle(Color.gray)
@@ -62,7 +58,6 @@ struct InputFamilyCodeView: View {
                             .background(Color.MediCheckMainColor)
                     }
                 }
-//                .background(Color.red.opacity(0.2))
             }
         }
     }

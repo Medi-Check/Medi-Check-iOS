@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputEmailView: View {
-    @State var email: String
+    @State var email: String = ""
     
     var body: some View {
         GeometryReader { geometry in
