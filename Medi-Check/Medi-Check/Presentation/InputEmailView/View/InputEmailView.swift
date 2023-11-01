@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputEmailView: View {
-    @State var email: String
+    @State var email: String = ""
     
     var body: some View {
         GeometryReader { geometry in
@@ -45,12 +45,14 @@ struct InputEmailView: View {
                             .background(Color.MediCheckMainColor)
                     }
                 }
-//                .background(Color.red.opacity(0.2))
             }
+        }
+        .onTapGesture {
+            self.endTextEditing()
         }
     }
 }
 
 #Preview {
-    InputEmailView(email: "EX) jmtkd9196@gmail.com")
+    InputEmailView(email: "")
 }
