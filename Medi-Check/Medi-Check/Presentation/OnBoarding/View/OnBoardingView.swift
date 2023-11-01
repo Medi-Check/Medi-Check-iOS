@@ -12,6 +12,9 @@ struct OnBoardingView: View {
     
     var body: some View {
         GeometryReader { geometry in
+            let geoWidth = geometry.size.width
+            let geoHeight = geometry.size.height
+            
             ZStack {
                 FirstBackgroundView()
                 VStack {
@@ -32,12 +35,12 @@ struct OnBoardingView: View {
                             
                         }
                     } label: {
-                        if indexOfTitle <= 0 {
-                            BasicButtonLabel(text: "다음", strokeWidth: 1, fontSize: geometry.size.height * 0.05, width: geometry.size.width, height: geometry.size.height * 0.07)
+                        if 0 <= indexOfTitle && indexOfTitle < 2 {
+                            BasicButtonLabel(text: "다음", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
                                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                                 .background(Color.MediCheckMainColor)
                         } else if indexOfTitle <= 2 {
-                            BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: geometry.size.height * 0.05, width: geometry.size.width, height: geometry.size.height * 0.07)
+                            BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
                                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                                 .background(Color.MediCheckMainColor)
                             
