@@ -33,19 +33,14 @@ struct OnBoardingView: View {
                         }
                     } label: {
                         if indexOfTitle <= 0 {
-                            StrokeText(text: "다음", width: 1, color: Color.black)
-                                .foregroundColor(.white)
-                                .font(.system(size: geometry.size.height * 0.05, weight: .bold))
-                                .frame(width: geometry.size.width, height: geometry.size.height * 0.07, alignment: .top)
+                            BasicButtonLabel(text: "다음", strokeWidth: 1, fontSize: geometry.size.height * 0.05, width: geometry.size.width, height: geometry.size.height * 0.07)
                                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                                 .background(Color.MediCheckMainColor)
                         } else if indexOfTitle <= 2 {
-                            StrokeText(text: "완료", width: 1, color: Color.black)
-                                .foregroundColor(.white)
-                                .font(.system(size: geometry.size.height * 0.05, weight: .bold))
-                                .frame(width: geometry.size.width, height: geometry.size.height * 0.07, alignment: .top)
+                            BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: geometry.size.height * 0.05, width: geometry.size.width, height: geometry.size.height * 0.07)
                                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                                 .background(Color.MediCheckMainColor)
+                            
                         }
                     }
                 }
