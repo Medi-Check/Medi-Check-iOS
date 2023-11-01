@@ -17,10 +17,16 @@ extension UIDevice {
     }
     
     static var isPortrait: Bool {
-        UIDevice.current.orientation == .portrait
+        guard let orientation = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.windowScene?.interfaceOrientation else {
+            return true
+        }
+        return orientation.isPortrait
     }
     
     static var isLandscape: Bool {
-        (UIDevice.current.orientation == .landscapeLeft) || (UIDevice.current.orientation == .landscapeRight)
+        guard let orientation = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.windowScene?.interfaceOrientation else {
+            return false
+        }
+        return orientation.isLandscape
     }
 }
