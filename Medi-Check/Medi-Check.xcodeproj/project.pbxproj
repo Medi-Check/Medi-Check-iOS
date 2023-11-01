@@ -33,6 +33,7 @@
 		F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */; };
 		F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */; };
 		F3DAD4B42AF2C90500D85F99 /* Extension+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B32AF2C90500D85F99 /* Extension+CGFloat.swift */; };
+		F3DAD4B62AF2EA0B00D85F99 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B52AF2EA0B00D85F99 /* Extension+View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailView.swift; sourceTree = "<group>"; };
 		F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
 		F3DAD4B32AF2C90500D85F99 /* Extension+CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CGFloat.swift"; sourceTree = "<group>"; };
+		F3DAD4B52AF2EA0B00D85F99 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 				F314B64B2AED05E700AEB652 /* Extension+Color.swift */,
 				F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */,
 				F3DAD4B32AF2C90500D85F99 /* Extension+CGFloat.swift */,
+				F3DAD4B52AF2EA0B00D85F99 /* Extension+View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				F30A42312AECF46B00AD59F9 /* TestEntity.swift in Sources */,
 				F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */,
 				F30A42432AECF8B700AD59F9 /* StrokeText.swift in Sources */,
+				F3DAD4B62AF2EA0B00D85F99 /* Extension+View.swift in Sources */,
 				F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */,
 				F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */,
 				F3DAD4B42AF2C90500D85F99 /* Extension+CGFloat.swift in Sources */,

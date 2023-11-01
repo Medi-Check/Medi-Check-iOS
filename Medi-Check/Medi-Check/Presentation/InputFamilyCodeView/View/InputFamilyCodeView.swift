@@ -60,6 +60,9 @@ struct InputFamilyCodeView: View {
                 }
             }
         }
+        .onTapGesture {
+            self.endTextEditing()
+        }
     }
 }
 

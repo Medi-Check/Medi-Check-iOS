@@ -45,12 +45,14 @@ struct InputEmailView: View {
                             .background(Color.MediCheckMainColor)
                     }
                 }
-//                .background(Color.red.opacity(0.2))
             }
+        }
+        .onTapGesture {
+            self.endTextEditing()
         }
     }
 }
 
 #Preview {
-    InputEmailView(email: "EX) jmtkd9196@gmail.com")
+    InputEmailView(email: "")
 }
