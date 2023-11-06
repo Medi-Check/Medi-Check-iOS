@@ -29,7 +29,7 @@ struct HomeView: View {
                         }
                         .tag(1)
                     
-                    Text("TEST3")
+                    ScheduleView()
                         .tabItem {
                             Image(systemName: "star.fill")
                         }

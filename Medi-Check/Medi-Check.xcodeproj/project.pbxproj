@@ -35,6 +35,7 @@
 		F39A51A72AF9150900BF393C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51A62AF9150900BF393C /* HomeView.swift */; };
 		F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51AA2AF9259B00BF393C /* DashboardView.swift */; };
 		F39A51AF2AF9310000BF393C /* RegistrationDrugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51AE2AF9310000BF393C /* RegistrationDrugView.swift */; };
+		F39A51B32AF9422F00BF393C /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51B22AF9422F00BF393C /* ScheduleView.swift */; };
 		F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */; };
 		F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */; };
 		F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */; };
@@ -91,6 +92,7 @@
 		F39A51A62AF9150900BF393C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F39A51AA2AF9259B00BF393C /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		F39A51AE2AF9310000BF393C /* RegistrationDrugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDrugView.swift; sourceTree = "<group>"; };
+		F39A51B22AF9422F00BF393C /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFamilyCodeView.swift; sourceTree = "<group>"; };
 		F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailView.swift; sourceTree = "<group>"; };
 		F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F39A51B02AF941EA00BF393C /* ScheduleView */,
 				F39A51AC2AF930F100BF393C /* RegistrationDrugView */,
 				F39A51A82AF922E600BF393C /* DashboardView */,
 				F39A51A42AF9150000BF393C /* HomeView */,
@@ -477,6 +480,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F39A51B02AF941EA00BF393C /* ScheduleView */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51B12AF9422600BF393C /* View */,
+			);
+			path = ScheduleView;
+			sourceTree = "<group>";
+		};
+		F39A51B12AF9422600BF393C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51B22AF9422F00BF393C /* ScheduleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F3C192CB2AF2B818003A40AF /* InputFamilyCodeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +676,7 @@
 				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
 				F39A51A72AF9150900BF393C /* HomeView.swift in Sources */,
 				F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */,
+				F39A51B32AF9422F00BF393C /* ScheduleView.swift in Sources */,
 				F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */,
 				F3926AA82AF132E400106387 /* BasicButtonLabel.swift in Sources */,
 				F3926AA02AF12D7200106387 /* SecondBackgroundView.swift in Sources */,

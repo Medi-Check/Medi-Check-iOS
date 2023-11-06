@@ -18,13 +18,17 @@ struct RegistrationDrugView: View {
                     Button {
                         
                     } label: {
-                        Image(systemName: "qrcode.viewfinder")
-                            .resizable()
-                            .padding(CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.05, landscapeIPhone: geoWidth * 0.03, portraitIPad: geoWidth * 0.05, landscapeIPad: geoWidth * 0.03))
-                            .background(Color.gray)
-                            .cornerRadius(30, corners: .allCorners)
-                            .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.5, landscapeIPhone: geoWidth * 0.3, portraitIPad: geoWidth * 0.5, landscapeIPad: geoWidth * 0.3), height: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.5, landscapeIPhone: geoWidth * 0.3, portraitIPad: geoWidth * 0.5, landscapeIPad: geoWidth * 0.3))
-                            .foregroundStyle(Color.black)
+                        ZStack {
+                            Color.clear
+                            Image(systemName: "qrcode.viewfinder")
+                                .resizable()
+                                .scaledToFit()
+                                .padding(CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.05, landscapeIPhone: geoWidth * 0.04, portraitIPad: geoWidth * 0.05, landscapeIPad: geoWidth * 0.04))
+                                .foregroundStyle(.black)
+                        }
+                        .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.5, landscapeIPhone: geoWidth * 0.3, portraitIPad: geoWidth * 0.5, landscapeIPad: geoWidth * 0.3), height: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.5, landscapeIPhone: geoWidth * 0.3, portraitIPad: geoWidth * 0.5, landscapeIPad: geoWidth * 0.3))
+                        .background(Color.gray)
+                        .cornerRadius(30, corners: .allCorners)
                     }
                     
                     Text("약 정보 등록")
