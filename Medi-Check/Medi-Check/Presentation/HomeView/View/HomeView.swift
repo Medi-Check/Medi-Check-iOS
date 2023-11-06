@@ -18,7 +18,8 @@ struct HomeView: View {
                     
                     ZStack {
                         FirstBackgroundView()
-                        Text("TEST1")
+                        DashboardView(urlToLoad: "https://dashboard-trainingapps-eks004.sa.wise-paas.com/d/Tns3Y0ZMz/core2_1215_sk?orgId=1&refresh=3s")
+                            .ignoresSafeArea()
                     }
                     .tabItem {
                         Image(systemName: "chart.bar.xaxis")
