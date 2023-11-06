@@ -30,7 +30,7 @@ struct ProfileView: View {
             }
             
             Text(name)
-                .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: 15, landscapeIPhone: 15, portraitIPad: 30, landscapeIPad: 30), weight: .bold))
+                .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: 20, landscapeIPhone: 20, portraitIPad: 40, landscapeIPad: 40), weight: .bold))
         }
         .cornerRadius(15, corners: .allCorners)
     }

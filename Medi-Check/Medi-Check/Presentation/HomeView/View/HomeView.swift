@@ -16,17 +16,14 @@ struct HomeView: View {
             VStack {
                 TabView(selection: $indexOfView) {
                     
-                    ZStack {
-                        FirstBackgroundView()
-                        DashboardView(urlToLoad: "https://dashboard-trainingapps-eks004.sa.wise-paas.com/d/Tns3Y0ZMz/core2_1215_sk?orgId=1&refresh=3s")
-                            .ignoresSafeArea()
-                    }
-                    .tabItem {
-                        Image(systemName: "chart.bar.xaxis")
-                    }
-                    .tag(0)
+                    DashboardView(urlToLoad: "https://dashboard-trainingapps-eks004.sa.wise-paas.com/d/Tns3Y0ZMz/core2_1215_sk?orgId=1&refresh=3s")
+                        .ignoresSafeArea()
+                        .tabItem {
+                            Image(systemName: "chart.bar.xaxis")
+                        }
+                        .tag(0)
                     
-                    Text("TEST2")
+                    RegistrationDrugView()
                         .tabItem {
                             Image(systemName: "pill.fill")
                         }

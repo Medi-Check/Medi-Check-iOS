@@ -34,6 +34,7 @@
 		F39A51A32AF9064500BF393C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51A22AF9064500BF393C /* ProfileView.swift */; };
 		F39A51A72AF9150900BF393C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51A62AF9150900BF393C /* HomeView.swift */; };
 		F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51AA2AF9259B00BF393C /* DashboardView.swift */; };
+		F39A51AF2AF9310000BF393C /* RegistrationDrugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51AE2AF9310000BF393C /* RegistrationDrugView.swift */; };
 		F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */; };
 		F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */; };
 		F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */; };
@@ -89,6 +90,7 @@
 		F39A51A22AF9064500BF393C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F39A51A62AF9150900BF393C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F39A51AA2AF9259B00BF393C /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		F39A51AE2AF9310000BF393C /* RegistrationDrugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDrugView.swift; sourceTree = "<group>"; };
 		F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFamilyCodeView.swift; sourceTree = "<group>"; };
 		F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailView.swift; sourceTree = "<group>"; };
 		F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F39A51AC2AF930F100BF393C /* RegistrationDrugView */,
 				F39A51A82AF922E600BF393C /* DashboardView */,
 				F39A51A42AF9150000BF393C /* HomeView */,
 				F39A519C2AF8FDCF00BF393C /* SelectProfileView */,
@@ -458,6 +461,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F39A51AC2AF930F100BF393C /* RegistrationDrugView */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51AD2AF930F800BF393C /* View */,
+			);
+			path = RegistrationDrugView;
+			sourceTree = "<group>";
+		};
+		F39A51AD2AF930F800BF393C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51AE2AF9310000BF393C /* RegistrationDrugView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F3C192CB2AF2B818003A40AF /* InputFamilyCodeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +640,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F30A424A2AECF96E00AD59F9 /* TestRepository.swift in Sources */,
+				F39A51AF2AF9310000BF393C /* RegistrationDrugView.swift in Sources */,
 				F30A42312AECF46B00AD59F9 /* TestEntity.swift in Sources */,
 				F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */,
 				F30A42432AECF8B700AD59F9 /* StrokeText.swift in Sources */,
