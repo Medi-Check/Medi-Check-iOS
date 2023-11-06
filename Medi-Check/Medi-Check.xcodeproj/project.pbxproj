@@ -38,6 +38,7 @@
 		F39A51B32AF9422F00BF393C /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51B22AF9422F00BF393C /* ScheduleView.swift */; };
 		F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */; };
 		F39A51BC2AF964A000BF393C /* InputNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51BB2AF964A000BF393C /* InputNicknameView.swift */; };
+		F39A51BF2AF967C600BF393C /* InputFaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */; };
 		F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */; };
 		F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */; };
 		F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */; };
@@ -97,6 +98,7 @@
 		F39A51B22AF9422F00BF393C /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionButtonLabel.swift; sourceTree = "<group>"; };
 		F39A51BB2AF964A000BF393C /* InputNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNicknameView.swift; sourceTree = "<group>"; };
+		F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFaceIdView.swift; sourceTree = "<group>"; };
 		F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFamilyCodeView.swift; sourceTree = "<group>"; };
 		F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailView.swift; sourceTree = "<group>"; };
 		F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				F39A51BB2AF964A000BF393C /* InputNicknameView.swift */,
+				F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */,
 				F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */,
 				F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */,
+				F39A51BF2AF967C600BF393C /* InputFaceIdView.swift in Sources */,
 				F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */,
 				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
 				F39A51A72AF9150900BF393C /* HomeView.swift in Sources */,

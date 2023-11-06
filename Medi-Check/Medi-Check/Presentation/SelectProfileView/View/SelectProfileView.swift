@@ -11,7 +11,7 @@ struct SelectProfileView: View {
     //    let dubbyProfiles: [Profile] = []
     let dummyProfileImages: [String] = ["Profile", "Profile", "Profile"]
     let dummyName: [String] = ["Name", "Name", "Name"]
-    @State private var isAddProfileViewPresented: Bool = false
+    @State private var isInputNicknameViewPresented: Bool = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -33,7 +33,7 @@ struct SelectProfileView: View {
                     
                     VStack {
                         Button {
-                            isAddProfileViewPresented = true
+                            isInputNicknameViewPresented = true
                         } label: {
                             ZStack {
                                 Circle()
@@ -45,8 +45,8 @@ struct SelectProfileView: View {
                                     .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.05, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.05, landscapeIPad: geoWidth * 0.05))
                             }
                             .foregroundStyle(Color.black)
-                            .navigationDestination(isPresented: $isAddProfileViewPresented) {
-                                
+                            .navigationDestination(isPresented: $isInputNicknameViewPresented) {
+                                InputNicknameView(isInputNicknameViewPresented: $isInputNicknameViewPresented)
                             }
                             
                         }

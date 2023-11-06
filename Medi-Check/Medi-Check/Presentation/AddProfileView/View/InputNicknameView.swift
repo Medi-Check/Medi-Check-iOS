@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct InputNicknameView: View {
-    @State var nickname: String
+    @State private var nickname: String = ""
+    @State var isInputFaceIdViewPresented: Bool = false
+    @Binding var isInputNicknameViewPresented: Bool
     var body: some View {
         GeometryReader { geometry in
             let geoWidth = geometry.size.width
@@ -37,11 +39,14 @@ struct InputNicknameView: View {
                     
                     Spacer()
                     Button {
-                        
+                        isInputFaceIdViewPresented = true
                     } label: {
                         BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                             .background(Color.MediCheckMainColor)
+                    }
+                    .navigationDestination(isPresented: $isInputFaceIdViewPresented) {
+                        InputFaceIdView(isInputNicknameViewPresented: $isInputNicknameViewPresented)
                     }
                 }
             }
@@ -54,5 +59,5 @@ struct InputNicknameView: View {
 }
 
 #Preview {
-    InputNicknameView(nickname: "숫자, 특수문자, 이모티콘 모두 사용 가능")
+    InputNicknameView(isInputNicknameViewPresented: .constant(false))
 }
