@@ -10,6 +10,7 @@ import SwiftUI
 struct InputFamilyCodeView: View {
     @State var familyCode: String = ""
     @State private var isInputEmailViewPresented = false
+    @State private var isFaceIdViewPresented = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -51,11 +52,14 @@ struct InputFamilyCodeView: View {
                     
                     Spacer()
                     Button {
-                        
+                        isFaceIdViewPresented = true
                     } label: {
                         BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                             .background(Color.MediCheckMainColor)
+                    }
+                    .navigationDestination(isPresented: $isFaceIdViewPresented) {
+                        FaceIdView()
                     }
                 }
             }
