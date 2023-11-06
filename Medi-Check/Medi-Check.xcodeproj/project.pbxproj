@@ -30,6 +30,7 @@
 		F3926AA02AF12D7200106387 /* SecondBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */; };
 		F3926AA82AF132E400106387 /* BasicButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926AA72AF132E400106387 /* BasicButtonLabel.swift */; };
 		F39A51972AF8EDB400BF393C /* FaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51962AF8EDB300BF393C /* FaceIdView.swift */; };
+		F39A519E2AF8FDE700BF393C /* SelectProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A519D2AF8FDE700BF393C /* SelectProfileView.swift */; };
 		F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */; };
 		F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */; };
 		F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */; };
@@ -81,6 +82,7 @@
 		F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondBackgroundView.swift; sourceTree = "<group>"; };
 		F3926AA72AF132E400106387 /* BasicButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonLabel.swift; sourceTree = "<group>"; };
 		F39A51962AF8EDB300BF393C /* FaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdView.swift; sourceTree = "<group>"; };
+		F39A519D2AF8FDE700BF393C /* SelectProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProfileView.swift; sourceTree = "<group>"; };
 		F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFamilyCodeView.swift; sourceTree = "<group>"; };
 		F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailView.swift; sourceTree = "<group>"; };
 		F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F39A519C2AF8FDCF00BF393C /* SelectProfileView */,
 				F39A51932AF8ED9700BF393C /* FaceIdView */,
 				F3C192CF2AF2C0DF003A40AF /* InputEmailView */,
 				F3C192CB2AF2B818003A40AF /* InputFamilyCodeView */,
@@ -398,6 +401,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F39A519C2AF8FDCF00BF393C /* SelectProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				F39A519F2AF901FA00BF393C /* View */,
+			);
+			path = SelectProfileView;
+			sourceTree = "<group>";
+		};
+		F39A519F2AF901FA00BF393C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F39A519D2AF8FDE700BF393C /* SelectProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F3C192CB2AF2B818003A40AF /* InputFamilyCodeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +601,7 @@
 				F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */,
 				F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */,
 				F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */,
+				F39A519E2AF8FDE700BF393C /* SelectProfileView.swift in Sources */,
 				F30A424E2AECFB3F00AD59F9 /* TestResponseRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
