@@ -29,6 +29,14 @@
 		F3694B4F2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B4E2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift */; };
 		F3926AA02AF12D7200106387 /* SecondBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */; };
 		F3926AA82AF132E400106387 /* BasicButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926AA72AF132E400106387 /* BasicButtonLabel.swift */; };
+		F39A51972AF8EDB400BF393C /* FaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51962AF8EDB300BF393C /* FaceIdView.swift */; };
+		F39A519E2AF8FDE700BF393C /* SelectProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A519D2AF8FDE700BF393C /* SelectProfileView.swift */; };
+		F39A51A32AF9064500BF393C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51A22AF9064500BF393C /* ProfileView.swift */; };
+		F39A51A72AF9150900BF393C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51A62AF9150900BF393C /* HomeView.swift */; };
+		F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51AA2AF9259B00BF393C /* DashboardView.swift */; };
+		F39A51AF2AF9310000BF393C /* RegistrationDrugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51AE2AF9310000BF393C /* RegistrationDrugView.swift */; };
+		F39A51B32AF9422F00BF393C /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51B22AF9422F00BF393C /* ScheduleView.swift */; };
+		F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */; };
 		F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */; };
 		F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */; };
 		F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */; };
@@ -79,6 +87,14 @@
 		F3694B4E2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_CheckUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondBackgroundView.swift; sourceTree = "<group>"; };
 		F3926AA72AF132E400106387 /* BasicButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonLabel.swift; sourceTree = "<group>"; };
+		F39A51962AF8EDB300BF393C /* FaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdView.swift; sourceTree = "<group>"; };
+		F39A519D2AF8FDE700BF393C /* SelectProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProfileView.swift; sourceTree = "<group>"; };
+		F39A51A22AF9064500BF393C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F39A51A62AF9150900BF393C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F39A51AA2AF9259B00BF393C /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		F39A51AE2AF9310000BF393C /* RegistrationDrugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDrugView.swift; sourceTree = "<group>"; };
+		F39A51B22AF9422F00BF393C /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionButtonLabel.swift; sourceTree = "<group>"; };
 		F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFamilyCodeView.swift; sourceTree = "<group>"; };
 		F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailView.swift; sourceTree = "<group>"; };
 		F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
@@ -122,6 +138,12 @@
 		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F39A51B02AF941EA00BF393C /* ScheduleView */,
+				F39A51AC2AF930F100BF393C /* RegistrationDrugView */,
+				F39A51A82AF922E600BF393C /* DashboardView */,
+				F39A51A42AF9150000BF393C /* HomeView */,
+				F39A519C2AF8FDCF00BF393C /* SelectProfileView */,
+				F39A51932AF8ED9700BF393C /* FaceIdView */,
 				F3C192CF2AF2C0DF003A40AF /* InputEmailView */,
 				F3C192CB2AF2B818003A40AF /* InputFamilyCodeView */,
 				F3926A9C2AF12B3F00106387 /* BackgroundView */,
@@ -225,6 +247,7 @@
 				F30A423E2AECF7CB00AD59F9 /* Protocols */,
 				F30A423D2AECF7C400AD59F9 /* Extensions */,
 				F3926AA72AF132E400106387 /* BasicButtonLabel.swift */,
+				F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -375,6 +398,103 @@
 			children = (
 				F342A3702AED21E400DBA689 /* FirstBackgroundView.swift */,
 				F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F39A51932AF8ED9700BF393C /* FaceIdView */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51942AF8ED9F00BF393C /* View */,
+			);
+			path = FaceIdView;
+			sourceTree = "<group>";
+		};
+		F39A51942AF8ED9F00BF393C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51962AF8EDB300BF393C /* FaceIdView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F39A519C2AF8FDCF00BF393C /* SelectProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				F39A519F2AF901FA00BF393C /* View */,
+			);
+			path = SelectProfileView;
+			sourceTree = "<group>";
+		};
+		F39A519F2AF901FA00BF393C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F39A519D2AF8FDE700BF393C /* SelectProfileView.swift */,
+				F39A51A22AF9064500BF393C /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F39A51A42AF9150000BF393C /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51A52AF9150400BF393C /* View */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		F39A51A52AF9150400BF393C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51A62AF9150900BF393C /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F39A51A82AF922E600BF393C /* DashboardView */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51A92AF922EF00BF393C /* View */,
+			);
+			path = DashboardView;
+			sourceTree = "<group>";
+		};
+		F39A51A92AF922EF00BF393C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51AA2AF9259B00BF393C /* DashboardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F39A51AC2AF930F100BF393C /* RegistrationDrugView */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51AD2AF930F800BF393C /* View */,
+			);
+			path = RegistrationDrugView;
+			sourceTree = "<group>";
+		};
+		F39A51AD2AF930F800BF393C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51AE2AF9310000BF393C /* RegistrationDrugView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F39A51B02AF941EA00BF393C /* ScheduleView */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51B12AF9422600BF393C /* View */,
+			);
+			path = ScheduleView;
+			sourceTree = "<group>";
+		};
+		F39A51B12AF9422600BF393C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51B22AF9422F00BF393C /* ScheduleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -542,26 +662,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				F30A424A2AECF96E00AD59F9 /* TestRepository.swift in Sources */,
+				F39A51AF2AF9310000BF393C /* RegistrationDrugView.swift in Sources */,
 				F30A42312AECF46B00AD59F9 /* TestEntity.swift in Sources */,
 				F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */,
 				F30A42432AECF8B700AD59F9 /* StrokeText.swift in Sources */,
 				F3DAD4B62AF2EA0B00D85F99 /* Extension+View.swift in Sources */,
 				F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */,
 				F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */,
+				F39A51A32AF9064500BF393C /* ProfileView.swift in Sources */,
 				F3DAD4B42AF2C90500D85F99 /* Extension+CGFloat.swift in Sources */,
+				F39A51972AF8EDB400BF393C /* FaceIdView.swift in Sources */,
 				F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */,
 				F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */,
 				F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */,
 				F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */,
 				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
+				F39A51A72AF9150900BF393C /* HomeView.swift in Sources */,
+				F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */,
 				F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */,
+				F39A51B32AF9422F00BF393C /* ScheduleView.swift in Sources */,
 				F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */,
 				F3926AA82AF132E400106387 /* BasicButtonLabel.swift in Sources */,
 				F3926AA02AF12D7200106387 /* SecondBackgroundView.swift in Sources */,
 				F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */,
 				F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */,
+				F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */,
 				F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */,
 				F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */,
+				F39A519E2AF8FDE700BF393C /* SelectProfileView.swift in Sources */,
 				F30A424E2AECFB3F00AD59F9 /* TestResponseRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
