@@ -36,6 +36,7 @@
 		F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51AA2AF9259B00BF393C /* DashboardView.swift */; };
 		F39A51AF2AF9310000BF393C /* RegistrationDrugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51AE2AF9310000BF393C /* RegistrationDrugView.swift */; };
 		F39A51B32AF9422F00BF393C /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51B22AF9422F00BF393C /* ScheduleView.swift */; };
+		F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */; };
 		F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */; };
 		F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */; };
 		F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */; };
@@ -93,6 +94,7 @@
 		F39A51AA2AF9259B00BF393C /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		F39A51AE2AF9310000BF393C /* RegistrationDrugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDrugView.swift; sourceTree = "<group>"; };
 		F39A51B22AF9422F00BF393C /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionButtonLabel.swift; sourceTree = "<group>"; };
 		F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFamilyCodeView.swift; sourceTree = "<group>"; };
 		F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailView.swift; sourceTree = "<group>"; };
 		F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				F30A423E2AECF7CB00AD59F9 /* Protocols */,
 				F30A423D2AECF7C400AD59F9 /* Extensions */,
 				F3926AA72AF132E400106387 /* BasicButtonLabel.swift */,
+				F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */,
 				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
 				F39A51A72AF9150900BF393C /* HomeView.swift in Sources */,
+				F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */,
 				F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */,
 				F39A51B32AF9422F00BF393C /* ScheduleView.swift in Sources */,
 				F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */,
