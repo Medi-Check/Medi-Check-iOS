@@ -29,6 +29,7 @@
 		F3694B4F2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B4E2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift */; };
 		F3926AA02AF12D7200106387 /* SecondBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */; };
 		F3926AA82AF132E400106387 /* BasicButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926AA72AF132E400106387 /* BasicButtonLabel.swift */; };
+		F39A51972AF8EDB400BF393C /* FaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51962AF8EDB300BF393C /* FaceIdView.swift */; };
 		F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */; };
 		F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */; };
 		F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */; };
@@ -79,6 +80,7 @@
 		F3694B4E2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_CheckUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondBackgroundView.swift; sourceTree = "<group>"; };
 		F3926AA72AF132E400106387 /* BasicButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonLabel.swift; sourceTree = "<group>"; };
+		F39A51962AF8EDB300BF393C /* FaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdView.swift; sourceTree = "<group>"; };
 		F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFamilyCodeView.swift; sourceTree = "<group>"; };
 		F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailView.swift; sourceTree = "<group>"; };
 		F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F39A51932AF8ED9700BF393C /* FaceIdView */,
 				F3C192CF2AF2C0DF003A40AF /* InputEmailView */,
 				F3C192CB2AF2B818003A40AF /* InputFamilyCodeView */,
 				F3926A9C2AF12B3F00106387 /* BackgroundView */,
@@ -379,6 +382,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F39A51932AF8ED9700BF393C /* FaceIdView */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51942AF8ED9F00BF393C /* View */,
+			);
+			path = FaceIdView;
+			sourceTree = "<group>";
+		};
+		F39A51942AF8ED9F00BF393C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51962AF8EDB300BF393C /* FaceIdView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F3C192CB2AF2B818003A40AF /* InputFamilyCodeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +568,7 @@
 				F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */,
 				F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */,
 				F3DAD4B42AF2C90500D85F99 /* Extension+CGFloat.swift in Sources */,
+				F39A51972AF8EDB400BF393C /* FaceIdView.swift in Sources */,
 				F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */,
 				F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */,
 				F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */,
