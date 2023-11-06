@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FaceIdView: View {
-    @State private var isProfileViewPresented: Bool = false
+    @State private var isSelectProfileViewPresented: Bool = false
     var body: some View {
         GeometryReader { geometry in
             let geoWidth = geometry.size.width
@@ -25,7 +25,7 @@ struct FaceIdView: View {
                         .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.6, landscapeIPhone: geoWidth * 0.5, portraitIPad: geoWidth * 0.5, landscapeIPad: geoWidth * 0.5), height: CGFloat.adaptiveSize(portraitIPhone: geoHeight * 0.5, landscapeIPhone: geoHeight * 0.5, portraitIPad: geoHeight * 0.5, landscapeIPad: geoHeight * 0.5))
                         .foregroundStyle(.gray)
                     Button {
-                        
+                        isSelectProfileViewPresented = true
                     } label: {
                         BasicButtonLabel(text: "프로필 선택", strokeWidth: 1, 
                                          fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05),
@@ -35,8 +35,8 @@ struct FaceIdView: View {
                             .background(Color.MediCheckMainColor)
                             .cornerRadius(15, corners: .allCorners)
                     }
-                    .navigationDestination(isPresented: $isProfileViewPresented) {
-                        
+                    .navigationDestination(isPresented: $isSelectProfileViewPresented) {
+                        SelectProfileView()
                     }
                 }
             }

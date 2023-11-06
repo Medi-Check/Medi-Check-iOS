@@ -14,7 +14,7 @@ struct ProfileView: View {
     var body: some View {
         VStack {
             Button {
-                
+                isHomeViewPresented = true
             } label: {
                 ZStack {
                     Rectangle()
