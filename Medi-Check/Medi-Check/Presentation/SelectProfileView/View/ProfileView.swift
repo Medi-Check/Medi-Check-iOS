@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     let image: String
     let name: String
+    @State private var isHomeViewPresented: Bool = false
     var body: some View {
         VStack {
             Button {
@@ -23,6 +24,9 @@ struct ProfileView: View {
                         .resizable()
                         .scaledToFit()
                 }
+            }
+            .navigationDestination(isPresented: $isHomeViewPresented) {
+                HomeView()
             }
             
             Text(name)
