@@ -42,6 +42,7 @@
 		F3BB159A2AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB15992AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift */; };
 		F3BB159C2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB159B2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift */; };
 		F3BB159E2AFAA43300DE7DC2 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB159D2AFAA43300DE7DC2 /* Medicine.swift */; };
+		F3BB15A02AFAA79F00DE7DC2 /* TakeMedicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB159F2AFAA79F00DE7DC2 /* TakeMedicine.swift */; };
 		F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */; };
 		F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */; };
 		F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */; };
@@ -105,6 +106,7 @@
 		F3BB15992AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
 		F3BB159B2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		F3BB159D2AFAA43300DE7DC2 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
+		F3BB159F2AFAA79F00DE7DC2 /* TakeMedicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeMedicine.swift; sourceTree = "<group>"; };
 		F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFamilyCodeView.swift; sourceTree = "<group>"; };
 		F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailView.swift; sourceTree = "<group>"; };
 		F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				F30A42302AECF46B00AD59F9 /* Member.swift */,
 				F3BB159D2AFAA43300DE7DC2 /* Medicine.swift */,
+				F3BB159F2AFAA79F00DE7DC2 /* TakeMedicine.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */,
 				F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */,
 				F39A51BC2AF964A000BF393C /* InputNicknameView.swift in Sources */,
+				F3BB15A02AFAA79F00DE7DC2 /* TakeMedicine.swift in Sources */,
 				F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */,
 				F39A519E2AF8FDE700BF393C /* SelectProfileView.swift in Sources */,
 				F30A424E2AECFB3F00AD59F9 /* TestResponseRepository.swift in Sources */,
