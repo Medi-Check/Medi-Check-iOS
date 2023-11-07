@@ -39,6 +39,8 @@
 		F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */; };
 		F39A51BC2AF964A000BF393C /* InputNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51BB2AF964A000BF393C /* InputNicknameView.swift */; };
 		F39A51BF2AF967C600BF393C /* InputFaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */; };
+		F3BB159A2AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB15992AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift */; };
+		F3BB159C2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB159B2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift */; };
 		F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */; };
 		F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */; };
 		F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */; };
@@ -99,6 +101,8 @@
 		F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionButtonLabel.swift; sourceTree = "<group>"; };
 		F39A51BB2AF964A000BF393C /* InputNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNicknameView.swift; sourceTree = "<group>"; };
 		F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFaceIdView.swift; sourceTree = "<group>"; };
+		F3BB15992AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
+		F3BB159B2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFamilyCodeView.swift; sourceTree = "<group>"; };
 		F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailView.swift; sourceTree = "<group>"; };
 		F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 		F30A42342AECF5DF00AD59F9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F3BB15982AFA67D500DE7DC2 /* DataMapping */,
 				F30A42352AECF61900AD59F9 /* APIEndpoints.swift */,
 			);
 			path = Network;
@@ -521,6 +526,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F3BB15982AFA67D500DE7DC2 /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				F3BB15992AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift */,
+				F3BB159B2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift */,
+			);
+			path = DataMapping;
+			sourceTree = "<group>";
+		};
 		F3C192CB2AF2B818003A40AF /* InputFamilyCodeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -686,6 +700,7 @@
 				F30A424A2AECF96E00AD59F9 /* TestRepository.swift in Sources */,
 				F39A51AF2AF9310000BF393C /* RegistrationDrugView.swift in Sources */,
 				F30A42312AECF46B00AD59F9 /* TestEntity.swift in Sources */,
+				F3BB159C2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift in Sources */,
 				F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */,
 				F30A42432AECF8B700AD59F9 /* StrokeText.swift in Sources */,
 				F3DAD4B62AF2EA0B00D85F99 /* Extension+View.swift in Sources */,
@@ -698,6 +713,7 @@
 				F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */,
 				F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */,
 				F39A51BF2AF967C600BF393C /* InputFaceIdView.swift in Sources */,
+				F3BB159A2AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift in Sources */,
 				F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */,
 				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
 				F39A51A72AF9150900BF393C /* HomeView.swift in Sources */,
