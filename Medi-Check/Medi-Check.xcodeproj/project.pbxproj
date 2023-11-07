@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A422B2AECEF7000AD59F9 /* DefaultRepository.swift */; };
-		F30A42312AECF46B00AD59F9 /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42302AECF46B00AD59F9 /* TestEntity.swift */; };
+		F30A42312AECF46B00AD59F9 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42302AECF46B00AD59F9 /* Member.swift */; };
 		F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42322AECF53A00AD59F9 /* RepositoryTask.swift */; };
 		F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42352AECF61900AD59F9 /* APIEndpoints.swift */; };
 		F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A423A2AECF66200AD59F9 /* TestViewModel.swift */; };
@@ -67,7 +67,7 @@
 
 /* Begin PBXFileReference section */
 		F30A422B2AECEF7000AD59F9 /* DefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRepository.swift; sourceTree = "<group>"; };
-		F30A42302AECF46B00AD59F9 /* TestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEntity.swift; sourceTree = "<group>"; };
+		F30A42302AECF46B00AD59F9 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		F30A42322AECF53A00AD59F9 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
 		F30A42352AECF61900AD59F9 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		F30A423A2AECF66200AD59F9 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 		F30A422F2AECF44E00AD59F9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				F30A42302AECF46B00AD59F9 /* TestEntity.swift */,
+				F30A42302AECF46B00AD59F9 /* Member.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -699,7 +699,7 @@
 			files = (
 				F30A424A2AECF96E00AD59F9 /* TestRepository.swift in Sources */,
 				F39A51AF2AF9310000BF393C /* RegistrationDrugView.swift in Sources */,
-				F30A42312AECF46B00AD59F9 /* TestEntity.swift in Sources */,
+				F30A42312AECF46B00AD59F9 /* Member.swift in Sources */,
 				F3BB159C2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift in Sources */,
 				F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */,
 				F30A42432AECF8B700AD59F9 /* StrokeText.swift in Sources */,
