@@ -52,6 +52,9 @@
 		F3DAD4B42AF2C90500D85F99 /* Extension+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B32AF2C90500D85F99 /* Extension+CGFloat.swift */; };
 		F3DAD4B62AF2EA0B00D85F99 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B52AF2EA0B00D85F99 /* Extension+View.swift */; };
 		F3DFC7E02AFBF610000E80F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3DFC7DF2AFBF610000E80F9 /* GoogleService-Info.plist */; };
+		F3DFC7E52AFC0CE3000E80F9 /* CarBode in Frameworks */ = {isa = PBXBuildFile; productRef = F3DFC7E42AFC0CE3000E80F9 /* CarBode */; };
+		F3DFC7E92AFC1371000E80F9 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DFC7E82AFC1371000E80F9 /* QRCodeView.swift */; };
+		F3DFC7EC2AFC15A8000E80F9 /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DFC7EB2AFC15A8000E80F9 /* QRCodeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +123,8 @@
 		F3DFC7DF2AFBF610000E80F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3DFC7E12AFBF91B000E80F9 /* Medi-Check.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Medi-Check.entitlements"; sourceTree = "<group>"; };
 		F3DFC7E22AFBF922000E80F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F3DFC7E82AFC1371000E80F9 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		F3DFC7EB2AFC15A8000E80F9 /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3DFC7E52AFC0CE3000E80F9 /* CarBode in Frameworks */,
 				F38E49572AFB7DA0008A1A90 /* FirebaseMessaging in Frameworks */,
 				F38E49552AFB7DA0008A1A90 /* FirebaseAnalytics in Frameworks */,
 			);
@@ -161,6 +167,7 @@
 		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F3DFC7E62AFC135C000E80F9 /* QRCodeView */,
 				F39A51B92AF9643A00BF393C /* AddProfileView */,
 				F39A51B02AF941EA00BF393C /* ScheduleView */,
 				F39A51AC2AF930F100BF393C /* RegistrationDrugView */,
@@ -587,6 +594,31 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F3DFC7E62AFC135C000E80F9 /* QRCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				F3DFC7EA2AFC159E000E80F9 /* ViewModel */,
+				F3DFC7E72AFC136A000E80F9 /* View */,
+			);
+			path = QRCodeView;
+			sourceTree = "<group>";
+		};
+		F3DFC7E72AFC136A000E80F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F3DFC7E82AFC1371000E80F9 /* QRCodeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3DFC7EA2AFC159E000E80F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3DFC7EB2AFC15A8000E80F9 /* QRCodeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -606,6 +638,7 @@
 			packageProductDependencies = (
 				F38E49542AFB7DA0008A1A90 /* FirebaseAnalytics */,
 				F38E49562AFB7DA0008A1A90 /* FirebaseMessaging */,
+				F3DFC7E42AFC0CE3000E80F9 /* CarBode */,
 			);
 			productName = "Medi-Check";
 			productReference = F3694B2E2AD5713E00D23E99 /* Medi-Check.app */;
@@ -681,6 +714,7 @@
 			mainGroup = F3694B252AD5713E00D23E99;
 			packageReferences = (
 				F38E49532AFB7DA0008A1A90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F3DFC7E32AFC0CE3000E80F9 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */,
 			);
 			productRefGroup = F3694B2F2AD5713E00D23E99 /* Products */;
 			projectDirPath = "";
@@ -748,11 +782,13 @@
 				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
 				F39A51A72AF9150900BF393C /* HomeView.swift in Sources */,
 				F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */,
+				F3DFC7EC2AFC15A8000E80F9 /* QRCodeViewModel.swift in Sources */,
 				F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */,
 				F39A51B32AF9422F00BF393C /* ScheduleView.swift in Sources */,
 				F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */,
 				F3926AA82AF132E400106387 /* BasicButtonLabel.swift in Sources */,
 				F3926AA02AF12D7200106387 /* SecondBackgroundView.swift in Sources */,
+				F3DFC7E92AFC1371000E80F9 /* QRCodeView.swift in Sources */,
 				F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */,
 				F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */,
 				F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */,
@@ -1101,6 +1137,14 @@
 				minimumVersion = 10.17.0;
 			};
 		};
+		F3DFC7E32AFC0CE3000E80F9 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/heart/CarBode-Barcode-Scanner-For-SwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1113,6 +1157,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F38E49532AFB7DA0008A1A90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		F3DFC7E42AFC0CE3000E80F9 /* CarBode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3DFC7E32AFC0CE3000E80F9 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */;
+			productName = CarBode;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
