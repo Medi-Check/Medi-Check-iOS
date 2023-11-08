@@ -13,20 +13,16 @@ struct FunctionButtonLabel: View {
     
     var body: some View {
         VStack {
-            Button {
-                
-            } label: {
-                ZStack {
-                    Color.clear
-                    Image(systemName: imageSystemName)
-                        .resizable()
-                        .scaledToFit()
-                        .padding(innerPadding)
-                        .foregroundStyle(.black)
-                }
-                .background(Color.gray)
-                .cornerRadius(30, corners: .allCorners)
+            ZStack {
+                Color.clear
+                Image(systemName: imageSystemName)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(innerPadding)
+                    .foregroundStyle(.black)
             }
+            .background(Color.gray)
+            .cornerRadius(30, corners: .allCorners)
         }
     }
 }
