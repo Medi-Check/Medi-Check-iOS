@@ -27,6 +27,8 @@
 		F3694B432AD5713F00D23E99 /* Medi_CheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B422AD5713F00D23E99 /* Medi_CheckTests.swift */; };
 		F3694B4D2AD5713F00D23E99 /* Medi_CheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B4C2AD5713F00D23E99 /* Medi_CheckUITests.swift */; };
 		F3694B4F2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B4E2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift */; };
+		F38E49552AFB7DA0008A1A90 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F38E49542AFB7DA0008A1A90 /* FirebaseAnalytics */; };
+		F38E49572AFB7DA0008A1A90 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F38E49562AFB7DA0008A1A90 /* FirebaseMessaging */; };
 		F3926AA02AF12D7200106387 /* SecondBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */; };
 		F3926AA82AF132E400106387 /* BasicButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926AA72AF132E400106387 /* BasicButtonLabel.swift */; };
 		F39A51972AF8EDB400BF393C /* FaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51962AF8EDB300BF393C /* FaceIdView.swift */; };
@@ -121,6 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F38E49572AFB7DA0008A1A90 /* FirebaseMessaging in Frameworks */,
+				F38E49552AFB7DA0008A1A90 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +596,10 @@
 			dependencies = (
 			);
 			name = "Medi-Check";
+			packageProductDependencies = (
+				F38E49542AFB7DA0008A1A90 /* FirebaseAnalytics */,
+				F38E49562AFB7DA0008A1A90 /* FirebaseMessaging */,
+			);
 			productName = "Medi-Check";
 			productReference = F3694B2E2AD5713E00D23E99 /* Medi-Check.app */;
 			productType = "com.apple.product-type.application";
@@ -664,6 +672,9 @@
 				Base,
 			);
 			mainGroup = F3694B252AD5713E00D23E99;
+			packageReferences = (
+				F38E49532AFB7DA0008A1A90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F3694B2F2AD5713E00D23E99 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1068,6 +1079,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F38E49532AFB7DA0008A1A90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.17.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F38E49542AFB7DA0008A1A90 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F38E49532AFB7DA0008A1A90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F38E49562AFB7DA0008A1A90 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F38E49532AFB7DA0008A1A90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F3694B262AD5713E00D23E99 /* Project object */;
 }
