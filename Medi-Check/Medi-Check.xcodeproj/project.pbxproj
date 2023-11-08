@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A422B2AECEF7000AD59F9 /* DefaultRepository.swift */; };
-		F30A42312AECF46B00AD59F9 /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42302AECF46B00AD59F9 /* TestEntity.swift */; };
+		F30A42312AECF46B00AD59F9 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42302AECF46B00AD59F9 /* Member.swift */; };
 		F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42322AECF53A00AD59F9 /* RepositoryTask.swift */; };
 		F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42352AECF61900AD59F9 /* APIEndpoints.swift */; };
 		F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A423A2AECF66200AD59F9 /* TestViewModel.swift */; };
@@ -27,6 +27,8 @@
 		F3694B432AD5713F00D23E99 /* Medi_CheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B422AD5713F00D23E99 /* Medi_CheckTests.swift */; };
 		F3694B4D2AD5713F00D23E99 /* Medi_CheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B4C2AD5713F00D23E99 /* Medi_CheckUITests.swift */; };
 		F3694B4F2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B4E2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift */; };
+		F38E49552AFB7DA0008A1A90 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F38E49542AFB7DA0008A1A90 /* FirebaseAnalytics */; };
+		F38E49572AFB7DA0008A1A90 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F38E49562AFB7DA0008A1A90 /* FirebaseMessaging */; };
 		F3926AA02AF12D7200106387 /* SecondBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */; };
 		F3926AA82AF132E400106387 /* BasicButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926AA72AF132E400106387 /* BasicButtonLabel.swift */; };
 		F39A51972AF8EDB400BF393C /* FaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51962AF8EDB300BF393C /* FaceIdView.swift */; };
@@ -39,11 +41,17 @@
 		F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */; };
 		F39A51BC2AF964A000BF393C /* InputNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51BB2AF964A000BF393C /* InputNicknameView.swift */; };
 		F39A51BF2AF967C600BF393C /* InputFaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */; };
+		F3BB159A2AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB15992AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift */; };
+		F3BB159C2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB159B2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift */; };
+		F3BB159E2AFAA43300DE7DC2 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB159D2AFAA43300DE7DC2 /* Medicine.swift */; };
+		F3BB15A02AFAA79F00DE7DC2 /* TakeMedicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB159F2AFAA79F00DE7DC2 /* TakeMedicine.swift */; };
+		F3BB15A32AFAB01800DE7DC2 /* EatMedicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB15A22AFAB01800DE7DC2 /* EatMedicine.swift */; };
 		F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */; };
 		F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */; };
 		F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */; };
 		F3DAD4B42AF2C90500D85F99 /* Extension+CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B32AF2C90500D85F99 /* Extension+CGFloat.swift */; };
 		F3DAD4B62AF2EA0B00D85F99 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DAD4B52AF2EA0B00D85F99 /* Extension+View.swift */; };
+		F3DFC7E02AFBF610000E80F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3DFC7DF2AFBF610000E80F9 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +73,7 @@
 
 /* Begin PBXFileReference section */
 		F30A422B2AECEF7000AD59F9 /* DefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRepository.swift; sourceTree = "<group>"; };
-		F30A42302AECF46B00AD59F9 /* TestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEntity.swift; sourceTree = "<group>"; };
+		F30A42302AECF46B00AD59F9 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		F30A42322AECF53A00AD59F9 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
 		F30A42352AECF61900AD59F9 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		F30A423A2AECF66200AD59F9 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
@@ -99,11 +107,19 @@
 		F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionButtonLabel.swift; sourceTree = "<group>"; };
 		F39A51BB2AF964A000BF393C /* InputNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNicknameView.swift; sourceTree = "<group>"; };
 		F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFaceIdView.swift; sourceTree = "<group>"; };
+		F3BB15992AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
+		F3BB159B2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
+		F3BB159D2AFAA43300DE7DC2 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
+		F3BB159F2AFAA79F00DE7DC2 /* TakeMedicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeMedicine.swift; sourceTree = "<group>"; };
+		F3BB15A22AFAB01800DE7DC2 /* EatMedicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatMedicine.swift; sourceTree = "<group>"; };
 		F3C192CD2AF2B82B003A40AF /* InputFamilyCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFamilyCodeView.swift; sourceTree = "<group>"; };
 		F3C192D12AF2C0EB003A40AF /* InputEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailView.swift; sourceTree = "<group>"; };
 		F3DAD4B12AF2C4FE00D85F99 /* Extension+UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIDevice.swift"; sourceTree = "<group>"; };
 		F3DAD4B32AF2C90500D85F99 /* Extension+CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CGFloat.swift"; sourceTree = "<group>"; };
 		F3DAD4B52AF2EA0B00D85F99 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
+		F3DFC7DF2AFBF610000E80F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F3DFC7E12AFBF91B000E80F9 /* Medi-Check.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Medi-Check.entitlements"; sourceTree = "<group>"; };
+		F3DFC7E22AFBF922000E80F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F38E49572AFB7DA0008A1A90 /* FirebaseMessaging in Frameworks */,
+				F38E49552AFB7DA0008A1A90 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +152,7 @@
 		F30A42222AECEDFA00AD59F9 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				F3DFC7DF2AFBF610000E80F9 /* GoogleService-Info.plist */,
 				F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */,
 			);
 			path = App;
@@ -207,7 +226,10 @@
 		F30A422F2AECF44E00AD59F9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				F30A42302AECF46B00AD59F9 /* TestEntity.swift */,
+				F30A42302AECF46B00AD59F9 /* Member.swift */,
+				F3BB159D2AFAA43300DE7DC2 /* Medicine.swift */,
+				F3BB159F2AFAA79F00DE7DC2 /* TakeMedicine.swift */,
+				F3BB15A22AFAB01800DE7DC2 /* EatMedicine.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -215,6 +237,7 @@
 		F30A42342AECF5DF00AD59F9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F3BB15982AFA67D500DE7DC2 /* DataMapping */,
 				F30A42352AECF61900AD59F9 /* APIEndpoints.swift */,
 			);
 			path = Network;
@@ -355,6 +378,8 @@
 		F3694B302AD5713E00D23E99 /* Medi-Check */ = {
 			isa = PBXGroup;
 			children = (
+				F3DFC7E22AFBF922000E80F9 /* Info.plist */,
+				F3DFC7E12AFBF91B000E80F9 /* Medi-Check.entitlements */,
 				F30A42282AECEE4300AD59F9 /* Resources */,
 				F30A42252AECEE2800AD59F9 /* Data */,
 				F30A42242AECEE2400AD59F9 /* Domain */,
@@ -521,6 +546,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F3BB15982AFA67D500DE7DC2 /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				F3BB15992AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift */,
+				F3BB159B2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift */,
+			);
+			path = DataMapping;
+			sourceTree = "<group>";
+		};
 		F3C192CB2AF2B818003A40AF /* InputFamilyCodeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +603,10 @@
 			dependencies = (
 			);
 			name = "Medi-Check";
+			packageProductDependencies = (
+				F38E49542AFB7DA0008A1A90 /* FirebaseAnalytics */,
+				F38E49562AFB7DA0008A1A90 /* FirebaseMessaging */,
+			);
 			productName = "Medi-Check";
 			productReference = F3694B2E2AD5713E00D23E99 /* Medi-Check.app */;
 			productType = "com.apple.product-type.application";
@@ -641,6 +679,9 @@
 				Base,
 			);
 			mainGroup = F3694B252AD5713E00D23E99;
+			packageReferences = (
+				F38E49532AFB7DA0008A1A90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F3694B2F2AD5713E00D23E99 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -658,6 +699,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3694B392AD5713F00D23E99 /* Preview Assets.xcassets in Resources */,
+				F3DFC7E02AFBF610000E80F9 /* GoogleService-Info.plist in Resources */,
 				F3694B362AD5713F00D23E99 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,10 +727,12 @@
 			files = (
 				F30A424A2AECF96E00AD59F9 /* TestRepository.swift in Sources */,
 				F39A51AF2AF9310000BF393C /* RegistrationDrugView.swift in Sources */,
-				F30A42312AECF46B00AD59F9 /* TestEntity.swift in Sources */,
+				F30A42312AECF46B00AD59F9 /* Member.swift in Sources */,
+				F3BB159C2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift in Sources */,
 				F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */,
 				F30A42432AECF8B700AD59F9 /* StrokeText.swift in Sources */,
 				F3DAD4B62AF2EA0B00D85F99 /* Extension+View.swift in Sources */,
+				F3BB159E2AFAA43300DE7DC2 /* Medicine.swift in Sources */,
 				F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */,
 				F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */,
 				F39A51A32AF9064500BF393C /* ProfileView.swift in Sources */,
@@ -696,8 +740,10 @@
 				F39A51972AF8EDB400BF393C /* FaceIdView.swift in Sources */,
 				F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */,
 				F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */,
+				F3BB15A32AFAB01800DE7DC2 /* EatMedicine.swift in Sources */,
 				F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */,
 				F39A51BF2AF967C600BF393C /* InputFaceIdView.swift in Sources */,
+				F3BB159A2AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift in Sources */,
 				F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */,
 				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
 				F39A51A72AF9150900BF393C /* HomeView.swift in Sources */,
@@ -712,6 +758,7 @@
 				F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */,
 				F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */,
 				F39A51BC2AF964A000BF393C /* InputNicknameView.swift in Sources */,
+				F3BB15A02AFAA79F00DE7DC2 /* TakeMedicine.swift in Sources */,
 				F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */,
 				F39A519E2AF8FDE700BF393C /* SelectProfileView.swift in Sources */,
 				F30A424E2AECFB3F00AD59F9 /* TestResponseRepository.swift in Sources */,
@@ -875,12 +922,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Medi-Check/Medi-Check.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Medi-Check/Preview Content\"";
 				DEVELOPMENT_TEAM = G64N5NJ4Q6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Medi-Check/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -904,12 +953,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Medi-Check/Medi-Check.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Medi-Check/Preview Content\"";
 				DEVELOPMENT_TEAM = G64N5NJ4Q6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Medi-Check/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1040,6 +1091,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F38E49532AFB7DA0008A1A90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.17.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F38E49542AFB7DA0008A1A90 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F38E49532AFB7DA0008A1A90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F38E49562AFB7DA0008A1A90 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F38E49532AFB7DA0008A1A90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F3694B262AD5713E00D23E99 /* Project object */;
 }
