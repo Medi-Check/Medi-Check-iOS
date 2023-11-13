@@ -56,6 +56,7 @@
 		F3DFC7E52AFC0CE3000E80F9 /* CarBode in Frameworks */ = {isa = PBXBuildFile; productRef = F3DFC7E42AFC0CE3000E80F9 /* CarBode */; };
 		F3DFC7E92AFC1371000E80F9 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DFC7E82AFC1371000E80F9 /* QRCodeView.swift */; };
 		F3DFC7EC2AFC15A8000E80F9 /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DFC7EB2AFC15A8000E80F9 /* QRCodeViewModel.swift */; };
+		F3FA34DA2B02973E0025EEF7 /* InputFaceIdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA34D92B02973E0025EEF7 /* InputFaceIdViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		F3DFC7E22AFBF922000E80F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F3DFC7E82AFC1371000E80F9 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		F3DFC7EB2AFC15A8000E80F9 /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
+		F3FA34D92B02973E0025EEF7 /* InputFaceIdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFaceIdViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,8 +171,9 @@
 		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F3FA34D62B02972C0025EEF7 /* InputFaceIdView */,
 				F3DFC7E62AFC135C000E80F9 /* QRCodeView */,
-				F39A51B92AF9643A00BF393C /* AddProfileView */,
+				F39A51B92AF9643A00BF393C /* InputNicknameView */,
 				F39A51B02AF941EA00BF393C /* ScheduleView */,
 				F39A51AC2AF930F100BF393C /* RegistrationDrugView */,
 				F39A51A82AF922E600BF393C /* DashboardView */,
@@ -538,19 +541,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F39A51B92AF9643A00BF393C /* AddProfileView */ = {
+		F39A51B92AF9643A00BF393C /* InputNicknameView */ = {
 			isa = PBXGroup;
 			children = (
 				F39A51BA2AF9649000BF393C /* View */,
 			);
-			path = AddProfileView;
+			path = InputNicknameView;
 			sourceTree = "<group>";
 		};
 		F39A51BA2AF9649000BF393C /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F39A51BB2AF964A000BF393C /* InputNicknameView.swift */,
-				F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -626,6 +628,31 @@
 			isa = PBXGroup;
 			children = (
 				F3DFC7EB2AFC15A8000E80F9 /* QRCodeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F3FA34D62B02972C0025EEF7 /* InputFaceIdView */ = {
+			isa = PBXGroup;
+			children = (
+				F3FA34D82B0297340025EEF7 /* ViewModel */,
+				F3FA34D72B02972F0025EEF7 /* View */,
+			);
+			path = InputFaceIdView;
+			sourceTree = "<group>";
+		};
+		F3FA34D72B02972F0025EEF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3FA34D82B0297340025EEF7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3FA34D92B02973E0025EEF7 /* InputFaceIdViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -792,6 +819,7 @@
 				F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */,
 				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
 				F39A51A72AF9150900BF393C /* HomeView.swift in Sources */,
+				F3FA34DA2B02973E0025EEF7 /* InputFaceIdViewModel.swift in Sources */,
 				F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */,
 				F3DFC7EC2AFC15A8000E80F9 /* QRCodeViewModel.swift in Sources */,
 				F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */,

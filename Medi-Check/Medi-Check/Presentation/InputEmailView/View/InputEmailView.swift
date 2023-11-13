@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InputEmailView: View {
+    @State private var familyCode = UserDefaults.standard.string(forKey: "familyCode")
     @State var email: String = ""
     @EnvironmentObject var viewModel: InputEmailViewModel
     
@@ -39,7 +40,7 @@ struct InputEmailView: View {
                     
                     Spacer()
                     Button {
-                        viewModel.registerUser(requestData: ["email" : email])
+                        viewModel.sendFamilyCode(requestData: ["email" : email])
                     } label: {
                         BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
@@ -56,4 +57,5 @@ struct InputEmailView: View {
 
 #Preview {
     InputEmailView(email: "")
+        .environmentObject(InputEmailViewModel())
 }

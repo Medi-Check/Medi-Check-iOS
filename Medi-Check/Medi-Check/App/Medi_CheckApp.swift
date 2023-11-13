@@ -16,6 +16,7 @@ struct Medi_CheckApp: App {
         WindowGroup {
             SplashView()
                 .environmentObject(InputEmailViewModel())
+                .environmentObject(InputFaceIdViewModel())
         }
     }
 }

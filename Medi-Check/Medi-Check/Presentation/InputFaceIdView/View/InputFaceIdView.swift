@@ -9,6 +9,8 @@ import SwiftUI
 
 struct InputFaceIdView: View {
     @Binding var isInputNicknameViewPresented: Bool
+    @Binding var nickname: String
+    @EnvironmentObject var viewModel: InputFaceIdViewModel
     
     var body: some View {
         GeometryReader { geometry in
@@ -29,6 +31,7 @@ struct InputFaceIdView: View {
                     Spacer()
                     
                     Button {
+//                        viewModel.registerUser(requestData: <#T##[String : Any]#>)
                         isInputNicknameViewPresented = false
                     } label: {
                         BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
@@ -45,5 +48,6 @@ struct InputFaceIdView: View {
 }
 
 #Preview {
-    InputFaceIdView(isInputNicknameViewPresented: .constant(false))
+    InputFaceIdView(isInputNicknameViewPresented: .constant(false), nickname: .constant("kyxxgsoo"))
+        .environmentObject(InputFaceIdViewModel())
 }

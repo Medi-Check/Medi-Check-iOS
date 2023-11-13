@@ -1,10 +1,9 @@
 //
-//  InputEmailViewModel.swift
+//  InputFaceIdViewModel.swift
 //  Medi-Check
 //
-//  Created by Kyungsoo Lee on 11/13/23.
+//  Created by Kyungsoo Lee on 11/14/23.
 //
-
 import Foundation
 
 fileprivate enum MediCheckAPI {
@@ -12,24 +11,23 @@ fileprivate enum MediCheckAPI {
     static let host = "yuno.hopto.org"
     
     enum Path: String {
-        case email_familyCode = "/email/familyCode"
+        case member_nickname = "/member/nickname"
     }
     
 }
 
-class InputEmailViewModel: ObservableObject {
+class InputFaceIdViewModel: ObservableObject {
     @Published var member = Member()
     
-    func sendFamilyCode(requestData: [String: Any]) {
+    func registerUser(requestData: [String: Any]) {
         var urlComponents = URLComponents()
         urlComponents.scheme = MediCheckAPI.scheme
         urlComponents.host = MediCheckAPI.host
         urlComponents.port = 80
-        urlComponents.path = MediCheckAPI.Path.email_familyCode.rawValue
-        urlComponents.queryItems = [URLQueryItem(name: "email", value: requestData["email"] as? String)]
+        urlComponents.path = MediCheckAPI.Path.member_nickname.rawValue
         
         guard let url = urlComponents.url else {
-            print("[sendFamilyCode] Error: cannot create URL")
+            print("[registerUser] Error: cannot create URL")
             return
         }
         print(url)
@@ -39,28 +37,28 @@ class InputEmailViewModel: ObservableObject {
         
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
-                print("[sendFamilyCode] Error: error calling GET")
+                print("[registerUser] Error: error calling GET")
                 print(error!)
                 return
             }
             guard let data = data else {
-                print("[sendFamilyCode] Error: Did not receive data")
+                print("[registerUser] Error: Did not receive data")
                 return
             }
-            guard let jsonString = String(data: data, encoding: .utf8) else {
-                print("[sendFamilyCode] Error: Failed to convert data to string")
+            guard let jsonDictionary = try? JSONSerialization.jsonObject(with: Data(data), options: []) as? [String: Any] else {
+                print("Error: convert failed json to dictionary")
                 return
             }
             guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
-                print("[sendFamilyCode] Error: HTTP request failed")
+                print("[registerUser] Error: HTTP request failed")
                 return
             }
             
             DispatchQueue.main.async { [weak self] in
                 do {
-                    print(jsonString)
+                    print(jsonDictionary)
                 } catch {
-                    print("[sendFamilyCode] Error: Failed to parse JSON data - \(error)")
+                    print("[registerUser] Error: Failed to parse JSON data - \(error)")
                 }
             }
         }.resume()
@@ -70,8 +68,9 @@ class InputEmailViewModel: ObservableObject {
     
 }
 
-extension InputEmailViewModel {
-    struct sendFamilyCodeDTO {
+extension InputFaceIdViewModel {
+    struct registerUserDTO {
+        let nickName: String
         let familyCode: String
     }
 }
