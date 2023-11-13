@@ -41,6 +41,7 @@
 		F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */; };
 		F39A51BC2AF964A000BF393C /* InputNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51BB2AF964A000BF393C /* InputNicknameView.swift */; };
 		F39A51BF2AF967C600BF393C /* InputFaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */; };
+		F3B0556A2B021EC3008D013C /* InputEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B055692B021EC3008D013C /* InputEmailViewModel.swift */; };
 		F3BB159A2AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB15992AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift */; };
 		F3BB159C2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB159B2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift */; };
 		F3BB159E2AFAA43300DE7DC2 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB159D2AFAA43300DE7DC2 /* Medicine.swift */; };
@@ -110,6 +111,7 @@
 		F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionButtonLabel.swift; sourceTree = "<group>"; };
 		F39A51BB2AF964A000BF393C /* InputNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNicknameView.swift; sourceTree = "<group>"; };
 		F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFaceIdView.swift; sourceTree = "<group>"; };
+		F3B055692B021EC3008D013C /* InputEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailViewModel.swift; sourceTree = "<group>"; };
 		F3BB15992AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
 		F3BB159B2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		F3BB159D2AFAA43300DE7DC2 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
@@ -553,6 +555,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F3B055682B021EAE008D013C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3B055692B021EC3008D013C /* InputEmailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F3BB15982AFA67D500DE7DC2 /* DataMapping */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,6 +591,7 @@
 		F3C192CF2AF2C0DF003A40AF /* InputEmailView */ = {
 			isa = PBXGroup;
 			children = (
+				F3B055682B021EAE008D013C /* ViewModel */,
 				F3C192D02AF2C0E5003A40AF /* View */,
 			);
 			path = InputEmailView;
@@ -791,6 +802,7 @@
 				F3DFC7E92AFC1371000E80F9 /* QRCodeView.swift in Sources */,
 				F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */,
 				F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */,
+				F3B0556A2B021EC3008D013C /* InputEmailViewModel.swift in Sources */,
 				F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */,
 				F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */,
 				F39A51BC2AF964A000BF393C /* InputNicknameView.swift in Sources */,
@@ -966,6 +978,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Medi-Check/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "QR코드를 위한 카메라 사용입니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -997,6 +1010,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Medi-Check/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "QR코드를 위한 카메라 사용입니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -9,9 +9,9 @@ import Foundation
 
 struct Member: Equatable, Identifiable {
     typealias Identifier = String
-    let id: Identifier
-    let nickname: String
-    let familyCode: String
-    let profileImage: String
+    var id: Identifier = ""
+    var nickname: String = ""
+    var familyCode: String = ""
+    var profileImage: String = ""
     
 }

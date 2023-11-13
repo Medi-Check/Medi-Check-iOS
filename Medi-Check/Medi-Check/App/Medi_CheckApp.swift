@@ -15,6 +15,7 @@ struct Medi_CheckApp: App {
     var body: some Scene {
         WindowGroup {
             SplashView()
+                .environmentObject(InputEmailViewModel())
         }
     }
 }
