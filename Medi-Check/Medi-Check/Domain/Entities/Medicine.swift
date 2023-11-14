@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Movie: Equatable, Identifiable {
+struct Medicine: Equatable, Identifiable {
     typealias Identifier = String
-    let id: Identifier
-    let name: String
-    let amount: Int
-    let makeDate: String
-    let information: String
-    let medicineContainer: Int
+    var id: Identifier = ""
+    var name: String = ""
+    var makeDate: String = ""
+    var amount: Int = 0
+    var information: String = ""
+    var medicineContainer: Int = 0
 }
