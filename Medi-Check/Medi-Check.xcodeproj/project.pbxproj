@@ -11,7 +11,7 @@
 		F30A42312AECF46B00AD59F9 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42302AECF46B00AD59F9 /* Member.swift */; };
 		F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42322AECF53A00AD59F9 /* RepositoryTask.swift */; };
 		F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42352AECF61900AD59F9 /* APIEndpoints.swift */; };
-		F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A423A2AECF66200AD59F9 /* TestViewModel.swift */; };
+		F30A423B2AECF66200AD59F9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A423A2AECF66200AD59F9 /* UserData.swift */; };
 		F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A423F2AECF7E300AD59F9 /* TestProtocol.swift */; };
 		F30A42432AECF8B700AD59F9 /* StrokeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42422AECF8B700AD59F9 /* StrokeText.swift */; };
 		F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42452AECF92700AD59F9 /* TestUseCase.swift */; };
@@ -41,6 +41,7 @@
 		F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */; };
 		F39A51BC2AF964A000BF393C /* InputNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51BB2AF964A000BF393C /* InputNicknameView.swift */; };
 		F39A51BF2AF967C600BF393C /* InputFaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */; };
+		F3B0556A2B021EC3008D013C /* InputEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B055692B021EC3008D013C /* InputEmailViewModel.swift */; };
 		F3BB159A2AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB15992AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift */; };
 		F3BB159C2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB159B2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift */; };
 		F3BB159E2AFAA43300DE7DC2 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BB159D2AFAA43300DE7DC2 /* Medicine.swift */; };
@@ -55,6 +56,7 @@
 		F3DFC7E52AFC0CE3000E80F9 /* CarBode in Frameworks */ = {isa = PBXBuildFile; productRef = F3DFC7E42AFC0CE3000E80F9 /* CarBode */; };
 		F3DFC7E92AFC1371000E80F9 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DFC7E82AFC1371000E80F9 /* QRCodeView.swift */; };
 		F3DFC7EC2AFC15A8000E80F9 /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DFC7EB2AFC15A8000E80F9 /* QRCodeViewModel.swift */; };
+		F3FA34DA2B02973E0025EEF7 /* InputFaceIdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FA34D92B02973E0025EEF7 /* InputFaceIdViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +81,7 @@
 		F30A42302AECF46B00AD59F9 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		F30A42322AECF53A00AD59F9 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
 		F30A42352AECF61900AD59F9 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
-		F30A423A2AECF66200AD59F9 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		F30A423A2AECF66200AD59F9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		F30A423F2AECF7E300AD59F9 /* TestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProtocol.swift; sourceTree = "<group>"; };
 		F30A42422AECF8B700AD59F9 /* StrokeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeText.swift; sourceTree = "<group>"; };
 		F30A42452AECF92700AD59F9 /* TestUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUseCase.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionButtonLabel.swift; sourceTree = "<group>"; };
 		F39A51BB2AF964A000BF393C /* InputNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNicknameView.swift; sourceTree = "<group>"; };
 		F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFaceIdView.swift; sourceTree = "<group>"; };
+		F3B055692B021EC3008D013C /* InputEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailViewModel.swift; sourceTree = "<group>"; };
 		F3BB15992AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberRequestDTO+Mapping.swift"; sourceTree = "<group>"; };
 		F3BB159B2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MemberResponseDTO+Mapping.swift"; sourceTree = "<group>"; };
 		F3BB159D2AFAA43300DE7DC2 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 		F3DFC7E22AFBF922000E80F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F3DFC7E82AFC1371000E80F9 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		F3DFC7EB2AFC15A8000E80F9 /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
+		F3FA34D92B02973E0025EEF7 /* InputFaceIdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFaceIdViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,8 +171,9 @@
 		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F3FA34D62B02972C0025EEF7 /* InputFaceIdView */,
 				F3DFC7E62AFC135C000E80F9 /* QRCodeView */,
-				F39A51B92AF9643A00BF393C /* AddProfileView */,
+				F39A51B92AF9643A00BF393C /* InputNicknameView */,
 				F39A51B02AF941EA00BF393C /* ScheduleView */,
 				F39A51AC2AF930F100BF393C /* RegistrationDrugView */,
 				F39A51A82AF922E600BF393C /* DashboardView */,
@@ -262,7 +267,7 @@
 		F30A42382AECF64A00AD59F9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F30A423A2AECF66200AD59F9 /* TestViewModel.swift */,
+				F30A423A2AECF66200AD59F9 /* UserData.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -536,21 +541,28 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F39A51B92AF9643A00BF393C /* AddProfileView */ = {
+		F39A51B92AF9643A00BF393C /* InputNicknameView */ = {
 			isa = PBXGroup;
 			children = (
 				F39A51BA2AF9649000BF393C /* View */,
 			);
-			path = AddProfileView;
+			path = InputNicknameView;
 			sourceTree = "<group>";
 		};
 		F39A51BA2AF9649000BF393C /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F39A51BB2AF964A000BF393C /* InputNicknameView.swift */,
-				F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F3B055682B021EAE008D013C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3B055692B021EC3008D013C /* InputEmailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F3BB15982AFA67D500DE7DC2 /* DataMapping */ = {
@@ -581,6 +593,7 @@
 		F3C192CF2AF2C0DF003A40AF /* InputEmailView */ = {
 			isa = PBXGroup;
 			children = (
+				F3B055682B021EAE008D013C /* ViewModel */,
 				F3C192D02AF2C0E5003A40AF /* View */,
 			);
 			path = InputEmailView;
@@ -615,6 +628,31 @@
 			isa = PBXGroup;
 			children = (
 				F3DFC7EB2AFC15A8000E80F9 /* QRCodeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F3FA34D62B02972C0025EEF7 /* InputFaceIdView */ = {
+			isa = PBXGroup;
+			children = (
+				F3FA34D82B0297340025EEF7 /* ViewModel */,
+				F3FA34D72B02972F0025EEF7 /* View */,
+			);
+			path = InputFaceIdView;
+			sourceTree = "<group>";
+		};
+		F3FA34D72B02972F0025EEF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F39A51BE2AF967C600BF393C /* InputFaceIdView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3FA34D82B0297340025EEF7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3FA34D92B02973E0025EEF7 /* InputFaceIdViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -779,8 +817,9 @@
 				F39A51BF2AF967C600BF393C /* InputFaceIdView.swift in Sources */,
 				F3BB159A2AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift in Sources */,
 				F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */,
-				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
+				F30A423B2AECF66200AD59F9 /* UserData.swift in Sources */,
 				F39A51A72AF9150900BF393C /* HomeView.swift in Sources */,
+				F3FA34DA2B02973E0025EEF7 /* InputFaceIdViewModel.swift in Sources */,
 				F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */,
 				F3DFC7EC2AFC15A8000E80F9 /* QRCodeViewModel.swift in Sources */,
 				F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */,
@@ -791,6 +830,7 @@
 				F3DFC7E92AFC1371000E80F9 /* QRCodeView.swift in Sources */,
 				F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */,
 				F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */,
+				F3B0556A2B021EC3008D013C /* InputEmailViewModel.swift in Sources */,
 				F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */,
 				F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */,
 				F39A51BC2AF964A000BF393C /* InputNicknameView.swift in Sources */,
@@ -966,6 +1006,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Medi-Check/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "QR코드를 위한 카메라 사용입니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -997,6 +1038,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Medi-Check/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "QR코드를 위한 카메라 사용입니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

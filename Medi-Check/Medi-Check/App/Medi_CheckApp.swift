@@ -12,9 +12,13 @@ import FirebaseMessaging
 @main
 struct Medi_CheckApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject private var userData = UserData()
     var body: some Scene {
         WindowGroup {
             SplashView()
+                .environmentObject(userData)
+                .environmentObject(InputEmailViewModel())
+                .environmentObject(InputFaceIdViewModel())
         }
     }
 }

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct InputEmailView: View {
+    @EnvironmentObject var userData: UserData
     @State var email: String = ""
+    @ObservedObject var viewModel = InputEmailViewModel()
     
     var body: some View {
         GeometryReader { geometry in
@@ -38,7 +40,11 @@ struct InputEmailView: View {
                     
                     Spacer()
                     Button {
-                        
+                        Task {
+                            await viewModel.fetchData(requestData: ["email": email])
+                            userData.familyCode = viewModel.member.familyCode
+                            print(userData.familyCode)
+                        }
                     } label: {
                         BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
@@ -55,4 +61,5 @@ struct InputEmailView: View {
 
 #Preview {
     InputEmailView(email: "")
+    //        .environmentObject(InputEmailViewModel())
 }

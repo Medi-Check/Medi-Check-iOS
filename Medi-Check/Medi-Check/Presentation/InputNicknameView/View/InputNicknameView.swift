@@ -46,7 +46,7 @@ struct InputNicknameView: View {
                             .background(Color.MediCheckMainColor)
                     }
                     .navigationDestination(isPresented: $isInputFaceIdViewPresented) {
-                        InputFaceIdView(isInputNicknameViewPresented: $isInputNicknameViewPresented)
+                        InputFaceIdView(isInputNicknameViewPresented: $isInputNicknameViewPresented, nickname: $nickname)
                     }
                 }
             }
