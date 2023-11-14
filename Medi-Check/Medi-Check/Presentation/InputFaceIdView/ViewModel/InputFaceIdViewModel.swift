@@ -19,7 +19,18 @@ fileprivate enum MediCheckAPI {
 class InputFaceIdViewModel: ObservableObject {
     @Published var member = Member()
     
-    func registerUser(requestData: [String: Any]) {
+    @MainActor
+    func fetchData(requestData: [String: Any]) async {
+        do {
+            member.nickname = try await registerUserAPI(requestData: requestData).nickName
+            print(member)
+        } catch {
+            print("Error: \(error)")
+            
+        }
+    }
+    
+    func registerUserAPI(requestData: [String: Any]) async throws -> RegisterUserDTO {
         var urlComponents = URLComponents()
         urlComponents.scheme = MediCheckAPI.scheme
         urlComponents.host = MediCheckAPI.host
@@ -28,48 +39,34 @@ class InputFaceIdViewModel: ObservableObject {
         
         guard let url = urlComponents.url else {
             print("[registerUser] Error: cannot create URL")
-            return
+            throw ExchangeRateError.cannotCreateURL
         }
         print(url)
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            guard error == nil else {
-                print("[registerUser] Error: error calling GET")
-                print(error!)
-                return
-            }
-            guard let data = data else {
-                print("[registerUser] Error: Did not receive data")
-                return
-            }
-            guard let jsonDictionary = try? JSONSerialization.jsonObject(with: Data(data), options: []) as? [String: Any] else {
-                print("Error: convert failed json to dictionary")
-                return
-            }
-            guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
-                print("[registerUser] Error: HTTP request failed")
-                return
-            }
-            
-            DispatchQueue.main.async { [weak self] in
-                do {
-                    print(jsonDictionary)
-                } catch {
-                    print("[registerUser] Error: Failed to parse JSON data - \(error)")
-                }
-            }
-        }.resume()
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        print(data)
+        print(response)
+        
+        guard let jsonDictionary = try? JSONSerialization.jsonObject(with: Data(data), options: []) as? [String: Any] else {
+            print("Error: convert failed json to dictionary")
+            throw ExchangeRateError.decodeFailed
+        }
+        print(jsonDictionary)
+        if let response = response as? HTTPURLResponse,
+           !(200..<300).contains(response.statusCode) {
+            throw ExchangeRateError.badResponse
+        }
+        let decoder = JSONDecoder()
+        var registerUserDTO = try decoder.decode(RegisterUserDTO.self, from: data)
+        return registerUserDTO
     }
-    
-    
-    
 }
 
 extension InputFaceIdViewModel {
-    struct registerUserDTO {
+    struct RegisterUserDTO: Decodable {
         let nickName: String
         let familyCode: String
     }

@@ -10,7 +10,8 @@ import SwiftUI
 struct InputFaceIdView: View {
     @Binding var isInputNicknameViewPresented: Bool
     @Binding var nickname: String
-    @EnvironmentObject var viewModel: InputFaceIdViewModel
+    @EnvironmentObject var userData: UserData
+    @ObservedObject var viewModel = InputFaceIdViewModel()
     
     var body: some View {
         GeometryReader { geometry in
@@ -31,7 +32,15 @@ struct InputFaceIdView: View {
                     Spacer()
                     
                     Button {
-//                        viewModel.registerUser(requestData: <#T##[String : Any]#>)
+                        Task {
+                            await viewModel.fetchData(requestData: ["images": [
+                                "string"
+                              ],
+                              "memberInfo": [
+                                "nickName": "string",
+                                "familyCode": "string"
+                              ]])
+                        }
                         isInputNicknameViewPresented = false
                     } label: {
                         BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
@@ -49,5 +58,5 @@ struct InputFaceIdView: View {
 
 #Preview {
     InputFaceIdView(isInputNicknameViewPresented: .constant(false), nickname: .constant("kyxxgsoo"))
-        .environmentObject(InputFaceIdViewModel())
+        .environmentObject(UserData())
 }
