@@ -28,6 +28,8 @@
 		F3694B4D2AD5713F00D23E99 /* Medi_CheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B4C2AD5713F00D23E99 /* Medi_CheckUITests.swift */; };
 		F3694B4F2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B4E2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift */; };
 		F3761BD52B03DC5600FEE560 /* SelectProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3761BD42B03DC5600FEE560 /* SelectProfileViewModel.swift */; };
+		F3761BDA2B03FA3000FEE560 /* CalendarCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3761BD92B03FA3000FEE560 /* CalendarCheckView.swift */; };
+		F3761BDE2B03FA4C00FEE560 /* CalendarCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3761BDD2B03FA4C00FEE560 /* CalendarCheckViewModel.swift */; };
 		F38E49552AFB7DA0008A1A90 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F38E49542AFB7DA0008A1A90 /* FirebaseAnalytics */; };
 		F38E49572AFB7DA0008A1A90 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F38E49562AFB7DA0008A1A90 /* FirebaseMessaging */; };
 		F3926AA02AF12D7200106387 /* SecondBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */; };
@@ -102,6 +104,8 @@
 		F3694B4C2AD5713F00D23E99 /* Medi_CheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_CheckUITests.swift; sourceTree = "<group>"; };
 		F3694B4E2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_CheckUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F3761BD42B03DC5600FEE560 /* SelectProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProfileViewModel.swift; sourceTree = "<group>"; };
+		F3761BD92B03FA3000FEE560 /* CalendarCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCheckView.swift; sourceTree = "<group>"; };
+		F3761BDD2B03FA4C00FEE560 /* CalendarCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCheckViewModel.swift; sourceTree = "<group>"; };
 		F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondBackgroundView.swift; sourceTree = "<group>"; };
 		F3926AA72AF132E400106387 /* BasicButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonLabel.swift; sourceTree = "<group>"; };
 		F39A51962AF8EDB300BF393C /* FaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdView.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F3761BD72B03FA0300FEE560 /* CalendarCheckView */,
 				F3FA34D62B02972C0025EEF7 /* InputFaceIdView */,
 				F3DFC7E62AFC135C000E80F9 /* QRCodeView */,
 				F39A51B92AF9643A00BF393C /* InputNicknameView */,
@@ -433,6 +438,31 @@
 			isa = PBXGroup;
 			children = (
 				F3761BD42B03DC5600FEE560 /* SelectProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F3761BD72B03FA0300FEE560 /* CalendarCheckView */ = {
+			isa = PBXGroup;
+			children = (
+				F3761BDB2B03FA3600FEE560 /* ViewModel */,
+				F3761BD82B03FA2000FEE560 /* View */,
+			);
+			path = CalendarCheckView;
+			sourceTree = "<group>";
+		};
+		F3761BD82B03FA2000FEE560 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F3761BD92B03FA3000FEE560 /* CalendarCheckView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3761BDB2B03FA3600FEE560 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3761BDD2B03FA4C00FEE560 /* CalendarCheckViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -811,6 +841,7 @@
 				F30A424A2AECF96E00AD59F9 /* TestRepository.swift in Sources */,
 				F39A51AF2AF9310000BF393C /* RegistrationDrugView.swift in Sources */,
 				F30A42312AECF46B00AD59F9 /* Member.swift in Sources */,
+				F3761BDE2B03FA4C00FEE560 /* CalendarCheckViewModel.swift in Sources */,
 				F3BB159C2AFA6A4400DE7DC2 /* MemberResponseDTO+Mapping.swift in Sources */,
 				F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */,
 				F30A42432AECF8B700AD59F9 /* StrokeText.swift in Sources */,
@@ -843,6 +874,7 @@
 				F3C192CE2AF2B82B003A40AF /* InputFamilyCodeView.swift in Sources */,
 				F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */,
 				F3B0556A2B021EC3008D013C /* InputEmailViewModel.swift in Sources */,
+				F3761BDA2B03FA3000FEE560 /* CalendarCheckView.swift in Sources */,
 				F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */,
 				F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */,
 				F39A51BC2AF964A000BF393C /* InputNicknameView.swift in Sources */,

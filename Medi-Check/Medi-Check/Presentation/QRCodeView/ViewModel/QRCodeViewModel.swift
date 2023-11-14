@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 fileprivate enum MediCheckAPI {
     static let scheme = "http"
     static let host = "yuno.hopto.org"
