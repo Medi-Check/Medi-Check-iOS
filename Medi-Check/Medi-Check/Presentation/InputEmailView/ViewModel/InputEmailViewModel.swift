@@ -17,10 +17,26 @@ fileprivate enum MediCheckAPI {
     
 }
 
+enum ExchangeRateError: Error {
+    case badResponse
+    case decodeFailed
+    case cannotCreateURL
+}
+
 class InputEmailViewModel: ObservableObject {
     @Published var member = Member()
     
-    func sendFamilyCode(requestData: [String: Any]) {
+    func fetchData(requestData: [String: Any], completion: @escaping () -> Void) {
+        Task {
+            do {
+                member.familyCode = try await sendFamilyCodeAPI(requestData: requestData)
+            } catch {
+                print("Error: \(error)")
+            }
+        }
+    }
+    
+    func sendFamilyCodeAPI(requestData: [String: Any]) async throws -> String {
         var urlComponents = URLComponents()
         urlComponents.scheme = MediCheckAPI.scheme
         urlComponents.host = MediCheckAPI.host
@@ -30,40 +46,22 @@ class InputEmailViewModel: ObservableObject {
         
         guard let url = urlComponents.url else {
             print("[sendFamilyCode] Error: cannot create URL")
-            return
+            throw ExchangeRateError.cannotCreateURL
         }
         print(url)
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            guard error == nil else {
-                print("[sendFamilyCode] Error: error calling GET")
-                print(error!)
-                return
-            }
-            guard let data = data else {
-                print("[sendFamilyCode] Error: Did not receive data")
-                return
-            }
-            guard let jsonString = String(data: data, encoding: .utf8) else {
-                print("[sendFamilyCode] Error: Failed to convert data to string")
-                return
-            }
-            guard let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode else {
-                print("[sendFamilyCode] Error: HTTP request failed")
-                return
-            }
-            
-            DispatchQueue.main.async { [weak self] in
-                do {
-                    print(jsonString)
-                } catch {
-                    print("[sendFamilyCode] Error: Failed to parse JSON data - \(error)")
-                }
-            }
-        }.resume()
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        if let response = response as? HTTPURLResponse,
+           !(200..<300).contains(response.statusCode) {
+            throw ExchangeRateError.badResponse
+        }
+        guard let familyCode = String(data: data, encoding: .utf8) else {
+            throw ExchangeRateError.decodeFailed
+        }
+        return familyCode
     }
     
     
@@ -71,7 +69,8 @@ class InputEmailViewModel: ObservableObject {
 }
 
 extension InputEmailViewModel {
-    struct sendFamilyCodeDTO {
+    
+    struct SendFamilyCodeDTO: Codable {
         let familyCode: String
     }
 }

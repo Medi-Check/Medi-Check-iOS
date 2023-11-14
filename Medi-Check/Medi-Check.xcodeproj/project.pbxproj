@@ -11,7 +11,7 @@
 		F30A42312AECF46B00AD59F9 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42302AECF46B00AD59F9 /* Member.swift */; };
 		F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42322AECF53A00AD59F9 /* RepositoryTask.swift */; };
 		F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42352AECF61900AD59F9 /* APIEndpoints.swift */; };
-		F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A423A2AECF66200AD59F9 /* TestViewModel.swift */; };
+		F30A423B2AECF66200AD59F9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A423A2AECF66200AD59F9 /* UserData.swift */; };
 		F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A423F2AECF7E300AD59F9 /* TestProtocol.swift */; };
 		F30A42432AECF8B700AD59F9 /* StrokeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42422AECF8B700AD59F9 /* StrokeText.swift */; };
 		F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42452AECF92700AD59F9 /* TestUseCase.swift */; };
@@ -81,7 +81,7 @@
 		F30A42302AECF46B00AD59F9 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		F30A42322AECF53A00AD59F9 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
 		F30A42352AECF61900AD59F9 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
-		F30A423A2AECF66200AD59F9 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		F30A423A2AECF66200AD59F9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		F30A423F2AECF7E300AD59F9 /* TestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProtocol.swift; sourceTree = "<group>"; };
 		F30A42422AECF8B700AD59F9 /* StrokeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeText.swift; sourceTree = "<group>"; };
 		F30A42452AECF92700AD59F9 /* TestUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUseCase.swift; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 		F30A42382AECF64A00AD59F9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F30A423A2AECF66200AD59F9 /* TestViewModel.swift */,
+				F30A423A2AECF66200AD59F9 /* UserData.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -817,7 +817,7 @@
 				F39A51BF2AF967C600BF393C /* InputFaceIdView.swift in Sources */,
 				F3BB159A2AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift in Sources */,
 				F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */,
-				F30A423B2AECF66200AD59F9 /* TestViewModel.swift in Sources */,
+				F30A423B2AECF66200AD59F9 /* UserData.swift in Sources */,
 				F39A51A72AF9150900BF393C /* HomeView.swift in Sources */,
 				F3FA34DA2B02973E0025EEF7 /* InputFaceIdViewModel.swift in Sources */,
 				F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */,
