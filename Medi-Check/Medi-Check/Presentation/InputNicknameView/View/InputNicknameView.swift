@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputNicknameView: View {
-    @State private var nickname: String = ""
+    @State private var nickName: String = ""
     @State var isInputFaceIdViewPresented: Bool = false
     @Binding var isInputNicknameViewPresented: Bool
     var body: some View {
@@ -28,7 +28,7 @@ struct InputNicknameView: View {
                             .foregroundStyle(Color.gray)
                             .padding(EdgeInsets(top: 0, leading: 0, bottom: geoHeight * 0.05, trailing: 0))
                         
-                        TextField("숫자, 특수문자, 이모티콘 모두 사용 가능", text: $nickname)
+                        TextField("숫자, 특수문자, 이모티콘 모두 사용 가능", text: $nickName)
                             .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.06, landscapeIPhone: geoWidth * 0.04, portraitIPad: geoWidth * 0.025, landscapeIPad: geoWidth * 0.025), weight: .bold))
                         
                         Rectangle()
@@ -46,7 +46,7 @@ struct InputNicknameView: View {
                             .background(Color.MediCheckMainColor)
                     }
                     .navigationDestination(isPresented: $isInputFaceIdViewPresented) {
-                        InputFaceIdView(isInputNicknameViewPresented: $isInputNicknameViewPresented, nickname: $nickname)
+                        InputFaceIdView(isInputNicknameViewPresented: $isInputNicknameViewPresented, nickName: $nickName)
                     }
                 }
             }

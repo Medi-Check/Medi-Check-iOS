@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InputFaceIdView: View {
     @Binding var isInputNicknameViewPresented: Bool
-    @Binding var nickname: String
+    @Binding var nickName: String
     @EnvironmentObject var userData: UserData
     @ObservedObject var viewModel = InputFaceIdViewModel()
     
@@ -33,13 +33,15 @@ struct InputFaceIdView: View {
                     
                     Button {
                         Task {
-                            await viewModel.fetchData(requestData: ["images": [
-                                "string"
-                              ],
-                              "memberInfo": [
-                                "nickName": "string",
-                                "familyCode": "string"
-                              ]])
+//                            await viewModel.fetchData(requestData: ["images": [
+//                                ""
+//                              ],
+//                              "memberInfo": [
+//                                "nickName": "string",
+//                                "familyCode": "string"
+//                              ]])
+                            let imageData: Data? = UIImage(named: "Profile")?.jpegData(compressionQuality: 1.0)
+                            await viewModel.fetchData(imageData: imageData, requestDictionary: ["nickName": nickName, "familyCode": userData.familyCode])
                         }
                         isInputNicknameViewPresented = false
                     } label: {
@@ -57,6 +59,6 @@ struct InputFaceIdView: View {
 }
 
 #Preview {
-    InputFaceIdView(isInputNicknameViewPresented: .constant(false), nickname: .constant("kyxxgsoo"))
+    InputFaceIdView(isInputNicknameViewPresented: .constant(false), nickName: .constant("kyxxgsoo"))
         .environmentObject(UserData())
 }

@@ -11,6 +11,8 @@ struct SelectProfileView: View {
     //    let dubbyProfiles: [Profile] = []
     let dummyProfileImages: [String] = ["Profile", "Profile", "Profile"]
     let dummyName: [String] = ["Name", "Name", "Name"]
+    @EnvironmentObject var userData: UserData
+    @ObservedObject var viewModel = SelectProfileViewModel()
     @State private var isInputNicknameViewPresented: Bool = false
     
     var body: some View {
@@ -53,8 +55,12 @@ struct SelectProfileView: View {
                         Text("프로필 추가")
                             .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: 15, landscapeIPhone: 15, portraitIPad: 40, landscapeIPad: 40), weight: .bold))
                     }
-                    
                 }
+            }
+        }
+        .onAppear {
+            Task {
+                await viewModel.fetchData(familyCode: userData.familyCode)
             }
         }
     }
