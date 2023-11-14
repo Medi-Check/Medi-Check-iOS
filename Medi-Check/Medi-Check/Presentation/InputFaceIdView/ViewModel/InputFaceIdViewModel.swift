@@ -13,24 +13,26 @@ fileprivate enum MediCheckAPI {
     enum Path: String {
         case member_nickname = "/member/nickname"
     }
-    
 }
 
 class InputFaceIdViewModel: ObservableObject {
     @Published var member = Member()
     
     @MainActor
-    func fetchData(requestData: [String: Any]) async {
+    func fetchData(imageData: Data?, requestDictionary: [String: Any]) async {
         do {
-            member.nickname = try await registerUserAPI(requestData: requestData).nickName
+            let nickName = requestDictionary["nickName"] as! String
+            let familyCode = requestDictionary["familyCode"] as! String
+            try await registerUserAPI(imageData: imageData, nickName: nickName, familyCode: familyCode)
+            member.nickname = nickName
+            member.familyCode = familyCode
             print(member)
         } catch {
             print("Error: \(error)")
-            
         }
     }
     
-    func registerUserAPI(requestData: [String: Any]) async throws -> RegisterUserDTO {
+    func registerUserAPI(imageData: Data?, nickName: String, familyCode: String) async throws {
         var urlComponents = URLComponents()
         urlComponents.scheme = MediCheckAPI.scheme
         urlComponents.host = MediCheckAPI.host
@@ -42,32 +44,56 @@ class InputFaceIdViewModel: ObservableObject {
             throw ExchangeRateError.cannotCreateURL
         }
         print(url)
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
         
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
+        let boundary = "Boundary-\(UUID().uuidString)"
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        print(data)
-        print(response)
+        var body = Data()
         
-        guard let jsonDictionary = try? JSONSerialization.jsonObject(with: Data(data), options: []) as? [String: Any] else {
-            print("Error: convert failed json to dictionary")
+        // 이미지 추가
+        if let imageData = imageData {
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; name=\"images\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+            body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+            body.append(imageData)
+            body.append("\r\n".data(using: .utf8)!)
+        }
+        
+        // JSON 데이터 추가
+        let jsonPart = """
+        {
+            "nickName": "\(nickName)",
+            "familyCode": "\(familyCode)"
+        }
+        """
+        if let jsonData = jsonPart.data(using: .utf8) {
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; name=\"memberInfo\"\r\n".data(using: .utf8)!)
+            body.append("Content-Type: application/json\r\n\r\n".data(using: .utf8)!)
+            body.append(jsonData)
+            body.append("\r\n".data(using: .utf8)!)
+        }
+        
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        request.httpBody = body
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        print("[registerUserAPI] \(data)")
+        print("[registerUserAPI] \(response)")
+        
+        guard let jsonString = String(data: data, encoding: .utf8) else {
+            print("Error: Failed to convert data to string")
             throw ExchangeRateError.decodeFailed
         }
-        print(jsonDictionary)
+        print("[registerUserAPI] \(jsonString)")
+        
         if let response = response as? HTTPURLResponse,
            !(200..<300).contains(response.statusCode) {
             throw ExchangeRateError.badResponse
         }
-        let decoder = JSONDecoder()
-        var registerUserDTO = try decoder.decode(RegisterUserDTO.self, from: data)
-        return registerUserDTO
     }
+    
 }
 
-extension InputFaceIdViewModel {
-    struct RegisterUserDTO: Decodable {
-        let nickName: String
-        let familyCode: String
-    }
-}
