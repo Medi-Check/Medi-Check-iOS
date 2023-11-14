@@ -17,8 +17,8 @@ struct TestModel: Decodable {
 }
 
 struct QRCodeView: View {
-    @State var testUrl: String = ""
-    @EnvironmentObject var qrCodeViewModel: QRCodeViewModel
+    @State var qrCodeValue: String = ""
+    @ObservedObject var viewModel = QRCodeViewModel()
     @Binding var isQRCodeViewPresented: Bool
     
     var body: some View {
@@ -30,8 +30,11 @@ struct QRCodeView: View {
             ){
                 //When the scanner found a barcode
                 print("BarCodeType =",$0.type.rawValue, "Value =",$0.value)
-                testUrl = $0.value
-                if testUrl != "" {
+                qrCodeValue = $0.value
+                if qrCodeValue != "" {
+                    Task {
+                        await viewModel.fetchData(medicineContainer: 1, medicineInfoJsonString: qrCodeValue)
+                    }
                     isQRCodeViewPresented = false
                 }
             }

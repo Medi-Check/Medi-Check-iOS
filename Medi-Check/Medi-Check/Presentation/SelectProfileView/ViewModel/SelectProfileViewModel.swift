@@ -54,11 +54,6 @@ class SelectProfileViewModel: ObservableObject {
         
         print(response)
         print(data)
-//        guard let jsonDictionary = try? JSONSerialization.jsonObject(with: Data(data), options: []) as? [String: Any] else {
-//            print("[getMembers] Error: convert failed json to dictionary")
-//            throw ExchangeRateError.decodeFailed
-//        }
-//        print(jsonDictionary)
         
         let decoder = JSONDecoder()
         var members: [getMembersDTO] = []
