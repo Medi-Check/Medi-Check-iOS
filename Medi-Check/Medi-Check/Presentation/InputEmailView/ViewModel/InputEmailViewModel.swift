@@ -26,13 +26,13 @@ enum ExchangeRateError: Error {
 class InputEmailViewModel: ObservableObject {
     @Published var member = Member()
     
-    func fetchData(requestData: [String: Any], completion: @escaping () -> Void) {
-        Task {
-            do {
-                member.familyCode = try await sendFamilyCodeAPI(requestData: requestData)
-            } catch {
-                print("Error: \(error)")
-            }
+    @MainActor
+    func fetchData(requestData: [String: Any]) async {
+        do {
+            member.familyCode = try await sendFamilyCodeAPI(requestData: requestData)
+        } catch {
+            print("Error: \(error)")
+            
         }
     }
     

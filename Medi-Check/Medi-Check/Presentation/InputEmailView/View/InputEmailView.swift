@@ -41,7 +41,8 @@ struct InputEmailView: View {
                     Spacer()
                     Button {
                         Task {
-                            try await userData.familyCode = viewModel.sendFamilyCodeAPI(requestData: ["email": email])
+                            await viewModel.fetchData(requestData: ["email": email])
+                            userData.familyCode = viewModel.member.familyCode
                             print(userData.familyCode)
                         }
                     } label: {
