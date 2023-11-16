@@ -17,6 +17,8 @@
 		F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42452AECF92700AD59F9 /* TestUseCase.swift */; };
 		F30A424A2AECF96E00AD59F9 /* TestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A42492AECF96E00AD59F9 /* TestRepository.swift */; };
 		F30A424E2AECFB3F00AD59F9 /* TestResponseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A424D2AECFB3F00AD59F9 /* TestResponseRepository.swift */; };
+		F30AF4322B04C59C0071C27A /* RegisterScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30AF4312B04C59C0071C27A /* RegisterScheduleView.swift */; };
+		F30AF4342B04C5B60071C27A /* RegisterScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30AF4332B04C5B60071C27A /* RegisterScheduleViewModel.swift */; };
 		F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314B64B2AED05E700AEB652 /* Extension+Color.swift */; };
 		F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */; };
 		F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A3702AED21E400DBA689 /* FirstBackgroundView.swift */; };
@@ -90,6 +92,8 @@
 		F30A42452AECF92700AD59F9 /* TestUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUseCase.swift; sourceTree = "<group>"; };
 		F30A42492AECF96E00AD59F9 /* TestRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRepository.swift; sourceTree = "<group>"; };
 		F30A424D2AECFB3F00AD59F9 /* TestResponseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResponseRepository.swift; sourceTree = "<group>"; };
+		F30AF4312B04C59C0071C27A /* RegisterScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScheduleView.swift; sourceTree = "<group>"; };
+		F30AF4332B04C5B60071C27A /* RegisterScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScheduleViewModel.swift; sourceTree = "<group>"; };
 		F314B64B2AED05E700AEB652 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		F342A3702AED21E400DBA689 /* FirstBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBackgroundView.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		F30A42232AECEE1B00AD59F9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F30AF42E2B04C1FF0071C27A /* RegisterScheduleView */,
 				F3761BD72B03FA0300FEE560 /* CheckCalendarView */,
 				F3FA34D62B02972C0025EEF7 /* InputFaceIdView */,
 				F3DFC7E62AFC135C000E80F9 /* QRCodeView */,
@@ -356,6 +361,31 @@
 				F30A424D2AECFB3F00AD59F9 /* TestResponseRepository.swift */,
 			);
 			path = ResponseStorage;
+			sourceTree = "<group>";
+		};
+		F30AF42E2B04C1FF0071C27A /* RegisterScheduleView */ = {
+			isa = PBXGroup;
+			children = (
+				F30AF4302B04C2250071C27A /* ViewModel */,
+				F30AF42F2B04C21E0071C27A /* View */,
+			);
+			path = RegisterScheduleView;
+			sourceTree = "<group>";
+		};
+		F30AF42F2B04C21E0071C27A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F30AF4312B04C59C0071C27A /* RegisterScheduleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F30AF4302B04C2250071C27A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F30AF4332B04C5B60071C27A /* RegisterScheduleViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F342A3682AED1EE800DBA689 /* SplashView */ = {
@@ -846,6 +876,7 @@
 				F3C192D22AF2C0EB003A40AF /* InputEmailView.swift in Sources */,
 				F30A42432AECF8B700AD59F9 /* StrokeText.swift in Sources */,
 				F3DAD4B62AF2EA0B00D85F99 /* Extension+View.swift in Sources */,
+				F30AF4322B04C59C0071C27A /* RegisterScheduleView.swift in Sources */,
 				F3BB159E2AFAA43300DE7DC2 /* Medicine.swift in Sources */,
 				F3761BD52B03DC5600FEE560 /* SelectProfileViewModel.swift in Sources */,
 				F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */,
@@ -859,6 +890,7 @@
 				F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */,
 				F39A51BF2AF967C600BF393C /* InputFaceIdView.swift in Sources */,
 				F3BB159A2AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift in Sources */,
+				F30AF4342B04C5B60071C27A /* RegisterScheduleViewModel.swift in Sources */,
 				F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */,
 				F30A423B2AECF66200AD59F9 /* UserData.swift in Sources */,
 				F39A51A72AF9150900BF393C /* HomeView.swift in Sources */,

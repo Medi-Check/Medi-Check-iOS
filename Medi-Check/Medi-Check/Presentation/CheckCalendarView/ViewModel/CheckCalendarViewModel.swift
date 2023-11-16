@@ -37,6 +37,7 @@ class CheckCalendarViewModel: ObservableObject {
         urlComponents.path = MediCheckAPI.Path.medicine_schedules.rawValue
         urlComponents.queryItems = [URLQueryItem(name: "memberName", value: String(memberName))]
         
+        
         guard let url = urlComponents.url else {
             print("[getSchedules] Error: cannot create URL")
             throw ExchangeRateError.cannotCreateURL
