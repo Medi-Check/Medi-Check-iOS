@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ScheduleView: View {
-    @State var isCalendarCheckViewModel: Bool = false
+    @State var isCheckCalendarViewPresented: Bool = false
+    @State var isRegisterScheduleViewPresented: Bool = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -19,10 +20,13 @@ struct ScheduleView: View {
                 HStack(spacing: geoWidth * 0.1) {
                     VStack(spacing: 20) {
                         Button {
-                            
+                            isRegisterScheduleViewPresented = true
                         } label: {
                             FunctionButtonLabel(imageSystemName: "calendar.badge.plus", innerPadding: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.05, landscapeIPhone: geoWidth * 0.04, portraitIPad: geoWidth * 0.05, landscapeIPad: geoWidth * 0.04))
                                 .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.4, landscapeIPhone: geoWidth * 0.3, portraitIPad: geoWidth * 0.4, landscapeIPad: geoWidth * 0.3), height: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.4, landscapeIPhone: geoWidth * 0.3, portraitIPad: geoWidth * 0.4, landscapeIPad: geoWidth * 0.3))
+                        }
+                        .navigationDestination(isPresented: $isRegisterScheduleViewPresented) {
+                            RegisterScheduleView()
                         }
                         
                         Text("일정 등록")
@@ -31,16 +35,16 @@ struct ScheduleView: View {
                     
                     VStack(spacing: 20) {
                         Button {
-                            isCalendarCheckViewModel = true
+                            isCheckCalendarViewPresented = true
                         } label: {
                             FunctionButtonLabel(imageSystemName: "calendar.badge.checkmark", innerPadding: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.05, landscapeIPhone: geoWidth * 0.04, portraitIPad: geoWidth * 0.05, landscapeIPad: geoWidth * 0.04))
                                 .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.4, landscapeIPhone: geoWidth * 0.3, portraitIPad: geoWidth * 0.4, landscapeIPad: geoWidth * 0.3), height: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.4, landscapeIPhone: geoWidth * 0.3, portraitIPad: geoWidth * 0.4, landscapeIPad: geoWidth * 0.3))
                         }
-                        .navigationDestination(isPresented: $isCalendarCheckViewModel) {
-                            CalendarCheckView()
+                        .navigationDestination(isPresented: $isCheckCalendarViewPresented) {
+                            CheckCalendarView()
                         }
                         
-                        Text("약 정보 등록")
+                        Text("일정 체크")
                             .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: 20, landscapeIPhone: 20, portraitIPad: 40, landscapeIPad: 40), weight: .bold))
                     }
                 }

@@ -50,10 +50,10 @@ class InputEmailViewModel: ObservableObject {
         }
         print(url)
         
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
         
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        let (data, response) = try await URLSession.shared.data(for: request)
         if let response = response as? HTTPURLResponse,
            !(200..<300).contains(response.statusCode) {
             throw ExchangeRateError.badResponse

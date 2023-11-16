@@ -1,5 +1,5 @@
 //
-//  CalendarCheckView.swift
+//  CheckCalendarView.swift
 //  Medi-Check
 //
 //  Created by Kyungsoo Lee on 11/15/23.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CalendarCheckView: View {
-    @ObservedObject var viewModel = CalendarCheckViewModel()
+struct CheckCalendarView: View {
+    @ObservedObject var viewModel = CheckCalendarViewModel()
     
     var body: some View {
         Button {
@@ -23,5 +23,5 @@ struct CalendarCheckView: View {
 }
 
 #Preview {
-    CalendarCheckView()
+    CheckCalendarView()
 }

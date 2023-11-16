@@ -1,5 +1,5 @@
 //
-//  CalendarCheckViewModel.swift
+//  CheckCalendarViewModel.swift
 //  Medi-Check
 //
 //  Created by Kyungsoo Lee on 11/15/23.
@@ -16,7 +16,7 @@ fileprivate enum MediCheckAPI {
     }
 }
 
-class CalendarCheckViewModel: ObservableObject {
+class CheckCalendarViewModel: ObservableObject {
     @Published var schedules: [getScheduleDTO] = []
     
     @MainActor
@@ -36,6 +36,7 @@ class CalendarCheckViewModel: ObservableObject {
         urlComponents.port = 80
         urlComponents.path = MediCheckAPI.Path.medicine_schedules.rawValue
         urlComponents.queryItems = [URLQueryItem(name: "memberName", value: String(memberName))]
+        
         
         guard let url = urlComponents.url else {
             print("[getSchedules] Error: cannot create URL")
@@ -68,7 +69,7 @@ class CalendarCheckViewModel: ObservableObject {
     }
 }
 
-extension CalendarCheckViewModel {
+extension CheckCalendarViewModel {
     struct getScheduleDTO: Codable {
         let medicineName: String
         let week: String
