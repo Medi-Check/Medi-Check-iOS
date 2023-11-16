@@ -29,7 +29,7 @@
 		F3694B432AD5713F00D23E99 /* Medi_CheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B422AD5713F00D23E99 /* Medi_CheckTests.swift */; };
 		F3694B4D2AD5713F00D23E99 /* Medi_CheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B4C2AD5713F00D23E99 /* Medi_CheckUITests.swift */; };
 		F3694B4F2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B4E2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift */; };
-		F3761BD52B03DC5600FEE560 /* SelectProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3761BD42B03DC5600FEE560 /* SelectProfileViewModel.swift */; };
+		F3761BD52B03DC5600FEE560 /* InputFamilyCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3761BD42B03DC5600FEE560 /* InputFamilyCodeViewModel.swift */; };
 		F3761BDA2B03FA3000FEE560 /* CheckCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3761BD92B03FA3000FEE560 /* CheckCalendarView.swift */; };
 		F3761BDE2B03FA4C00FEE560 /* CheckCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3761BDD2B03FA4C00FEE560 /* CheckCalendarViewModel.swift */; };
 		F38E49552AFB7DA0008A1A90 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F38E49542AFB7DA0008A1A90 /* FirebaseAnalytics */; };
@@ -107,7 +107,7 @@
 		F3694B482AD5713F00D23E99 /* Medi-CheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Medi-CheckUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3694B4C2AD5713F00D23E99 /* Medi_CheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_CheckUITests.swift; sourceTree = "<group>"; };
 		F3694B4E2AD5713F00D23E99 /* Medi_CheckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medi_CheckUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		F3761BD42B03DC5600FEE560 /* SelectProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProfileViewModel.swift; sourceTree = "<group>"; };
+		F3761BD42B03DC5600FEE560 /* InputFamilyCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFamilyCodeViewModel.swift; sourceTree = "<group>"; };
 		F3761BD92B03FA3000FEE560 /* CheckCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCalendarView.swift; sourceTree = "<group>"; };
 		F3761BDD2B03FA4C00FEE560 /* CheckCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCalendarViewModel.swift; sourceTree = "<group>"; };
 		F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondBackgroundView.swift; sourceTree = "<group>"; };
@@ -388,6 +388,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F30AF4352B05ED600071C27A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3761BD42B03DC5600FEE560 /* InputFamilyCodeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F342A3682AED1EE800DBA689 /* SplashView */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,7 +475,6 @@
 		F3761BD32B03DC4A00FEE560 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F3761BD42B03DC5600FEE560 /* SelectProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -648,6 +655,7 @@
 		F3C192CB2AF2B818003A40AF /* InputFamilyCodeView */ = {
 			isa = PBXGroup;
 			children = (
+				F30AF4352B05ED600071C27A /* ViewModel */,
 				F3C192CC2AF2B81F003A40AF /* View */,
 			);
 			path = InputFamilyCodeView;
@@ -878,7 +886,7 @@
 				F3DAD4B62AF2EA0B00D85F99 /* Extension+View.swift in Sources */,
 				F30AF4322B04C59C0071C27A /* RegisterScheduleView.swift in Sources */,
 				F3BB159E2AFAA43300DE7DC2 /* Medicine.swift in Sources */,
-				F3761BD52B03DC5600FEE560 /* SelectProfileViewModel.swift in Sources */,
+				F3761BD52B03DC5600FEE560 /* InputFamilyCodeViewModel.swift in Sources */,
 				F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */,
 				F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */,
 				F39A51A32AF9064500BF393C /* ProfileView.swift in Sources */,

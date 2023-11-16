@@ -10,8 +10,8 @@ import Foundation
 struct Member: Equatable, Identifiable {
     typealias Identifier = String
     var id: Identifier = ""
-    var nickname: String = ""
+    var nickName: String = ""
     var familyCode: String = ""
-    var profileImage: String = ""
+    var profileImage: String = "Profile"
     
 }

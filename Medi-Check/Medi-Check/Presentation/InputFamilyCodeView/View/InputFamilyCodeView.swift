@@ -11,6 +11,8 @@ struct InputFamilyCodeView: View {
     @State var familyCode: String = ""
     @State private var isInputEmailViewPresented = false
     @State private var isFaceIdViewPresented = false
+    @ObservedObject var viewModel = InputFamilyCodeViewModel()
+    @EnvironmentObject var userData: UserData
     
     var body: some View {
         GeometryReader { geometry in
@@ -43,7 +45,7 @@ struct InputFamilyCodeView: View {
                         }
                         .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.04, landscapeIPhone: geoWidth * 0.025, portraitIPad: geoWidth * 0.015, landscapeIPad: geoWidth * 0.015), weight: .bold))
                         .navigationDestination(isPresented: $isInputEmailViewPresented) {
-                            InputEmailView()
+                            InputEmailView(isInputEmailViewPresented: $isInputEmailViewPresented)
                         }
                         
                     }
@@ -52,7 +54,14 @@ struct InputFamilyCodeView: View {
                     
                     Spacer()
                     Button {
-                        isFaceIdViewPresented = true
+                        Task {
+                            if familyCode.count == 6 {
+                                await viewModel.fetchData(familyCode: familyCode)
+                                userData.members = UserData.getMembersDtoToMembers(members: viewModel.members)
+                                print(userData.members)
+                                isFaceIdViewPresented = true
+                            }
+                        }
                     } label: {
                         BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))

@@ -24,7 +24,7 @@ class InputFaceIdViewModel: ObservableObject {
             let nickName = requestDictionary["nickName"] as! String
             let familyCode = requestDictionary["familyCode"] as! String
             try await registerUserAPI(imageData: imageData, nickName: nickName, familyCode: familyCode)
-            member.nickname = nickName
+            member.nickName = nickName
             member.familyCode = familyCode
             print(member)
         } catch {

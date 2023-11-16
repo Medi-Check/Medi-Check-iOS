@@ -42,6 +42,7 @@ struct InputFaceIdView: View {
 //                              ]])
                             let imageData: Data? = UIImage(named: "Profile")?.jpegData(compressionQuality: 1.0)
                             await viewModel.fetchData(imageData: imageData, requestDictionary: ["nickName": nickName, "familyCode": userData.familyCode])
+                            userData.members.append(viewModel.member)
                         }
                         isInputNicknameViewPresented = false
                     } label: {
