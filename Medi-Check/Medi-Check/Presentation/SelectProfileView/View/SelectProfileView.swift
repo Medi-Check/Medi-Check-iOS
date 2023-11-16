@@ -12,8 +12,7 @@ struct SelectProfileView: View {
     let dummyProfileImages: [String] = ["Profile", "Profile", "Profile"]
     let dummyName: [String] = ["Name", "Name", "Name"]
     @EnvironmentObject var userData: UserData
-//    @ObservedObject var viewModel = SelectProfileViewModel()
-//    @ObservedObject var inputFamilyCodeViewModel:
+    //    @ObservedObject var viewModel = SelectProfileViewModel()
     @State private var isInputNicknameViewPresented: Bool = false
     
     var body: some View {
@@ -26,12 +25,15 @@ struct SelectProfileView: View {
                     Text("프로필을 선택하세요.")
                         .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.08, landscapeIPhone: geoWidth * 0.04, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), weight: .bold))
                         .padding(EdgeInsets(top: geoHeight * 0.1, leading: 0, bottom: 0, trailing: 0))
-                    HStack(spacing: CGFloat.adaptiveSize(portraitIPhone: 10, landscapeIPhone: 10, portraitIPad: 20, landscapeIPad: 20)) {
-                        ForEach(userData.members.indices, id: \.self) { index in
-                            let userInfo = userData.members[index]
-                            ProfileView(image: userInfo.profileImage, name: userInfo.nickName)
-                                .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.3, landscapeIPhone: geoWidth * 0.3, portraitIPad: geoWidth * 0.3, landscapeIPad: geoWidth * 0.3), height: CGFloat.adaptiveSize(portraitIPhone: geoHeight * 0.2, landscapeIPhone: geoHeight * 0.5, portraitIPad: geoHeight * 0.25, landscapeIPad: geoHeight * 0.4))
-                            
+                    
+                    ScrollView(.horizontal) {
+                        HStack(spacing: CGFloat.adaptiveSize(portraitIPhone: 10, landscapeIPhone: 10, portraitIPad: 20, landscapeIPad: 20)) {
+                            ForEach(userData.members.indices, id: \.self) { index in
+                                let userInfo = userData.members[index]
+                                ProfileView(image: userInfo.profileImage, name: userInfo.nickName)
+                                    .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.3, landscapeIPhone: geoWidth * 0.3, portraitIPad: geoWidth * 0.3, landscapeIPad: geoWidth * 0.3), height: CGFloat.adaptiveSize(portraitIPhone: geoHeight * 0.2, landscapeIPhone: geoHeight * 0.5, portraitIPad: geoHeight * 0.25, landscapeIPad: geoHeight * 0.4))
+                                
+                            }
                         }
                     }
                     
@@ -60,11 +62,12 @@ struct SelectProfileView: View {
                 }
             }
         }
-        .onAppear {
+//        .onAppear {
 //            Task {
-//                await viewModel.fetchData(familyCode: userData.familyCode)
+//                await inputFamilyCodeViewModel.fetchData(familyCode: userData.familyCode)
+//                userData.members = UserData.getMembersDtoToMembers(members: inputFamilyCodeViewModel.members)
 //            }
-        }
+//        }
     }
 }
 

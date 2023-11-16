@@ -26,6 +26,8 @@ struct ProfileView: View {
                             .aspectRatio(contentMode: .fill)
                     } placeholder: {
                         Image("Profile")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
                     }
                 }
             }
