@@ -12,7 +12,9 @@ struct Medicine: Equatable, Identifiable {
     var id: Identifier = ""
     var name: String = ""
     var makeDate: String = ""
+    var expirationDate: String = ""
     var amount: Int = 0
     var information: String = ""
     var medicineContainer: Int = 0
+    var medicineCost: Int = 0
 }

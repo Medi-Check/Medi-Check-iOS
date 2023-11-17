@@ -25,15 +25,19 @@ class QRCodeViewModel: ObservableObject {
             if let medicineInfoDictinoary = jsonStringToDictionary(jsonString: medicineInfoJsonString) {
                 let name = medicineInfoDictinoary["name"] as? String ?? ""
                 let makeDate = medicineInfoDictinoary["makeDate"] as? String ?? ""
+                let expirationDate = medicineInfoDictinoary["expirationDate"] as? String ?? ""
                 let amount = medicineInfoDictinoary["amount"] as? Int ?? 0
                 let information = medicineInfoDictinoary["information"] as? String ?? ""
+                let medicineCost = medicineInfoDictinoary["medicineCost"] as? Int ?? 0
                 
-                try await registerMedicine(medicineContainer: medicineContainer, name: name, makeDate: makeDate, amount: amount, information: information)
+                try await registerMedicine(name: name, makeDate: makeDate, expirationDate: expirationDate, amount: amount, information: information, medicineContainer: medicineContainer, medicineCost: medicineCost)
                 medicine.name = name
                 medicine.makeDate = makeDate
+                medicine.expirationDate = expirationDate
                 medicine.amount = amount
                 medicine.information = information
                 medicine.medicineContainer = medicineContainer
+                medicine.medicineCost = medicineCost
             } else {
                 print("Error")
             }
@@ -72,7 +76,7 @@ class QRCodeViewModel: ObservableObject {
         return nil
     }
     
-    func registerMedicine(medicineContainer: Int, name: String, makeDate: String, amount: Int, information: String) async throws {
+    func registerMedicine(name: String, makeDate: String, expirationDate: String, amount: Int, information: String, medicineContainer: Int, medicineCost: Int) async throws {
         var urlComponents = URLComponents()
         urlComponents.scheme = MediCheckAPI.scheme
         urlComponents.host = MediCheckAPI.host
@@ -96,8 +100,10 @@ class QRCodeViewModel: ObservableObject {
         {
             "name": "\(name)",
             "makeDate": "\(makeDate)",
+            "expirationDate": "\(expirationDate)",
             "amount": "\(amount)",
-            "information": "\(information)"
+            "information": "\(information)",
+            "medicineCost": "\(medicineCost)"
         }
         """
         
