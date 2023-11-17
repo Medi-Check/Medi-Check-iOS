@@ -10,6 +10,7 @@ import SwiftUI
 struct InputEmailView: View {
     @EnvironmentObject var userData: UserData
     @State var email: String = ""
+    @Binding var isInputEmailViewPresented: Bool
     @ObservedObject var viewModel = InputEmailViewModel()
     
     var body: some View {
@@ -44,6 +45,7 @@ struct InputEmailView: View {
                             await viewModel.fetchData(requestData: ["email": email])
                             userData.familyCode = viewModel.member.familyCode
                             print(userData.familyCode)
+                            isInputEmailViewPresented = false
                         }
                     } label: {
                         BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
@@ -60,6 +62,6 @@ struct InputEmailView: View {
 }
 
 #Preview {
-    InputEmailView(email: "")
+    InputEmailView(email: "", isInputEmailViewPresented: .constant(false))
     //        .environmentObject(InputEmailViewModel())
 }

@@ -12,6 +12,7 @@ struct InputFaceIdView: View {
     @Binding var nickName: String
     @EnvironmentObject var userData: UserData
     @ObservedObject var viewModel = InputFaceIdViewModel()
+    @ObservedObject var inputFamilyCodeViewModel = InputFamilyCodeViewModel()
     
     var body: some View {
         GeometryReader { geometry in
@@ -33,17 +34,13 @@ struct InputFaceIdView: View {
                     
                     Button {
                         Task {
-//                            await viewModel.fetchData(requestData: ["images": [
-//                                ""
-//                              ],
-//                              "memberInfo": [
-//                                "nickName": "string",
-//                                "familyCode": "string"
-//                              ]])
                             let imageData: Data? = UIImage(named: "Profile")?.jpegData(compressionQuality: 1.0)
                             await viewModel.fetchData(imageData: imageData, requestDictionary: ["nickName": nickName, "familyCode": userData.familyCode])
+                            
+                                await inputFamilyCodeViewModel.fetchData(familyCode: userData.familyCode)
+                                userData.members = UserData.getMembersDtoToMembers(members: inputFamilyCodeViewModel.members)
+                            isInputNicknameViewPresented = false
                         }
-                        isInputNicknameViewPresented = false
                     } label: {
                         BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))

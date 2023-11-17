@@ -1,5 +1,5 @@
 //
-//  SelectProfileViewModel.swift
+//  InputFamilyCodeViewModel.swift
 //  Medi-Check
 //
 //  Created by Kyungsoo Lee on 11/15/23.
@@ -17,13 +17,15 @@ fileprivate enum MediCheckAPI {
     
 }
 
-class SelectProfileViewModel: ObservableObject {
+class InputFamilyCodeViewModel: ObservableObject {
     @Published var members: [getMembersDTO] = []
+    
     
     @MainActor
     func fetchData(familyCode: String) async {
         do {
             self.members = try await getMembers(familyCode: familyCode)
+            print(self.members)
         } catch {
             print("Error: \(error)")
         }
@@ -66,7 +68,7 @@ class SelectProfileViewModel: ObservableObject {
     
 }
 
-extension SelectProfileViewModel {
+extension InputFamilyCodeViewModel {
     struct getMembersDTO: Codable {
         let nickName: String
         let imgUrl: String

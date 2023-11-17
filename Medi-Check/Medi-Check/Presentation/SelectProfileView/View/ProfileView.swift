@@ -20,9 +20,15 @@ struct ProfileView: View {
                     Rectangle()
                         .cornerRadius(15, corners: .allCorners)
                         .foregroundStyle(.gray)
-                    Image(image)
-                        .resizable()
-                        .scaledToFit()
+                    AsyncImage(url: URL(string: image)) { img in
+                        img
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        Image("Profile")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    }
                 }
             }
             .navigationDestination(isPresented: $isHomeViewPresented) {
