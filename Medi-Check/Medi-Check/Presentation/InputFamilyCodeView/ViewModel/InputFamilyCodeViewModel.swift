@@ -25,6 +25,7 @@ class InputFamilyCodeViewModel: ObservableObject {
     func fetchData(familyCode: String) async {
         do {
             self.members = try await getMembers(familyCode: familyCode)
+            print(self.members)
         } catch {
             print("Error: \(error)")
         }

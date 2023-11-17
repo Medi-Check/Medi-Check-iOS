@@ -58,6 +58,7 @@ struct InputFamilyCodeView: View {
                             if familyCode.count == 6 {
                                 await viewModel.fetchData(familyCode: familyCode)
                                 userData.members = UserData.getMembersDtoToMembers(members: viewModel.members)
+                                userData.familyCode = familyCode
                                 print(userData.members)
                                 isFaceIdViewPresented = true
                             }
