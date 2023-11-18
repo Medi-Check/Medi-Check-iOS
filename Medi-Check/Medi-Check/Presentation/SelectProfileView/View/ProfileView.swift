@@ -10,10 +10,15 @@ import SwiftUI
 struct ProfileView: View {
     let image: String
     let name: String
+    @EnvironmentObject var userData: UserData
     @State private var isHomeViewPresented: Bool = false
     var body: some View {
         VStack {
             Button {
+                userData.currnetProfile.nickName = name
+                userData.currnetProfile.profileImage = image
+                userData.currnetProfile.familyCode = userData.familyCode
+                print(userData.currnetProfile)
                 isHomeViewPresented = true
             } label: {
                 ZStack {
@@ -44,4 +49,5 @@ struct ProfileView: View {
 
 #Preview {
     ProfileView(image: "Profile", name: "name")
+        .environmentObject(UserData())
 }

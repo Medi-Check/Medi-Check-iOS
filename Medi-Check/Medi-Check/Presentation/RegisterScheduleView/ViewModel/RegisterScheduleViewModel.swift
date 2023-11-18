@@ -13,11 +13,13 @@ fileprivate enum MediCheckAPI {
     
     enum Path: String {
         case medicine_schedule = "/medicine/schedule"
+        case medicine_schedules = "/member/schedules"
     }
 }
 
 class RegisterScheduleViewModel: ObservableObject {
-    @Published var schdules: [TakeMedicineInfoDTO] = []
+//    @Published var schdules: [TakeMedicineInfoDTO] = []
+    @Published var medicines: [MyMedicineDTO] = []
     
     @MainActor
     func fetchData(week: String, medicineName: String, memberName: String, hour: Int, minute: Int, amounts: Int) async {
@@ -28,6 +30,7 @@ class RegisterScheduleViewModel: ObservableObject {
         }
     }
     
+    // 약 일정 등록
     func registerTakeSchedule(week: String, medicineName: String, memberName: String, hour: Int, minute: Int, amounts: Int) async throws {
         var urlComponents = URLComponents()
         urlComponents.scheme = MediCheckAPI.scheme
@@ -83,10 +86,78 @@ class RegisterScheduleViewModel: ObservableObject {
             throw ExchangeRateError.badResponse
         }
     }
+    
+    @MainActor
+    func fetchMyMedicinesData(memberName: String) async {
+        do {
+            medicines = try await getMyMedicineByMemberName(memberName: memberName)
+        } catch {
+            print("Error: \(error)")
+        }
+    }
+    
+    // 약 일정 모두 조회 (사람 이름에 따라)
+    func getMyMedicineByMemberName(memberName: String) async throws -> [MyMedicineDTO] {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = MediCheckAPI.scheme
+        urlComponents.host = MediCheckAPI.host
+        urlComponents.port = 80
+        urlComponents.path = MediCheckAPI.Path.medicine_schedules.rawValue
+        urlComponents.queryItems = [URLQueryItem(name: "memberName", value: memberName)]
+        
+        guard let url = urlComponents.url else {
+            print("[getMyMedicineByMemberName] Error: cannot create URL")
+            throw ExchangeRateError.cannotCreateURL
+        }
+        print(url)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        if let response = response as? HTTPURLResponse,
+           !(200..<300).contains(response.statusCode) {
+            throw ExchangeRateError.badResponse
+        }
+        
+        print("[getMyMedicineByMemberName] \(data)")
+        print("[getMyMedicineByMemberName] \(response)")
+        
+        guard let jsonString = String(data: data, encoding: .utf8) else {
+            print("Error: Failed to convert data to string")
+            throw ExchangeRateError.decodeFailed
+        }
+        print("[getMyMedicineByMemberName] \(jsonString)")
+        
+        let decoder = JSONDecoder()
+        var medicines: [MyMedicineDTO] = []
+        medicines = try decoder.decode([MyMedicineDTO].self, from: data)
+        
+        return medicines
+    }
 }
 
+//extension RegisterScheduleViewModel {
+//    struct TakeMedicineInfoDTO: Codable {
+//        enum Week: String, Codable {
+//            case MONDAY
+//            case TUESDAY
+//            case WEDNESDAY
+//            case THURSDAY
+//            case FRIDAY
+//            case SATURDAY
+//            case SUNDAY
+//        }
+//        let medicineName: String
+//        let week: Week
+//        let hour: Int
+//        let minute: Int
+//        let amount: Int
+//    }
+//}
+
 extension RegisterScheduleViewModel {
-    struct TakeMedicineInfoDTO: Codable {
+    struct MyMedicineDTO: Codable {
         enum Week: String, Codable {
             case MONDAY
             case TUESDAY
@@ -94,12 +165,13 @@ extension RegisterScheduleViewModel {
             case THURSDAY
             case FRIDAY
             case SATURDAY
-            case SUNDAT
+            case SUNDAY
         }
         let medicineName: String
-        let week: [Week]
+        let takeMedicineId: Int
+        let week: Week
         let hour: Int
         let minute: Int
-        let amount: Int
+        let amounts: Int
     }
 }
