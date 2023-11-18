@@ -12,7 +12,7 @@ fileprivate enum MediCheckAPI {
     static let host = "yuno.hopto.org"
     
     enum Path: String {
-        case medicine_schedules = "/medicine/schedules"
+        case member_scheduels = "/member/schedules"
     }
 }
 
@@ -34,7 +34,7 @@ class CheckCalendarViewModel: ObservableObject {
         urlComponents.scheme = MediCheckAPI.scheme
         urlComponents.host = MediCheckAPI.host
         urlComponents.port = 80
-        urlComponents.path = MediCheckAPI.Path.medicine_schedules.rawValue
+        urlComponents.path = MediCheckAPI.Path.member_scheduels.rawValue
         urlComponents.queryItems = [URLQueryItem(name: "memberName", value: String(memberName))]
         
         
@@ -71,7 +71,7 @@ class CheckCalendarViewModel: ObservableObject {
 
 extension CheckCalendarViewModel {
     struct getScheduleDTO: Codable {
-        let medicineName: String
+//        let medicineName: String
         let week: String
         let hour: Int
         let minute: Int

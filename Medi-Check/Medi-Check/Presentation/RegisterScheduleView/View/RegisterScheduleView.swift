@@ -13,7 +13,7 @@ struct RegisterScheduleView: View {
     var body: some View {
         Button {
             Task {
-                await viewModel.fetchData(week: "MONDAY", medicineName: "경수약", memberName: "경수", hour: 19, minute: 35, amounts: 3)
+                await viewModel.fetchData(week: "SUNDAY", medicineName: "광동 평위천", memberName: "웅구", hour: 11, minute: 23, amounts: 3)
             }
         } label: {
             Text("RegisterScheduleView")

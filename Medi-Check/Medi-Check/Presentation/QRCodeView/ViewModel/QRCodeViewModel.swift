@@ -30,6 +30,7 @@ class QRCodeViewModel: ObservableObject {
                 let information = medicineInfoDictinoary["information"] as? String ?? ""
                 let medicineCost = medicineInfoDictinoary["medicineCost"] as? Int ?? 0
                 
+                
                 try await registerMedicine(name: name, makeDate: makeDate, expirationDate: expirationDate, amount: amount, information: information, medicineContainer: medicineContainer, medicineCost: medicineCost)
                 medicine.name = name
                 medicine.makeDate = makeDate
@@ -40,6 +41,7 @@ class QRCodeViewModel: ObservableObject {
                 medicine.medicineCost = medicineCost
             } else {
                 print("Error")
+                return
             }
             
         } catch {
@@ -54,16 +56,37 @@ class QRCodeViewModel: ObservableObject {
                 // JSONSerialization을 사용하여 Data를 Dictionary로 파싱
                 if let jsonDictionary = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
                     // 파싱된 Dictionary를 사용
-                    if let name = jsonDictionary["name"] as? String,
-                       let makeDate = jsonDictionary["makeDate"] as? String,
-                       let amount = jsonDictionary["amount"] as? Int,
-                       let information = jsonDictionary["information"] as? String {
+                    if let name = jsonDictionary["name"] as? String {
                         print("Name: \(name)")
-                        print("Make Date: \(makeDate)")
-                        print("Amount: \(amount)")
-                        print("Information: \(information)")
-                        return jsonDictionary
+                    } else {
+                        print("1")
                     }
+                    if let makeDate = jsonDictionary["makeDate"] as? String {
+                        print("Make Date: \(makeDate)")
+                    } else {
+                        print("2")
+                    }
+                    if let expirationDate = jsonDictionary["expirationDate"] as? String {
+                        print("Expiration Date: \(expirationDate)")
+                    } else {
+                        print("3")
+                    }
+                    if let amount = jsonDictionary["amount"] as? Int {
+                        print("Amount: \(amount)")
+                    } else {
+                        print("4")
+                    }
+                    if let information = jsonDictionary["information"] as? String {
+                        print("Information: \(information)")
+                    } else {
+                        print("5")
+                    }
+                    if let medicineCost = jsonDictionary["medicineCost"] as? Int {
+                        print("medicinCost: \(medicineCost)")
+                    } else {
+                        print("6")
+                    }
+                    return jsonDictionary
                 } else {
                     print("Error: Failed to parse JSON as Dictionary")
                 }
