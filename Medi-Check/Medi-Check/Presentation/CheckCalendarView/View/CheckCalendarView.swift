@@ -13,7 +13,7 @@ struct CheckCalendarView: View {
     var body: some View {
         Button {
             Task {
-                await viewModel.fetchData(memberName: "웅구형")
+                await viewModel.fetchData(memberName: "웅구")
             }
         } label: {
             Text("Button")
