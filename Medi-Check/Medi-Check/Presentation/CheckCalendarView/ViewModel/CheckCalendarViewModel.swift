@@ -22,14 +22,14 @@ class CheckCalendarViewModel: ObservableObject {
     @MainActor
     func fetchData(memberName: String) async {
         do {
-            self.schedules = try await getSchedules(memberName: memberName)
+            self.schedules = try await getSchedulesForMemberName(memberName: memberName)
             print(schedules)
         } catch {
             print("Error: \(error)")
         }
     }
     
-    func getSchedules(memberName: String) async throws -> [getScheduleDTO] {
+    func getSchedulesForMemberName(memberName: String) async throws -> [getScheduleDTO] {
         var urlComponents = URLComponents()
         urlComponents.scheme = MediCheckAPI.scheme
         urlComponents.host = MediCheckAPI.host

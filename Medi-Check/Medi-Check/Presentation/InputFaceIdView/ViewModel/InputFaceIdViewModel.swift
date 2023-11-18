@@ -23,7 +23,7 @@ class InputFaceIdViewModel: ObservableObject {
         do {
             let nickName = requestDictionary["nickName"] as! String
             let familyCode = requestDictionary["familyCode"] as! String
-            try await registerUserAPI(imageData: imageData, nickName: nickName, familyCode: familyCode)
+            try await registerUser(imageData: imageData, nickName: nickName, familyCode: familyCode)
             member.nickName = nickName
             member.familyCode = familyCode
             print(member)
@@ -32,7 +32,7 @@ class InputFaceIdViewModel: ObservableObject {
         }
     }
     
-    func registerUserAPI(imageData: Data?, nickName: String, familyCode: String) async throws {
+    func registerUser(imageData: Data?, nickName: String, familyCode: String) async throws {
         var urlComponents = URLComponents()
         urlComponents.scheme = MediCheckAPI.scheme
         urlComponents.host = MediCheckAPI.host

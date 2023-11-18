@@ -22,13 +22,13 @@ class RegisterScheduleViewModel: ObservableObject {
     @MainActor
     func fetchData(week: String, medicineName: String, memberName: String, hour: Int, minute: Int, amounts: Int) async {
         do {
-            try await eatMedicine(week: week, medicineName: medicineName, memberName: memberName, hour: hour, minute: minute, amounts: amounts)
+            try await registerTakeSchedule(week: week, medicineName: medicineName, memberName: memberName, hour: hour, minute: minute, amounts: amounts)
         } catch {
             print("Error: \(error)")
         }
     }
     
-    func eatMedicine(week: String, medicineName: String, memberName: String, hour: Int, minute: Int, amounts: Int) async throws {
+    func registerTakeSchedule(week: String, medicineName: String, memberName: String, hour: Int, minute: Int, amounts: Int) async throws {
         var urlComponents = URLComponents()
         urlComponents.scheme = MediCheckAPI.scheme
         urlComponents.host = MediCheckAPI.host
@@ -36,7 +36,7 @@ class RegisterScheduleViewModel: ObservableObject {
         urlComponents.path = MediCheckAPI.Path.medicine_schedule.rawValue
         
         guard let url = urlComponents.url else {
-            print("[getMembers] Error: cannot create URL")
+            print("[registerTakeSchedule] Error: cannot create URL")
             throw ExchangeRateError.cannotCreateURL
         }
         print(url)
