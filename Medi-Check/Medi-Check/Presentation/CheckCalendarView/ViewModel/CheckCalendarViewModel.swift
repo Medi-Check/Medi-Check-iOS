@@ -72,7 +72,7 @@ class CheckCalendarViewModel: ObservableObject {
 extension CheckCalendarViewModel {
     struct getScheduleDTO: Codable {
         let medicineName: String
-        let takeMedicineId: Int?
+        let takeMedicineId: Int
         let week: String
         let hour: Int
         let minute: Int

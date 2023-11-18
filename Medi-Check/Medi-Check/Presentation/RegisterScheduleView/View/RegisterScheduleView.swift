@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RegisterScheduleView: View {
+    @EnvironmentObject var userData: UserData
     @ObservedObject var viewModel = RegisterScheduleViewModel()
     @State private var medicineName: String = ""
     @State private var week: String = ""
@@ -17,12 +18,35 @@ struct RegisterScheduleView: View {
     @State private var timeString: String = ""
     @State private var amounts: String = ""
     
+    
     var body: some View {
         VStack {
             Text("약 일정 등록")
                 .font(.title)
                 .bold()
                 .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+            
+            
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach(viewModel.medicines.indices, id: \.self) { index in
+                        let medicineInfo = viewModel.medicines[index]
+                        Button {
+                            medicineName = medicineInfo.medicineName
+                            amounts = String(medicineInfo.amounts)
+                        } label: {
+                            Text(medicineInfo.medicineName)
+                                .bold()
+                                .foregroundStyle(Color.white)
+                        }
+                        .frame(width: 100)
+                        .background(Color.gray)
+                    }
+                }
+            }
+            // 기기별로 사이즈 설정할 것
+            .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+            
             
             Spacer()
             
@@ -55,7 +79,7 @@ struct RegisterScheduleView: View {
             
             Button {
                 Task {
-                    await viewModel.fetchData(week: week, medicineName: medicineName, memberName: "웅구", hour: Int(hour) ?? 0, minute: Int(minute) ?? 0, amounts: Int(amounts) ?? 0)
+                    await viewModel.fetchData(week: week, medicineName: medicineName, memberName: userData.currnetProfile.nickName, hour: Int(hour) , minute: Int(minute) , amounts: Int(amounts) ?? 0)
                 }
             } label: {
                 Text("RegisterScheduleView")
@@ -63,10 +87,19 @@ struct RegisterScheduleView: View {
             
             Spacer()
         }
+        .onAppear {
+            Task {
+                print("TEST")
+                await viewModel.fetchMyMedicinesData(memberName: userData.currnetProfile.nickName)
+                print(viewModel.$medicines)
+                print(userData.currnetProfile)
+            }
+        }
     }
     
 }
 
 #Preview {
     RegisterScheduleView()
+        .environmentObject(UserData())
 }

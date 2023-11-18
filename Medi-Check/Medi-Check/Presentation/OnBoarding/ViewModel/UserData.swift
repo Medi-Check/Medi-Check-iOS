@@ -8,6 +8,7 @@
 import Foundation
 
 class UserData: ObservableObject {
+    @Published var currnetProfile: Member = Member()
     @Published var familyCode: String = ""
     @Published var members: [Member] = []
     

@@ -20,6 +20,7 @@
 		F30AF4322B04C59C0071C27A /* RegisterScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30AF4312B04C59C0071C27A /* RegisterScheduleView.swift */; };
 		F30AF4342B04C5B60071C27A /* RegisterScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30AF4332B04C5B60071C27A /* RegisterScheduleViewModel.swift */; };
 		F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314B64B2AED05E700AEB652 /* Extension+Color.swift */; };
+		F32A17852B09487800052233 /* TakeMedicineRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A17842B09487800052233 /* TakeMedicineRes.swift */; };
 		F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */; };
 		F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A3702AED21E400DBA689 /* FirstBackgroundView.swift */; };
 		F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */; };
@@ -95,6 +96,7 @@
 		F30AF4312B04C59C0071C27A /* RegisterScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScheduleView.swift; sourceTree = "<group>"; };
 		F30AF4332B04C5B60071C27A /* RegisterScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScheduleViewModel.swift; sourceTree = "<group>"; };
 		F314B64B2AED05E700AEB652 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		F32A17842B09487800052233 /* TakeMedicineRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeMedicineRes.swift; sourceTree = "<group>"; };
 		F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		F342A3702AED21E400DBA689 /* FirstBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBackgroundView.swift; sourceTree = "<group>"; };
 		F3694B2E2AD5713E00D23E99 /* Medi-Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medi-Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,6 +256,7 @@
 				F3BB159D2AFAA43300DE7DC2 /* Medicine.swift */,
 				F3BB159F2AFAA79F00DE7DC2 /* TakeMedicine.swift */,
 				F3BB15A22AFAB01800DE7DC2 /* EatMedicine.swift */,
+				F32A17842B09487800052233 /* TakeMedicineRes.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 				F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */,
 				F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */,
 				F39A51A32AF9064500BF393C /* ProfileView.swift in Sources */,
+				F32A17852B09487800052233 /* TakeMedicineRes.swift in Sources */,
 				F3DAD4B42AF2C90500D85F99 /* Extension+CGFloat.swift in Sources */,
 				F39A51972AF8EDB400BF393C /* FaceIdView.swift in Sources */,
 				F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */,

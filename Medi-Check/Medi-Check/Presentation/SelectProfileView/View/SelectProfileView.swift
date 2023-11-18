@@ -73,4 +73,5 @@ struct SelectProfileView: View {
 
 #Preview {
     SelectProfileView()
+        .environmentObject(UserData())
 }
