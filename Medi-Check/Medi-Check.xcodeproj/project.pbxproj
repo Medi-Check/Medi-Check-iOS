@@ -37,6 +37,7 @@
 		F38E49572AFB7DA0008A1A90 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F38E49562AFB7DA0008A1A90 /* FirebaseMessaging */; };
 		F3926AA02AF12D7200106387 /* SecondBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */; };
 		F3926AA82AF132E400106387 /* BasicButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926AA72AF132E400106387 /* BasicButtonLabel.swift */; };
+		F394C73B2B0A409F0012DBF5 /* MedicineSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C73A2B0A409F0012DBF5 /* MedicineSheetView.swift */; };
 		F39A51972AF8EDB400BF393C /* FaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51962AF8EDB300BF393C /* FaceIdView.swift */; };
 		F39A519E2AF8FDE700BF393C /* SelectProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A519D2AF8FDE700BF393C /* SelectProfileView.swift */; };
 		F39A51A32AF9064500BF393C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51A22AF9064500BF393C /* ProfileView.swift */; };
@@ -114,6 +115,7 @@
 		F3761BDD2B03FA4C00FEE560 /* CheckCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCalendarViewModel.swift; sourceTree = "<group>"; };
 		F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondBackgroundView.swift; sourceTree = "<group>"; };
 		F3926AA72AF132E400106387 /* BasicButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonLabel.swift; sourceTree = "<group>"; };
+		F394C73A2B0A409F0012DBF5 /* MedicineSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineSheetView.swift; sourceTree = "<group>"; };
 		F39A51962AF8EDB300BF393C /* FaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdView.swift; sourceTree = "<group>"; };
 		F39A519D2AF8FDE700BF393C /* SelectProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProfileView.swift; sourceTree = "<group>"; };
 		F39A51A22AF9064500BF393C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 			isa = PBXGroup;
 			children = (
 				F3761BD92B03FA3000FEE560 /* CheckCalendarView.swift */,
+				F394C73A2B0A409F0012DBF5 /* MedicineSheetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -899,6 +902,7 @@
 				F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */,
 				F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */,
 				F3BB15A32AFAB01800DE7DC2 /* EatMedicine.swift in Sources */,
+				F394C73B2B0A409F0012DBF5 /* MedicineSheetView.swift in Sources */,
 				F3694B342AD5713E00D23E99 /* SplashView.swift in Sources */,
 				F39A51BF2AF967C600BF393C /* InputFaceIdView.swift in Sources */,
 				F3BB159A2AFA68D600DE7DC2 /* MemberRequestDTO+Mapping.swift in Sources */,
