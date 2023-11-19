@@ -15,9 +15,8 @@ struct Medi_CheckApp: App {
     @StateObject private var userData = UserData()
     var body: some Scene {
         WindowGroup {
-            FaceIdView()
-//            SplashView()
-//                .environmentObject(userData)
+            SplashView()
+                .environmentObject(userData)
         }
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FaceIdView: View {
-    @State private var isSelectProfileViewPresented: Bool = false
+    @State var isSelectProfileViewPresented: Bool = false
     var body: some View {
         GeometryReader { geometry in
             let geoWidth = geometry.size.width
@@ -20,7 +20,7 @@ struct FaceIdView: View {
                         .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.08, landscapeIPhone: geoWidth * 0.04, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), weight: .bold))
                         .padding(EdgeInsets(top: geoHeight * 0.1, leading: 0, bottom: 0, trailing: 0))
                     
-                    VideoContentView()
+                    VideoContentView(isSelectProfileViewPresented: $isSelectProfileViewPresented)
                         .cornerRadius(15, corners: .allCorners)
                         .frame(height: CGFloat.adaptiveSize(portraitIPhone: geoHeight * 0.5, landscapeIPhone: geoHeight * 0.5, portraitIPad: geoHeight * 0.7, landscapeIPad: geoHeight * 0.65))
                         .foregroundStyle(.gray)
