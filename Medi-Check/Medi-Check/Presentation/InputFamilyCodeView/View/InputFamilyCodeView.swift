@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputFamilyCodeView: View {
-    @State var familyCode: String = ""
+    @State var familyCode: String = "vt1u7X"
     @State private var isInputEmailViewPresented = false
     @State private var isFaceIdViewPresented = false
     @ObservedObject var viewModel = InputFamilyCodeViewModel()

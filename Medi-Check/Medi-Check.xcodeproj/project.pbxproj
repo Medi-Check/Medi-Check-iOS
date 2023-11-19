@@ -38,6 +38,12 @@
 		F3926AA02AF12D7200106387 /* SecondBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */; };
 		F3926AA82AF132E400106387 /* BasicButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3926AA72AF132E400106387 /* BasicButtonLabel.swift */; };
 		F394C73B2B0A409F0012DBF5 /* MedicineSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C73A2B0A409F0012DBF5 /* MedicineSheetView.swift */; };
+		F394C7BE2B0A9B230012DBF5 /* Aespa in Frameworks */ = {isa = PBXBuildFile; productRef = F394C7BD2B0A9B230012DBF5 /* Aespa */; };
+		F394C7D22B0A9DC60012DBF5 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C7CC2B0A9DC50012DBF5 /* GalleryView.swift */; };
+		F394C7D32B0A9DC60012DBF5 /* VideoContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C7CD2B0A9DC50012DBF5 /* VideoContentViewModel.swift */; };
+		F394C7D52B0A9DC60012DBF5 /* VideoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C7CF2B0A9DC50012DBF5 /* VideoContentView.swift */; };
+		F394C7D62B0A9DC60012DBF5 /* FaceIdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C7D02B0A9DC50012DBF5 /* FaceIdViewModel.swift */; };
+		F394C7D72B0A9DC60012DBF5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394C7D12B0A9DC60012DBF5 /* SettingView.swift */; };
 		F39A51972AF8EDB400BF393C /* FaceIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51962AF8EDB300BF393C /* FaceIdView.swift */; };
 		F39A519E2AF8FDE700BF393C /* SelectProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A519D2AF8FDE700BF393C /* SelectProfileView.swift */; };
 		F39A51A32AF9064500BF393C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A51A22AF9064500BF393C /* ProfileView.swift */; };
@@ -116,6 +122,11 @@
 		F3926A9F2AF12D7200106387 /* SecondBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondBackgroundView.swift; sourceTree = "<group>"; };
 		F3926AA72AF132E400106387 /* BasicButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicButtonLabel.swift; sourceTree = "<group>"; };
 		F394C73A2B0A409F0012DBF5 /* MedicineSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineSheetView.swift; sourceTree = "<group>"; };
+		F394C7CC2B0A9DC50012DBF5 /* GalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		F394C7CD2B0A9DC50012DBF5 /* VideoContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoContentViewModel.swift; sourceTree = "<group>"; };
+		F394C7CF2B0A9DC50012DBF5 /* VideoContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoContentView.swift; sourceTree = "<group>"; };
+		F394C7D02B0A9DC50012DBF5 /* FaceIdViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceIdViewModel.swift; sourceTree = "<group>"; };
+		F394C7D12B0A9DC60012DBF5 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		F39A51962AF8EDB300BF393C /* FaceIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIdView.swift; sourceTree = "<group>"; };
 		F39A519D2AF8FDE700BF393C /* SelectProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProfileView.swift; sourceTree = "<group>"; };
 		F39A51A22AF9064500BF393C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -153,6 +164,7 @@
 				F3DFC7E52AFC0CE3000E80F9 /* CarBode in Frameworks */,
 				F38E49572AFB7DA0008A1A90 /* FirebaseMessaging in Frameworks */,
 				F38E49552AFB7DA0008A1A90 /* FirebaseAnalytics in Frameworks */,
+				F394C7BE2B0A9B230012DBF5 /* Aespa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,9 +539,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F394C7BF2B0A9B630012DBF5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F394C7D02B0A9DC50012DBF5 /* FaceIdViewModel.swift */,
+				F394C7CD2B0A9DC50012DBF5 /* VideoContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F39A51932AF8ED9700BF393C /* FaceIdView */ = {
 			isa = PBXGroup;
 			children = (
+				F394C7BF2B0A9B630012DBF5 /* ViewModel */,
 				F39A51942AF8ED9F00BF393C /* View */,
 			);
 			path = FaceIdView;
@@ -538,6 +560,9 @@
 		F39A51942AF8ED9F00BF393C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F394C7CC2B0A9DC50012DBF5 /* GalleryView.swift */,
+				F394C7D12B0A9DC60012DBF5 /* SettingView.swift */,
+				F394C7CF2B0A9DC50012DBF5 /* VideoContentView.swift */,
 				F39A51962AF8EDB300BF393C /* FaceIdView.swift */,
 			);
 			path = View;
@@ -762,6 +787,7 @@
 				F38E49542AFB7DA0008A1A90 /* FirebaseAnalytics */,
 				F38E49562AFB7DA0008A1A90 /* FirebaseMessaging */,
 				F3DFC7E42AFC0CE3000E80F9 /* CarBode */,
+				F394C7BD2B0A9B230012DBF5 /* Aespa */,
 			);
 			productName = "Medi-Check";
 			productReference = F3694B2E2AD5713E00D23E99 /* Medi-Check.app */;
@@ -838,6 +864,7 @@
 			packageReferences = (
 				F38E49532AFB7DA0008A1A90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F3DFC7E32AFC0CE3000E80F9 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */,
+				F394C7BC2B0A9B230012DBF5 /* XCRemoteSwiftPackageReference "Aespa" */,
 			);
 			productRefGroup = F3694B2F2AD5713E00D23E99 /* Products */;
 			projectDirPath = "";
@@ -896,10 +923,14 @@
 				F30A42332AECF53A00AD59F9 /* RepositoryTask.swift in Sources */,
 				F30A42462AECF92700AD59F9 /* TestUseCase.swift in Sources */,
 				F39A51A32AF9064500BF393C /* ProfileView.swift in Sources */,
+				F394C7D22B0A9DC60012DBF5 /* GalleryView.swift in Sources */,
 				F32A17852B09487800052233 /* TakeMedicineRes.swift in Sources */,
 				F3DAD4B42AF2C90500D85F99 /* Extension+CGFloat.swift in Sources */,
+				F394C7D62B0A9DC60012DBF5 /* FaceIdViewModel.swift in Sources */,
 				F39A51972AF8EDB400BF393C /* FaceIdView.swift in Sources */,
+				F394C7D52B0A9DC60012DBF5 /* VideoContentView.swift in Sources */,
 				F30A422C2AECEF7000AD59F9 /* DefaultRepository.swift in Sources */,
+				F394C7D72B0A9DC60012DBF5 /* SettingView.swift in Sources */,
 				F30A42362AECF61900AD59F9 /* APIEndpoints.swift in Sources */,
 				F3BB15A32AFAB01800DE7DC2 /* EatMedicine.swift in Sources */,
 				F394C73B2B0A409F0012DBF5 /* MedicineSheetView.swift in Sources */,
@@ -923,6 +954,7 @@
 				F30A42402AECF7E300AD59F9 /* TestProtocol.swift in Sources */,
 				F3B0556A2B021EC3008D013C /* InputEmailViewModel.swift in Sources */,
 				F3761BDA2B03FA3000FEE560 /* CheckCalendarView.swift in Sources */,
+				F394C7D32B0A9DC60012DBF5 /* VideoContentViewModel.swift in Sources */,
 				F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */,
 				F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */,
 				F39A51BC2AF964A000BF393C /* InputNicknameView.swift in Sources */,
@@ -1271,6 +1303,14 @@
 				minimumVersion = 10.17.0;
 			};
 		};
+		F394C7BC2B0A9B230012DBF5 /* XCRemoteSwiftPackageReference "Aespa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/enebin/Aespa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
 		F3DFC7E32AFC0CE3000E80F9 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/heart/CarBode-Barcode-Scanner-For-SwiftUI";
@@ -1291,6 +1331,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F38E49532AFB7DA0008A1A90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		F394C7BD2B0A9B230012DBF5 /* Aespa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F394C7BC2B0A9B230012DBF5 /* XCRemoteSwiftPackageReference "Aespa" */;
+			productName = Aespa;
 		};
 		F3DFC7E42AFC0CE3000E80F9 /* CarBode */ = {
 			isa = XCSwiftPackageProductDependency;
