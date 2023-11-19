@@ -82,8 +82,11 @@ struct RegisterScheduleView: View {
                     await viewModel.fetchData(week: week, medicineName: medicineName, memberName: userData.currnetProfile.nickName, hour: Int(hour) , minute: Int(minute) , amounts: Int(amounts) ?? 0)
                 }
             } label: {
-                Text("RegisterScheduleView")
+                Text("약 등록하기")
+                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                    .foregroundStyle(Color.white)
             }
+            .background(Color.gray)
             
             Spacer()
         }

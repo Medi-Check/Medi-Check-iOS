@@ -9,19 +9,44 @@ import SwiftUI
 
 struct CheckCalendarView: View {
     @ObservedObject var viewModel = CheckCalendarViewModel()
+    @EnvironmentObject var userData: UserData
+    @State private var isSheetPresented: Bool = false
     
     var body: some View {
-        Button {
-            Task {
-                await viewModel.fetchData(memberName: "웅구")
+        VStack {
+            ScrollView(.vertical) {
+                VStack {
+                    ForEach(viewModel.schedules.indices, id: \.self) { index in
+                        let schedule = viewModel.schedules[index]
+                        HStack {
+                            Button {
+                                
+                            } label: {
+                                Text(schedule.medicineName)
+                            }
+                            .background(Color.gray)
+                            .sheet(isPresented: $isSheetPresented) {
+                                
+                            }
+                            
+                            Spacer()
+                        }
+                        .frame(height: 100)
+                        .background(Color.black)
+                        
+                    }
+                }
             }
-        } label: {
-            Text("Button")
-                .background(Color.blue)
+        }
+        .onAppear {
+            Task {
+                await viewModel.fetchData(memberName: userData.currnetProfile.nickName)
+            }
         }
     }
 }
 
 #Preview {
     CheckCalendarView()
+        .environmentObject(UserData())
 }
