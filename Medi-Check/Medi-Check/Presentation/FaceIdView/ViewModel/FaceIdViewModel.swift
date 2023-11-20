@@ -8,8 +8,9 @@
 import Foundation
 
 class FaceIdViewModel: ObservableObject {
+    @Published var name: String = ""
     
-    func uploadImage(imageData: Data, to serverURL: URL, completion: @escaping (Result<Bool, Error>) -> Void) {
+    func uploadImage(nickname: String, imageData: Data, to serverURL: URL, completion: @escaping (Result<Bool, Error>) -> Void) {
         var request = URLRequest(url: serverURL)
         request.httpMethod = "POST"
 
@@ -19,7 +20,7 @@ class FaceIdViewModel: ObservableObject {
         var body = Data()
 
         body.append("--\(boundary)\r\n".data(using: .utf8)!)
-        body.append("Content-Disposition: form-data; name=\"img\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"img\"; filename=\"\(nickname).jpg\"\r\n".data(using: .utf8)!)
         body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
         body.append(imageData)
         body.append("\r\n".data(using: .utf8)!)
@@ -85,6 +86,24 @@ class FaceIdViewModel: ObservableObject {
                 return
             }
             print("jsonString : \(jsonString)")
+            
+            if let jsonData = jsonString.data(using: .utf8) {
+                do {
+                    if let jsonDictionary = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any],
+                       let name = jsonDictionary["name"] as? String {
+                        DispatchQueue.main.async { [weak self] in
+                            self?.name = name
+                            print("Name: \(name)")
+                        }
+                    } else {
+                        print("사용자의 얼굴을 인식하지 못했습니다.")
+                        return
+                    }
+                } catch {
+                    print("JSON 파싱 오류: \(error)")
+                }
+            }
+            
             completion(.success(true))
         }.resume()
     }

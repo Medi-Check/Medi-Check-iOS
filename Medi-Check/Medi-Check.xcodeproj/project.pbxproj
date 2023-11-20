@@ -20,6 +20,7 @@
 		F30AF4322B04C59C0071C27A /* RegisterScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30AF4312B04C59C0071C27A /* RegisterScheduleView.swift */; };
 		F30AF4342B04C5B60071C27A /* RegisterScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30AF4332B04C5B60071C27A /* RegisterScheduleViewModel.swift */; };
 		F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314B64B2AED05E700AEB652 /* Extension+Color.swift */; };
+		F3257E5E2B0B50DA0082A64E /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3257E5D2B0B50DA0082A64E /* CustomBackButton.swift */; };
 		F32A17852B09487800052233 /* TakeMedicineRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A17842B09487800052233 /* TakeMedicineRes.swift */; };
 		F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */; };
 		F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A3702AED21E400DBA689 /* FirstBackgroundView.swift */; };
@@ -103,6 +104,7 @@
 		F30AF4312B04C59C0071C27A /* RegisterScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScheduleView.swift; sourceTree = "<group>"; };
 		F30AF4332B04C5B60071C27A /* RegisterScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScheduleViewModel.swift; sourceTree = "<group>"; };
 		F314B64B2AED05E700AEB652 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		F3257E5D2B0B50DA0082A64E /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		F32A17842B09487800052233 /* TakeMedicineRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeMedicineRes.swift; sourceTree = "<group>"; };
 		F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		F342A3702AED21E400DBA689 /* FirstBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBackgroundView.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				F30A423D2AECF7C400AD59F9 /* Extensions */,
 				F3926AA72AF132E400106387 /* BasicButtonLabel.swift */,
 				F39A51B42AF9488000BF393C /* FunctionButtonLabel.swift */,
+				F3257E5D2B0B50DA0082A64E /* CustomBackButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -942,6 +945,7 @@
 				F30A423B2AECF66200AD59F9 /* UserData.swift in Sources */,
 				F39A51A72AF9150900BF393C /* HomeView.swift in Sources */,
 				F3FA34DA2B02973E0025EEF7 /* InputFaceIdViewModel.swift in Sources */,
+				F3257E5E2B0B50DA0082A64E /* CustomBackButton.swift in Sources */,
 				F39A51B52AF9488000BF393C /* FunctionButtonLabel.swift in Sources */,
 				F3DFC7EC2AFC15A8000E80F9 /* QRCodeViewModel.swift in Sources */,
 				F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */,

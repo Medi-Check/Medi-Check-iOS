@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SplashView: View {
     @State private var isOnBoardingViewVisible = false
+    
     private let screenHeight = UIScreen.main.bounds.size.height
     private let screenWidth = UIScreen.main.bounds.size.width
     var body: some View {
@@ -34,7 +35,7 @@ struct SplashView: View {
                     }
                 }
             } else {
-                OnBoardingView()
+                InputFamilyCodeView()
                     .opacity(isOnBoardingViewVisible ? 1 : 0)
             }
         }

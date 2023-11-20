@@ -13,7 +13,8 @@ struct SelectProfileView: View {
     let dummyName: [String] = ["Name", "Name", "Name"]
     @EnvironmentObject var userData: UserData
     //    @ObservedObject var viewModel = SelectProfileViewModel()
-    @State private var isInputNicknameViewPresented: Bool = false
+    @State private var goToInputNicknameView: Bool = false
+    
     
     var body: some View {
         GeometryReader { geometry in
@@ -39,7 +40,7 @@ struct SelectProfileView: View {
                     
                     VStack {
                         Button {
-                            isInputNicknameViewPresented = true
+                            goToInputNicknameView = true
                         } label: {
                             ZStack {
                                 Circle()
@@ -51,10 +52,10 @@ struct SelectProfileView: View {
                                     .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.05, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.05, landscapeIPad: geoWidth * 0.05))
                             }
                             .foregroundStyle(Color.black)
-                            .navigationDestination(isPresented: $isInputNicknameViewPresented) {
-                                InputNicknameView(isInputNicknameViewPresented: $isInputNicknameViewPresented)
-                            }
                             
+                        }
+                        .navigationDestination(isPresented: $goToInputNicknameView) {
+                            InputNicknameView(goToInputNicknameView: $goToInputNicknameView)
                         }
                         Text("프로필 추가")
                             .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: 15, landscapeIPhone: 15, portraitIPad: 40, landscapeIPad: 40), weight: .bold))
@@ -71,7 +72,7 @@ struct SelectProfileView: View {
     }
 }
 
-#Preview {
-    SelectProfileView()
-        .environmentObject(UserData())
-}
+//#Preview {
+//    SelectProfileView()
+//        .environmentObject(UserData())
+//}

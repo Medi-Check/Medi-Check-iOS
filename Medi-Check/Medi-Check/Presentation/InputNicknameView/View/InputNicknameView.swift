@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct InputNicknameView: View {
-    @State private var nickName: String = ""
-    @State var isInputFaceIdViewPresented: Bool = false
-    @Binding var isInputNicknameViewPresented: Bool
+    @State var nickName: String = ""
+    @State private var goToInputFaceIdView: Bool = false
+    @Binding var goToInputNicknameView: Bool
+    
     var body: some View {
         GeometryReader { geometry in
             let geoWidth = geometry.size.width
@@ -39,14 +40,14 @@ struct InputNicknameView: View {
                     
                     Spacer()
                     Button {
-                        isInputFaceIdViewPresented = true
+                        goToInputFaceIdView = true
                     } label: {
                         BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                             .background(Color.MediCheckMainColor)
                     }
-                    .navigationDestination(isPresented: $isInputFaceIdViewPresented) {
-                        InputFaceIdView(isInputNicknameViewPresented: $isInputNicknameViewPresented, nickName: $nickName)
+                    .navigationDestination(isPresented: $goToInputFaceIdView) {
+                        InputFaceIdView(nickName: $nickName, goToInputFaceIdView: $goToInputFaceIdView, goToInputNicknameView: $goToInputNicknameView)
                     }
                 }
             }
@@ -58,6 +59,6 @@ struct InputNicknameView: View {
     
 }
 
-#Preview {
-    InputNicknameView(isInputNicknameViewPresented: .constant(false))
-}
+//#Preview {
+//    InputNicknameView(isInputNicknameViewPresented: .constant(false))
+//}

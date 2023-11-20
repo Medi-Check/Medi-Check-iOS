@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct InputFamilyCodeView: View {
-    @State var familyCode: String = "vt1u7X"
-    @State private var isInputEmailViewPresented = false
-    @State private var isFaceIdViewPresented = false
+    @State private var familyCode: String = "vt1u7X"
+    @State private var goToInputEmailView: Bool = false
+    @State private var goToFaceIdView: Bool = false
+    
     @ObservedObject var viewModel = InputFamilyCodeViewModel()
     @EnvironmentObject var userData: UserData
     
@@ -39,14 +40,15 @@ struct InputFamilyCodeView: View {
                         
                         
                         Button {
-                            isInputEmailViewPresented = true
+                            goToInputEmailView = true
                         } label: {
                             Text("코드 발급 & 재전송")
                         }
                         .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.04, landscapeIPhone: geoWidth * 0.025, portraitIPad: geoWidth * 0.015, landscapeIPad: geoWidth * 0.015), weight: .bold))
-                        .navigationDestination(isPresented: $isInputEmailViewPresented) {
-                            InputEmailView(isInputEmailViewPresented: $isInputEmailViewPresented)
+                        .navigationDestination(isPresented: $goToInputEmailView) {
+                            InputEmailView()
                         }
+                    
                         
                     }
                     .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.85, landscapeIPhone: geoWidth * 0.63, portraitIPad: geoWidth * 0.5, landscapeIPad: geoWidth * 0.5), alignment: .leading)
@@ -60,16 +62,16 @@ struct InputFamilyCodeView: View {
                                 userData.members = UserData.getMembersDtoToMembers(members: viewModel.members)
                                 userData.familyCode = familyCode
                                 print(userData.members)
-                                isFaceIdViewPresented = true
                             }
                         }
+                        goToFaceIdView = true
                     } label: {
                         BasicButtonLabel(text: "완료", strokeWidth: 1, fontSize: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.07, landscapeIPad: geoWidth * 0.05), width: geoWidth, height: geoHeight * 0.07)
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                             .background(Color.MediCheckMainColor)
                     }
-                    .navigationDestination(isPresented: $isFaceIdViewPresented) {
-                        FaceIdView()
+                    .navigationDestination(isPresented: $goToFaceIdView) {
+                        FaceIdView(goToFaceIdView: $goToFaceIdView)
                     }
                 }
             }
@@ -80,6 +82,6 @@ struct InputFamilyCodeView: View {
     }
 }
 
-#Preview {
-    InputFamilyCodeView(familyCode: "가족코드 6자리를 입력하세요.")
-}
+//#Preview {
+//    InputFamilyCodeView(familyCode: "가족코드 6자리를 입력하세요.")
+//}
