@@ -35,6 +35,7 @@ struct CheckCalendarView: View {
             ScrollView(.vertical) {
                 ForEach(filteringWeekArray.indices, id: \.self) { index in
                     let schedule = filteringWeekArray[index]
+                    let takeMedicineCheckColor = schedule.status ? Color.green : Color.white
                     HStack {
                         Button {
                             
@@ -65,7 +66,7 @@ struct CheckCalendarView: View {
                         Spacer()
                     }
                     .frame(height: 100)
-                    .background(Color.gray)
+                    .background(takeMedicineCheckColor)
                     
                 }
             }

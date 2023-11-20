@@ -81,5 +81,6 @@ extension CheckCalendarViewModel {
         let minute: Int
         let amounts: Int
         let medicineImgUrl: String
+        let status: Bool
     }
 }
