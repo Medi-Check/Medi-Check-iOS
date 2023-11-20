@@ -132,6 +132,7 @@ class RegisterScheduleViewModel: ObservableObject {
         let decoder = JSONDecoder()
         var medicines: [MyMedicineDTO] = []
         medicines = try decoder.decode([MyMedicineDTO].self, from: data)
+        print("[getMyMedicineByMemberName] \(medicines)")
         
         return medicines
     }
@@ -166,6 +167,7 @@ extension RegisterScheduleViewModel {
             case FRIDAY
             case SATURDAY
             case SUNDAY
+            case EVERYDAY
         }
         let medicineName: String
         let takeMedicineId: Int

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegistrationDrugView: View {
-    @State var isQRCodeViewPresented: Bool = false
+    @State var goToQRCodeView: Bool = false
     var body: some View {
         GeometryReader { geometry in
             let geoWidth = geometry.size.width
@@ -17,10 +17,13 @@ struct RegistrationDrugView: View {
                 SecondBackgroundView()
                 VStack(spacing: 20) {
                     Button {
-                        isQRCodeViewPresented = true
+                        goToQRCodeView = true
                     } label: {
                         FunctionButtonLabel(imageSystemName: "qrcode.viewfinder", innerPadding: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.05, landscapeIPhone: geoWidth * 0.04, portraitIPad: geoWidth * 0.05, landscapeIPad: geoWidth * 0.04))
                             .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.5, landscapeIPhone: geoWidth * 0.3, portraitIPad: geoWidth * 0.5, landscapeIPad: geoWidth * 0.3), height: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.5, landscapeIPhone: geoWidth * 0.3, portraitIPad: geoWidth * 0.5, landscapeIPad: geoWidth * 0.3))
+                    }
+                    .navigationDestination(isPresented: $goToQRCodeView) {
+                        QRCodeView(goToQRCodeView: $goToQRCodeView)
                     }
                     
                     Text("약 정보 등록")

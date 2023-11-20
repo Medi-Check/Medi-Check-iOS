@@ -19,7 +19,7 @@ struct TestModel: Decodable {
 struct QRCodeView: View {
     @State var qrCodeValue: String = ""
     @ObservedObject var viewModel = QRCodeViewModel()
-    @Binding var isQRCodeViewPresented: Bool
+    @Binding var goToQRCodeView: Bool
     
     var body: some View {
         VStack{
@@ -35,7 +35,7 @@ struct QRCodeView: View {
                     Task {
                         await viewModel.fetchData(medicineContainer: 1, medicineInfoJsonString: qrCodeValue)
                     }
-                    isQRCodeViewPresented = false
+                    goToQRCodeView = false
                 }
             }
             
@@ -43,6 +43,6 @@ struct QRCodeView: View {
     }
 }
 
-#Preview {
-    QRCodeView(isQRCodeViewPresented: .constant(false))
-}
+//#Preview {
+//    QRCodeView(isQRCodeViewPresented: .constant(false))
+//}
