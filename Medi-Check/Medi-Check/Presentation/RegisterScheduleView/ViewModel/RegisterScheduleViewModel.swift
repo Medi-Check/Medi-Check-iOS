@@ -22,16 +22,16 @@ class RegisterScheduleViewModel: ObservableObject {
     @Published var medicines: [MyMedicineDTO] = []
     
     @MainActor
-    func fetchData(week: String, medicineName: String, memberName: String, hour: Int, minute: Int, amounts: Int) async {
+    func fetchData(week: [String], medicineName: String, memberName: String, time: [String], takeAmount: Int) async {
         do {
-            try await registerTakeSchedule(week: week, medicineName: medicineName, memberName: memberName, hour: hour, minute: minute, amounts: amounts)
+            try await registerTakeSchedule(week: week, medicineName: medicineName, memberName: memberName, time: time, takeAmount: takeAmount)
         } catch {
             print("Error: \(error)")
         }
     }
     
     // 약 일정 등록
-    func registerTakeSchedule(week: String, medicineName: String, memberName: String, hour: Int, minute: Int, amounts: Int) async throws {
+    func registerTakeSchedule(week: [String], medicineName: String, memberName: String, time: [String], takeAmount: Int) async throws {
         var urlComponents = URLComponents()
         urlComponents.scheme = MediCheckAPI.scheme
         urlComponents.host = MediCheckAPI.host
@@ -56,9 +56,8 @@ class RegisterScheduleViewModel: ObservableObject {
             "week": "\(week)",
             "medicineName": "\(medicineName)",
             "memberName": "\(memberName)",
-            "hour": "\(hour)",
-            "minute": "\(minute)",
-            "amounts": "\(amounts)"
+            "time": "\(time)",
+            "takeAmount": "\(takeAmount)"
         }
         """
         
