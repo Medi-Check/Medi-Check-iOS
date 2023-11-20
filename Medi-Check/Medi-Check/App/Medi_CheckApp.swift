@@ -74,7 +74,7 @@ extension AppDelegate: MessagingDelegate{
     
     // fcm 등록 토큰을 받았을 때
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-
+        
         print("토큰을 받았다")
         // Store this token to firebase and retrieve when to send message to someone...
         let dataDict: [String: String] = ["token": fcmToken ?? ""]
@@ -82,7 +82,7 @@ extension AppDelegate: MessagingDelegate{
         // Store token in Firestore For Sending Notifications From Server in Future...
         
         print(dataDict)
-     
+        
     }
 }
 
@@ -90,41 +90,41 @@ extension AppDelegate: MessagingDelegate{
 
 @available(iOS 10, *)
 extension AppDelegate: UNUserNotificationCenterDelegate {
-  
+    
     // 푸시 메세지가 앱이 켜져있을 때 나올떄
-  func userNotificationCenter(_ center: UNUserNotificationCenter,
-                              willPresent notification: UNNotification,
-                              withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions)
                                 -> Void) {
-      
-    let userInfo = notification.request.content.userInfo
-
-    
-    // Do Something With MSG Data...
-    if let messageID = userInfo[gcmMessageIDKey] {
-        print("Message ID: \(messageID)")
+        
+        let userInfo = notification.request.content.userInfo
+        
+        
+        // Do Something With MSG Data...
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        
+        print(userInfo)
+        
+        completionHandler([[.banner, .badge, .sound]])
     }
     
-    
-    print(userInfo)
-
-    completionHandler([[.banner, .badge, .sound]])
-  }
-
     // 푸시메세지를 받았을 떄
-  func userNotificationCenter(_ center: UNUserNotificationCenter,
-                              didReceive response: UNNotificationResponse,
-                              withCompletionHandler completionHandler: @escaping () -> Void) {
-    let userInfo = response.notification.request.content.userInfo
-
-    // Do Something With MSG Data...
-    if let messageID = userInfo[gcmMessageIDKey] {
-        print("Message ID: \(messageID)")
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        print(userInfo.values)
+        
+        
+        // Do Something With MSG Data...
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        print(userInfo)
+        
+        completionHandler()
     }
-      
-    print(userInfo)
-
-    completionHandler()
-  }
 }
 

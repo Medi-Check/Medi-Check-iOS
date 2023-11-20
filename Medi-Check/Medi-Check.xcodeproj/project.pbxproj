@@ -22,6 +22,7 @@
 		F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314B64B2AED05E700AEB652 /* Extension+Color.swift */; };
 		F3257E5E2B0B50DA0082A64E /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3257E5D2B0B50DA0082A64E /* CustomBackButton.swift */; };
 		F32A17852B09487800052233 /* TakeMedicineRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A17842B09487800052233 /* TakeMedicineRes.swift */; };
+		F34267372B0BCAB600328F97 /* MedicineSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34267362B0BCAB600328F97 /* MedicineSheetViewModel.swift */; };
 		F342A36F2AED1FCF00DBA689 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */; };
 		F342A3712AED21E400DBA689 /* FirstBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F342A3702AED21E400DBA689 /* FirstBackgroundView.swift */; };
 		F3694B322AD5713E00D23E99 /* Medi_CheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3694B312AD5713E00D23E99 /* Medi_CheckApp.swift */; };
@@ -106,6 +107,7 @@
 		F314B64B2AED05E700AEB652 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		F3257E5D2B0B50DA0082A64E /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		F32A17842B09487800052233 /* TakeMedicineRes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeMedicineRes.swift; sourceTree = "<group>"; };
+		F34267362B0BCAB600328F97 /* MedicineSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineSheetViewModel.swift; sourceTree = "<group>"; };
 		F342A36E2AED1FCF00DBA689 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		F342A3702AED21E400DBA689 /* FirstBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstBackgroundView.swift; sourceTree = "<group>"; };
 		F3694B2E2AD5713E00D23E99 /* Medi-Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medi-Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -521,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				F3761BDD2B03FA4C00FEE560 /* CheckCalendarViewModel.swift */,
+				F34267362B0BCAB600328F97 /* MedicineSheetViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -961,6 +964,7 @@
 				F394C7D32B0A9DC60012DBF5 /* VideoContentViewModel.swift in Sources */,
 				F39A51AB2AF9259B00BF393C /* DashboardView.swift in Sources */,
 				F3DAD4B22AF2C4FE00D85F99 /* Extension+UIDevice.swift in Sources */,
+				F34267372B0BCAB600328F97 /* MedicineSheetViewModel.swift in Sources */,
 				F39A51BC2AF964A000BF393C /* InputNicknameView.swift in Sources */,
 				F3BB15A02AFAA79F00DE7DC2 /* TakeMedicine.swift in Sources */,
 				F314B64C2AED05E700AEB652 /* Extension+Color.swift in Sources */,

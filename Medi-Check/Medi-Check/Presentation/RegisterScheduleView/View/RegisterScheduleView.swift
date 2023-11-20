@@ -143,7 +143,7 @@ struct RegisterScheduleView: View {
         .onAppear {
             Task {
                 print("TEST")
-                await viewModel.fetchMyMedicinesData(memberName: userData.currnetProfile.nickName)
+                await viewModel.fetchMyMedicineData(memberName: userData.currnetProfile.nickName)
                 print(viewModel.$medicines)
                 print(userData.currnetProfile)
             }

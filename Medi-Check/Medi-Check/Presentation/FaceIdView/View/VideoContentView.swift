@@ -19,7 +19,7 @@ struct VideoContentView: View {
     @State var captureMode: AssetType = .video
     @State private var rotationAngle: Double = 0
     
-//    @Binding var goToFaceIdView: Bool
+    @Binding var goToSelectProfileView: Bool
     @Binding var isSuccessFaceId: Bool
     @Binding var nickname: String
     
@@ -129,7 +129,6 @@ struct VideoContentView: View {
                                                     userData.currnetProfile.nickName = matchedMember.nickName
                                                     print(userData.currnetProfile)
                                                 }
-    //                                            goToFaceIdView
                                                 isSuccessFaceId = true
                                             }
                                         }

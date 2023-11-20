@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MedicineSheetView: View {
     let scheduleInfo: CheckCalendarViewModel.getScheduleDTO
+    @Binding var isSheetPresented: Bool
+    @ObservedObject var viewModel = MedicineSheetViewModel()
     
     var body: some View {
         VStack {
@@ -17,14 +19,20 @@ struct MedicineSheetView: View {
             
             HStack {
                 Button {
-                    
+                    Task {
+                        await viewModel.fetchData(takeMedicineId: scheduleInfo.takeMedicineId, checked: 1)
+                        isSheetPresented = false
+                    }
                 } label: {
                     Text("Yes")
                 }
                 .background(Color.green)
                 
                 Button {
-                    
+                    Task {
+                        await viewModel.fetchData(takeMedicineId: scheduleInfo.takeMedicineId, checked: 0)
+                        isSheetPresented = false
+                    }
                 } label: {
                     Text("No")
                 }
@@ -36,5 +44,5 @@ struct MedicineSheetView: View {
 }
 
 #Preview {
-    MedicineSheetView(scheduleInfo: CheckCalendarViewModel.getScheduleDTO(medicineName: "타이레놀", takeMedicineId: 1, week: "SUNDAY", hour: 17, minute: 30, amounts: 5))
+    MedicineSheetView(scheduleInfo: CheckCalendarViewModel.getScheduleDTO(medicineName: "타이레놀", takeMedicineId: 1, week: "SUNDAY", hour: 17, minute: 30, amounts: 5, medicineImgUrl: "Profile", status: false), isSheetPresented: .constant(false))
 }

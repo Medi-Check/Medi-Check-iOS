@@ -24,7 +24,7 @@ struct FaceIdView: View {
                         .padding(EdgeInsets(top: geoHeight * 0.1, leading: 0, bottom: 0, trailing: 0))
                     
                     // VideoContentView에서 얼굴인식하면 자동으로 바로 이전 뷰로 돌아가는 현상이 있음... 임시로 goToFaceIdView를 바인딩해서 처리해놨지만 해결해야함.
-                    VideoContentView(isSuccessFaceId: $isSuccessFaceId, nickname: .constant(""))
+                    VideoContentView(goToSelectProfileView: $goToSelectProfileView, isSuccessFaceId: $isSuccessFaceId, nickname: .constant(""))
                         .cornerRadius(15, corners: .allCorners)
                         .frame(height: CGFloat.adaptiveSize(portraitIPhone: geoHeight * 0.5, landscapeIPhone: geoHeight * 0.5, portraitIPad: geoHeight * 0.7, landscapeIPad: geoHeight * 0.65))
                         .foregroundStyle(.gray)
@@ -44,7 +44,7 @@ struct FaceIdView: View {
                             .cornerRadius(15, corners: .allCorners)
                     }
                     .navigationDestination(isPresented: $goToSelectProfileView) {
-                        SelectProfileView()
+                        SelectProfileView(goToSelectProfileView: $goToSelectProfileView)
                     }
                     
                 }

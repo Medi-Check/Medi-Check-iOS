@@ -14,6 +14,7 @@ struct SelectProfileView: View {
     @EnvironmentObject var userData: UserData
     //    @ObservedObject var viewModel = SelectProfileViewModel()
     @State private var goToInputNicknameView: Bool = false
+    @Binding var goToSelectProfileView: Bool
     
     
     var body: some View {
@@ -55,7 +56,7 @@ struct SelectProfileView: View {
                             
                         }
                         .navigationDestination(isPresented: $goToInputNicknameView) {
-                            InputNicknameView(goToInputNicknameView: $goToInputNicknameView)
+                            InputNicknameView(goToSelectProfileView: $goToSelectProfileView, goToInputNicknameView: $goToInputNicknameView)
                         }
                         Text("프로필 추가")
                             .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: 15, landscapeIPhone: 15, portraitIPad: 40, landscapeIPad: 40), weight: .bold))
