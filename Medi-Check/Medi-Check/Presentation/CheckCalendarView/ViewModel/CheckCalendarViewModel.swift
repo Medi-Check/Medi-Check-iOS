@@ -13,11 +13,13 @@ fileprivate enum MediCheckAPI {
     
     enum Path: String {
         case member_scheduels = "/member/schedules"
+        case medicine_take_false = "/medicine/take/false"
     }
 }
 
 class CheckCalendarViewModel: ObservableObject {
     @Published var schedules: [getScheduleDTO] = []
+    
     
     @MainActor
     func fetchData(memberName: String) async {
@@ -68,6 +70,69 @@ class CheckCalendarViewModel: ObservableObject {
         return schedules
     }
     
+    @MainActor
+    func changeHStackColor(takeMedicineId: Int) async {
+        do {
+            try await turnOffGreenScreen(takeMedicineId: takeMedicineId)
+        } catch {
+            print("Error: \(error)")
+        }
+    }
+    
+    // 약 복용 체크(By ID)
+    func turnOffGreenScreen(takeMedicineId: Int) async throws {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = MediCheckAPI.scheme
+        urlComponents.host = MediCheckAPI.host
+        urlComponents.port = 80
+        urlComponents.path = MediCheckAPI.Path.medicine_take_false.rawValue
+        urlComponents.queryItems = [URLQueryItem(name: "takeMedicineId", value: "\(takeMedicineId)")]
+        
+        guard let url = urlComponents.url else {
+            print("[turnOffLED] Error: cannot create URL")
+            throw ExchangeRateError.cannotCreateURL
+        }
+        print(url)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+//        var body = Data()
+//        
+//        // JSON 데이터 추가
+//        
+//        let jsonString = """
+//        {
+//            "takeMedicineId": \(takeMedicineId),
+//            "checked": "\(checked)"
+//        }
+//        """
+//        
+//        print(jsonString)
+//        if let jsonData = jsonString.data(using: .utf8) {
+//            body.append(jsonData)
+//        }
+//        
+//        request.httpBody = body
+        
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        print("[turnOffLED] \(data)")
+        print("[turnOffLED] \(response)")
+        
+        guard let jsonString = String(data: data, encoding: .utf8) else {
+            print("Error: Failed to convert data to string")
+            throw ExchangeRateError.decodeFailed
+        }
+        print("[turnOffLED] \(jsonString)")
+        
+        if let response = response as? HTTPURLResponse,
+           !(200..<300).contains(response.statusCode) {
+            throw ExchangeRateError.badResponse
+        }
+    }
     
     
 }

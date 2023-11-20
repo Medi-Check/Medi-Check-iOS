@@ -38,7 +38,13 @@ struct CheckCalendarView: View {
                     let takeMedicineCheckColor = schedule.status ? Color.green : Color.white
                     HStack {
                         Button {
-                            
+                            Task {
+                                await viewModel.changeHStackColor(takeMedicineId: schedule.takeMedicineId)
+                                await viewModel.fetchData(memberName: userData.currnetProfile.nickName)
+                                
+                                filteringWeekArray = viewModel.schedules.filter { $0.week == weekDictionary[selectWeekDay] }
+                            }
+                            isSheetPresented = true
                         } label: {
                             HStack {
                                 AsyncImage(url: URL(string: schedule.medicineImgUrl)) { img in
@@ -60,7 +66,7 @@ struct CheckCalendarView: View {
                         }
                         .foregroundStyle(Color.black)
                         .sheet(isPresented: $isSheetPresented) {
-                            
+                            MedicineSheetView(scheduleInfo: schedule, isSheetPresented: $isSheetPresented)
                         }
                         
                         Spacer()
