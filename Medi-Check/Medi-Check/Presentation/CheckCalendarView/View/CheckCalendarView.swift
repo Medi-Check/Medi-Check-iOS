@@ -15,26 +15,40 @@ struct CheckCalendarView: View {
     var body: some View {
         VStack {
             ScrollView(.vertical) {
-                VStack {
-                    ForEach(viewModel.schedules.indices, id: \.self) { index in
-                        let schedule = viewModel.schedules[index]
-                        HStack {
-                            Button {
-                                
-                            } label: {
-                                Text(schedule.medicineName)
-                            }
-                            .background(Color.gray)
-                            .sheet(isPresented: $isSheetPresented) {
-                                
-                            }
+                ForEach(viewModel.schedules.indices, id: \.self) { index in
+                    let schedule = viewModel.schedules[index]
+                    HStack {
+                        Button {
                             
-                            Spacer()
+                        } label: {
+                            HStack {
+                                AsyncImage(url: URL(string: schedule.medicineImgUrl)) { img in
+                                    img
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                } placeholder: {
+                                    Image("Capsule")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
+                                VStack(alignment: .leading) {
+                                    Text("약 이름 : \(schedule.medicineName)")
+                                        .frame(maxWidth: .infinity)
+                                    Text("복용 요일 : \(schedule.week)")
+                                    Text("복용 시간 : \(schedule.hour)시 \(schedule.minute)분")
+                                }
+                            }
                         }
-                        .frame(height: 100)
-                        .background(Color.black)
+                        .foregroundStyle(Color.black)
+                        .sheet(isPresented: $isSheetPresented) {
+                            
+                        }
                         
+                        Spacer()
                     }
+                    .frame(height: 100)
+                    .background(Color.gray)
+                    
                 }
             }
         }

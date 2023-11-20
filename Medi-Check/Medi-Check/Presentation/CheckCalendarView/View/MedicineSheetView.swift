@@ -36,5 +36,5 @@ struct MedicineSheetView: View {
 }
 
 #Preview {
-    MedicineSheetView(scheduleInfo: CheckCalendarViewModel.getScheduleDTO(medicineName: "타이레놀", takeMedicineId: 1, week: "SUNDAY", hour: 17, minute: 30, amounts: 5))
+    MedicineSheetView(scheduleInfo: CheckCalendarViewModel.getScheduleDTO(medicineName: "타이레놀", takeMedicineId: 1, week: "SUNDAY", hour: 17, minute: 30, amounts: 5, medicineImgUrl: "Profile"))
 }

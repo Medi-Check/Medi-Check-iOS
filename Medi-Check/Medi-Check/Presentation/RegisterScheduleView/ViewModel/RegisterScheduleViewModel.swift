@@ -13,7 +13,7 @@ fileprivate enum MediCheckAPI {
     
     enum Path: String {
         case medicine_schedule = "/medicine/schedule"
-        case medicine_schedules = "/member/schedules"
+//        case member_schedules = "/member/schedules"
         case medicine_check_take = "/medicine/check/take"
     }
 }
@@ -88,55 +88,6 @@ class RegisterScheduleViewModel: ObservableObject {
         }
     }
     
-    @MainActor
-    func fetchMyScheduleData(memberName: String) async {
-        do {
-            schedules = try await getMyScheduleByMemberName(memberName: memberName)
-        } catch {
-            print("Error: \(error)")
-        }
-    }
-    
-    // 약 일정 모두 조회 (사람 이름에 따라)
-    func getMyScheduleByMemberName(memberName: String) async throws -> [MyScheduleDTO] {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = MediCheckAPI.scheme
-        urlComponents.host = MediCheckAPI.host
-        urlComponents.port = 80
-        urlComponents.path = MediCheckAPI.Path.medicine_schedules.rawValue
-        urlComponents.queryItems = [URLQueryItem(name: "memberName", value: memberName)]
-        
-        guard let url = urlComponents.url else {
-            print("[getMyMedicineByMemberName] Error: cannot create URL")
-            throw ExchangeRateError.cannotCreateURL
-        }
-        print(url)
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        
-        let (data, response) = try await URLSession.shared.data(for: request)
-        if let response = response as? HTTPURLResponse,
-           !(200..<300).contains(response.statusCode) {
-            throw ExchangeRateError.badResponse
-        }
-        
-        print("[getMyMedicineByMemberName] \(data)")
-        print("[getMyMedicineByMemberName] \(response)")
-        
-        guard let jsonString = String(data: data, encoding: .utf8) else {
-            print("Error: Failed to convert data to string")
-            throw ExchangeRateError.decodeFailed
-        }
-        print("[getMyMedicineByMemberName] \(jsonString)")
-        
-        let decoder = JSONDecoder()
-        var medicines: [MyScheduleDTO] = []
-        medicines = try decoder.decode([MyScheduleDTO].self, from: data)
-        print("[getMyMedicineByMemberName] \(medicines)")
-        
-        return medicines
-    }
     
     @MainActor
     func fetchMyMedicineData(memberName: String) async {
@@ -187,6 +138,56 @@ class RegisterScheduleViewModel: ObservableObject {
         
         return medicines
     }
+    
+//    @MainActor
+//    func fetchMyScheduleData(memberName: String) async {
+//        do {
+//            schedules = try await getMyScheduleByMemberName(memberName: memberName)
+//        } catch {
+//            print("Error: \(error)")
+//        }
+//    }
+//    
+//    // 약 일정 모두 조회 (사람 이름에 따라)
+//    func getMyScheduleByMemberName(memberName: String) async throws -> [MyScheduleDTO] {
+//        var urlComponents = URLComponents()
+//        urlComponents.scheme = MediCheckAPI.scheme
+//        urlComponents.host = MediCheckAPI.host
+//        urlComponents.port = 80
+//        urlComponents.path = MediCheckAPI.Path.member_schedules.rawValue
+//        urlComponents.queryItems = [URLQueryItem(name: "memberName", value: memberName)]
+//        
+//        guard let url = urlComponents.url else {
+//            print("[getMyMedicineByMemberName] Error: cannot create URL")
+//            throw ExchangeRateError.cannotCreateURL
+//        }
+//        print(url)
+//        
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "GET"
+//        
+//        let (data, response) = try await URLSession.shared.data(for: request)
+//        if let response = response as? HTTPURLResponse,
+//           !(200..<300).contains(response.statusCode) {
+//            throw ExchangeRateError.badResponse
+//        }
+//        
+//        print("[getMyMedicineByMemberName] \(data)")
+//        print("[getMyMedicineByMemberName] \(response)")
+//        
+//        guard let jsonString = String(data: data, encoding: .utf8) else {
+//            print("Error: Failed to convert data to string")
+//            throw ExchangeRateError.decodeFailed
+//        }
+//        print("[getMyMedicineByMemberName] \(jsonString)")
+//        
+//        let decoder = JSONDecoder()
+//        var medicines: [MyScheduleDTO] = []
+//        medicines = try decoder.decode([MyScheduleDTO].self, from: data)
+//        print("[getMyMedicineByMemberName] \(medicines)")
+//        
+//        return medicines
+//    }
 }
 
 //extension RegisterScheduleViewModel {

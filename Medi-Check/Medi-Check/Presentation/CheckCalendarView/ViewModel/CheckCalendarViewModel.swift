@@ -67,6 +67,9 @@ class CheckCalendarViewModel: ObservableObject {
         
         return schedules
     }
+    
+    
+    
 }
 
 extension CheckCalendarViewModel {
@@ -77,5 +80,6 @@ extension CheckCalendarViewModel {
         let hour: Int
         let minute: Int
         let amounts: Int
+        let medicineImgUrl: String
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct InputNicknameView: View {
     @State var nickName: String = ""
     @State private var goToInputFaceIdView: Bool = false
+    @Binding var goToSelectProfileView: Bool
     @Binding var goToInputNicknameView: Bool
     
     var body: some View {
@@ -47,7 +48,7 @@ struct InputNicknameView: View {
                             .background(Color.MediCheckMainColor)
                     }
                     .navigationDestination(isPresented: $goToInputFaceIdView) {
-                        InputFaceIdView(nickName: $nickName, goToInputFaceIdView: $goToInputFaceIdView, goToInputNicknameView: $goToInputNicknameView)
+                        InputFaceIdView(nickName: $nickName, goToSelectProfileView: $goToSelectProfileView, goToInputFaceIdView: $goToInputFaceIdView, goToInputNicknameView: $goToInputNicknameView)
                     }
                 }
             }
