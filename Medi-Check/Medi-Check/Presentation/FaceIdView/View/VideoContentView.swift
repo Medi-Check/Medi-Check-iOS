@@ -19,8 +19,9 @@ struct VideoContentView: View {
     @State var captureMode: AssetType = .video
     @State private var rotationAngle: Double = 0
     
-    @State var isSuccessFaceId = false
-    @Binding var isSelectProfileViewPresented: Bool
+//    @Binding var goToFaceIdView: Bool
+    @Binding var isSuccessFaceId: Bool
+    @Binding var nickname: String
     
     @ObservedObject private var viewModel = VideoContentViewModel()
     @ObservedObject var faceIdViewModel = FaceIdViewModel()
@@ -95,9 +96,7 @@ struct VideoContentView: View {
         //        .sheet(isPresented: $showGallery) {
         //            GalleryView(mediaType: $captureMode, contentViewModel: viewModel)
         //        }
-        .navigationDestination(isPresented: $isSuccessFaceId) {
-            HomeView()
-        }
+        
         .onAppear {
             NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification, object: nil, queue: .main) { _ in
                 adjustForOrientation()
@@ -117,28 +116,33 @@ struct VideoContentView: View {
                                 do {
                                     print(videoURL.lastPathComponent)
                                     let videoData = try Data(contentsOf: videoURL)
-                                    faceIdViewModel.uploadVideo(videoData: videoData, to: URL(string: "http://yuno.hopto.org:5000/video")!) { _ in
-                                        DispatchQueue.main.async {
-                                            print(userData.members)
-                                            userData.currnetProfile.nickName = faceIdViewModel.name
-                                            print(userData.currnetProfile.nickName)
-                                            let currentNickName = userData.currnetProfile.nickName
-                                            if let matchedMember = userData.members.first(where: { $0.nickName == currentNickName }) {
-                                                userData.currnetProfile.profileImage = matchedMember.profileImage
-                                                userData.currnetProfile.familyCode = matchedMember.familyCode
-                                                userData.currnetProfile.nickName = matchedMember.nickName
-                                                print(userData.currnetProfile)
+                                    if nickname == "" {
+                                        faceIdViewModel.uploadVideo(videoData: videoData, to: URL(string: "http://yuno.hopto.org:5000/video")!) { _ in
+                                            DispatchQueue.main.async {
+                                                print(userData.members)
+                                                userData.currnetProfile.nickName = faceIdViewModel.name
+                                                print(userData.currnetProfile.nickName)
+                                                let currentNickName = userData.currnetProfile.nickName
+                                                if let matchedMember = userData.members.first(where: { $0.nickName == currentNickName }) {
+                                                    userData.currnetProfile.profileImage = matchedMember.profileImage
+                                                    userData.currnetProfile.familyCode = matchedMember.familyCode
+                                                    userData.currnetProfile.nickName = matchedMember.nickName
+                                                    print(userData.currnetProfile)
+                                                }
+    //                                            goToFaceIdView
+                                                isSuccessFaceId = true
                                             }
-                                            isSuccessFaceId = true
-//                                            isSelectProfileViewPresented = true
+                                        }
+                                    } else {
+                                        faceIdViewModel.uploadImage(nickname: nickname,imageData: file.thumbnail.jpegData(compressionQuality: 1.0)!, to: URL(string: "http://yuno.hopto.org:5000/upload")!) { _ in
+                                            print("사진 성공")
                                         }
                                     }
+                                    
                                     //                                    networkViewModel.uploadVideo1(videoURL: file.path!, to: URL(string: "http://yuno.hopto.org:5000/video")!) { _ in
                                     //                                    }
                                     
-                                    //                                    networkViewModel.uploadImage(imageData: file.thumbnail.jpegData(compressionQuality: 1.0)!, to: URL(string: "http://yuno.hopto.org:5000/img")!) { _ in
-                                    //                                        print("사진 성공")
-                                    //                                    }
+                                    
                                     
                                 } catch {
                                     print("비디오 데이터 로드 실패: \(error)")

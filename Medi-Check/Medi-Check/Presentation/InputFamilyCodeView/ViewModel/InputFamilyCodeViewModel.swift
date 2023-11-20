@@ -43,7 +43,7 @@ class InputFamilyCodeViewModel: ObservableObject {
             print("[getMembers] Error: cannot create URL")
             throw ExchangeRateError.cannotCreateURL
         }
-        print(url)
+        print("[getMembers] \(url)")
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"

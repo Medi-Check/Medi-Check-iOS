@@ -10,8 +10,9 @@ import SwiftUI
 struct ProfileView: View {
     let image: String
     let name: String
+    @State private var goToHomeView: Bool = false
     @EnvironmentObject var userData: UserData
-    @State private var isHomeViewPresented: Bool = false
+    
     var body: some View {
         VStack {
             Button {
@@ -19,7 +20,7 @@ struct ProfileView: View {
                 userData.currnetProfile.profileImage = image
                 userData.currnetProfile.familyCode = userData.familyCode
                 print(userData.currnetProfile)
-                isHomeViewPresented = true
+                goToHomeView = true
             } label: {
                 ZStack {
                     Rectangle()
@@ -36,7 +37,7 @@ struct ProfileView: View {
                     }
                 }
             }
-            .navigationDestination(isPresented: $isHomeViewPresented) {
+            .navigationDestination(isPresented: $goToHomeView) {
                 HomeView()
             }
             
@@ -47,7 +48,7 @@ struct ProfileView: View {
     }
 }
 
-#Preview {
-    ProfileView(image: "Profile", name: "name")
-        .environmentObject(UserData())
-}
+//#Preview {
+//    ProfileView(image: "Profile", name: "name")
+//        .environmentObject(UserData())
+//}

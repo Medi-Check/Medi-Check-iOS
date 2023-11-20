@@ -10,7 +10,7 @@ import Foundation
 class FaceIdViewModel: ObservableObject {
     @Published var name: String = ""
     
-    func uploadImage(imageData: Data, to serverURL: URL, completion: @escaping (Result<Bool, Error>) -> Void) {
+    func uploadImage(nickname: String, imageData: Data, to serverURL: URL, completion: @escaping (Result<Bool, Error>) -> Void) {
         var request = URLRequest(url: serverURL)
         request.httpMethod = "POST"
 
@@ -20,7 +20,7 @@ class FaceIdViewModel: ObservableObject {
         var body = Data()
 
         body.append("--\(boundary)\r\n".data(using: .utf8)!)
-        body.append("Content-Disposition: form-data; name=\"img\"; filename=\"image.jpg\"\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"img\"; filename=\"\(nickname).jpg\"\r\n".data(using: .utf8)!)
         body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
         body.append(imageData)
         body.append("\r\n".data(using: .utf8)!)
