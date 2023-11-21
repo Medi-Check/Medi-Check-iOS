@@ -100,7 +100,7 @@ class VideoContentViewModel: ObservableObject {
         }
     }
     
-    // 비디오 회전
+    // 비디오 회전 (잘 작동함)
     func rotateVideo(videoURL: URL, completion: @escaping (URL?) -> Void) {
         let asset = AVAsset(url: videoURL)
         guard let clipVideoTrack = asset.tracks(withMediaType: .video).first else {
