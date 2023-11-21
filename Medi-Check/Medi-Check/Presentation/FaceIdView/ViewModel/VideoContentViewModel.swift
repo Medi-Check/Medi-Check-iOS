@@ -113,7 +113,7 @@ class VideoContentViewModel: ObservableObject {
         
         try? compositionClipVideoTrack?.insertTimeRange(CMTimeRangeMake(start: CMTime.zero, duration: asset.duration), of: clipVideoTrack, at: CMTime.zero)
         
-        let transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+        let transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
         compositionClipVideoTrack?.preferredTransform = transform
 
         guard let exporter = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) else {
@@ -121,9 +121,9 @@ class VideoContentViewModel: ObservableObject {
             return
         }
 
-        let outputFileURL = URL(fileURLWithPath: NSTemporaryDirectory() + UUID().uuidString + ".mov")
+        let outputFileURL = URL(fileURLWithPath: NSTemporaryDirectory() + UUID().uuidString + "dddd.mp4")
         exporter.outputURL = outputFileURL
-        exporter.outputFileType = .mov
+        exporter.outputFileType = .mp4
         exporter.exportAsynchronously {
             switch exporter.status {
             case .completed:

@@ -22,7 +22,7 @@ class CheckCalendarViewModel: ObservableObject {
     
     
     @MainActor
-    func fetchData(memberName: String) async {
+    func fetchSchedulesForMemberName(memberName: String) async {
         do {
             self.schedules = try await getSchedulesForMemberName(memberName: memberName)
             print(schedules)
@@ -41,7 +41,7 @@ class CheckCalendarViewModel: ObservableObject {
         
         
         guard let url = urlComponents.url else {
-            print("[getSchedules] Error: cannot create URL")
+            print("[getSchedulesForMemberName] Error: cannot create URL")
             throw ExchangeRateError.cannotCreateURL
         }
         print(url)
@@ -49,14 +49,14 @@ class CheckCalendarViewModel: ObservableObject {
         request.httpMethod = "GET"
         
         let (data, response) = try await URLSession.shared.data(for: request)
-        print("[getSchedules] \(data)")
-        print("[getSchedules] \(response)")
+        print("[getSchedulesForMemberName] \(data)")
+        print("[getSchedulesForMemberName] \(response)")
         
         guard let jsonString = String(data: data, encoding: .utf8) else {
             print("Error: Failed to convert data to string")
             throw ExchangeRateError.decodeFailed
         }
-        print("[getSchedules] \(jsonString)")
+        print("[getSchedulesForMemberName] \(jsonString)")
         
         if let response = response as? HTTPURLResponse,
            !(200..<300).contains(response.statusCode) {

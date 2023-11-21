@@ -53,7 +53,7 @@ struct CheckCalendarView: View {
                             Button {
                                 Task {
                                     await viewModel.changeHStackColor(takeMedicineId: schedule.takeMedicineId)
-                                    await viewModel.fetchData(memberName: userData.currnetProfile.nickName)
+                                    await viewModel.fetchSchedulesForMemberName(memberName: userData.currnetProfile.nickName)
                                     
                                     filteringWeekArray = viewModel.schedules.filter { $0.week == weekDictionaryKorToEng[selectWeekDay] }
                                 }
@@ -114,7 +114,7 @@ struct CheckCalendarView: View {
             }
             .onAppear {
                 Task {
-                    await viewModel.fetchData(memberName: /*userData.currnetProfile.nickName*/"이경수")
+                    await viewModel.fetchSchedulesForMemberName(memberName: userData.currnetProfile.nickName)
                     filteringWeekArray = viewModel.schedules.filter { $0.week == weekDictionaryKorToEng["월"] }
                     print("viewModel.schedules: \(viewModel.schedules)")
                     print("fliteringWeekArray: \(filteringWeekArray)")

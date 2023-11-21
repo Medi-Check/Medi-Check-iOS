@@ -15,7 +15,8 @@ struct Medi_CheckApp: App {
     @StateObject private var userData = UserData()
     var body: some Scene {
         WindowGroup {
-            CheckCalendarView()
+//            MedicineSheetView(schedule: CheckCalendarViewModel.getScheduleDTO(id: 1, medicineName: "타이레놀", takeMedicineId: 1, week: "월요일", hour: 13, minute: 30, amounts: 1, medicineImgUrl: "https://heronmovie.s3.ap-northeast-2.amazonaws.com/%ED%83%80%EC%9D%B4%EB%A0%88%EB%86%80.png", status: true), selectSchedule: .constant(CheckCalendarViewModel.getScheduleDTO(id: 1, medicineName: "타이레놀", takeMedicineId: 1, week: "월요일", hour: 13, minute: 30, amounts: 1, medicineImgUrl: "https://heronmovie.s3.ap-northeast-2.amazonaws.com/%ED%83%80%EC%9D%B4%EB%A0%88%EB%86%80.png", status: true)))
+            SplashView()
                 .environmentObject(userData)
         }
     }
