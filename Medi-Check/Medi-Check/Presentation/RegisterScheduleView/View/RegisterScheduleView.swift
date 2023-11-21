@@ -39,9 +39,9 @@ struct RegisterScheduleView: View {
     var body: some View {
         ZStack {
             FirstBackgroundView()
-            VStack {
+            ScrollView {
                 Text("약 일정 등록")
-                    .font(.title)
+                    .font(.system(size: 50))
                     .bold()
                     .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                 
@@ -320,6 +320,7 @@ struct RegisterScheduleView: View {
                 }
                 .background(Color.gray)
                 .cornerRadius(20, corners: .allCorners)
+                .padding(.top, 30)
                 
                 Spacer()
             }

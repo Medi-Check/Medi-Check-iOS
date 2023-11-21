@@ -35,7 +35,7 @@ struct HomeView: View {
                         
                         ScheduleView()
                             .tabItem {
-                                Image(systemName: "star.fill")
+                                Image(systemName: "calendar")
                             }
                             .tag(2)
                         

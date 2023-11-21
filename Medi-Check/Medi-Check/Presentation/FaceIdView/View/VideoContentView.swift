@@ -93,6 +93,7 @@ struct VideoContentView: View {
                     viewModel.aespaSession.capturePhoto()
                 }
             }
+            .padding(.bottom, 30)
             
         }
         //        .sheet(isPresented: $showSetting) {
