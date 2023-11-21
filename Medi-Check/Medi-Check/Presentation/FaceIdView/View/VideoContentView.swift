@@ -68,9 +68,9 @@ struct VideoContentView: View {
                                         //                                            print("사진 성공")
                                         //                                        }
                                         
-                                        let videoData = try Data(contentsOf: videoURL)
-                                        faceIdViewModel.uploadVideo(videoData: videoData, to: URL(string: "http://yuno.hopto.org:5000/video")!) { _ in
-                                        }
+//                                        let videoData = try Data(contentsOf: videoURL)
+//                                        faceIdViewModel.uploadVideo(videoData: videoData, to: URL(string: "http://yuno.hopto.org:5000/video")!) { _ in
+//                                        }
                                         //                                                networkViewModel.uploadVideo1(videoURL: file.path!, to: URL(string: "http://yuno.hopto.org:5000/video")!) { _ in
                                         //
                                         //                                                }

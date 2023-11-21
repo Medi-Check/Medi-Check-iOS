@@ -14,6 +14,7 @@ struct CheckCalendarView: View {
     @State private var selectWeekDay: String = "월"
     @State private var weekDictionary: [String: String] = ["월": "MONDAY", "화": "TUESDAY", "수": "WEDNESDAY", "목": "THURSDAY", "금": "FRIDAY", "토": "SATURDAY", "일": "SUNDAY", "매일": "EVERYDAY"]
     @State private var filteringWeekArray: [CheckCalendarViewModel.getScheduleDTO] = []
+    @State private var selectSchedule: CheckCalendarViewModel.getScheduleDTO?
     
     let weekdays: [String] = ["월", "화", "수", "목", "금", "토", "일", "매일"]
     
@@ -44,7 +45,8 @@ struct CheckCalendarView: View {
                                 
                                 filteringWeekArray = viewModel.schedules.filter { $0.week == weekDictionary[selectWeekDay] }
                             }
-                            isSheetPresented = true
+                            selectSchedule = schedule
+//                            isSheetPresented = true
                         } label: {
                             HStack {
                                 AsyncImage(url: URL(string: schedule.medicineImgUrl)) { img in
@@ -57,6 +59,7 @@ struct CheckCalendarView: View {
                                         .aspectRatio(contentMode: .fit)
                                 }
                                 VStack(alignment: .leading) {
+                                    Text("ID : \(schedule.takeMedicineId)")
                                     Text("약 이름 : \(schedule.medicineName)")
                                         .frame(maxWidth: .infinity)
                                     Text("복용 요일 : \(schedule.week)")
@@ -65,9 +68,6 @@ struct CheckCalendarView: View {
                             }
                         }
                         .foregroundStyle(Color.black)
-                        .sheet(isPresented: $isSheetPresented) {
-                            MedicineSheetView(scheduleInfo: schedule, isSheetPresented: $isSheetPresented)
-                        }
                         
                         Spacer()
                     }
@@ -75,18 +75,23 @@ struct CheckCalendarView: View {
                     .background(takeMedicineCheckColor)
                     
                 }
+                .sheet(item: $selectSchedule) { schedule in
+                    MedicineSheetView(schedule: schedule, selectSchedule: $selectSchedule)
+                }
             }
         }
         .onAppear {
             Task {
                 await viewModel.fetchData(memberName: userData.currnetProfile.nickName)
                 filteringWeekArray = viewModel.schedules.filter { $0.week == weekDictionary["월"] }
+                print("viewModel.schedules: \(viewModel.schedules)")
+                print("fliteringWeekArray: \(filteringWeekArray)")
             }
         }
     }
 }
 
-#Preview {
-    CheckCalendarView()
-        .environmentObject(UserData())
-}
+//#Preview {
+//    CheckCalendarView()
+//        .environmentObject(UserData())
+//}

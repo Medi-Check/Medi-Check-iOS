@@ -15,11 +15,12 @@ class MedicineSheetViewModel: ObservableObject {
         
         enum Path: String {
             case medicine_eat = "/medicine/eat"
+            case medicine_healthRate = "/medicine/healthRate"
         }
     }
     
     @MainActor
-    func fetchData(takeMedicineId: Int, checked: Int) async {
+    func fetchCheckTakeMedicineById(takeMedicineId: Int, checked: Int) async {
         do {
             try await checkTakeMedicineById(takeMedicineId: takeMedicineId, checked: checked)
         } catch {
@@ -74,6 +75,69 @@ class MedicineSheetViewModel: ObservableObject {
             throw ExchangeRateError.decodeFailed
         }
         print("[checkTakeMedicineById] \(jsonString)")
+        
+        if let response = response as? HTTPURLResponse,
+           !(200..<300).contains(response.statusCode) {
+            throw ExchangeRateError.badResponse
+        }
+    }
+    
+    @MainActor
+    func fetchHealthRate(healthRate: Int, eatMedicineId: Int) async {
+        do {
+            try await checkHealthRate(healthRate: healthRate, eatMedicineId: eatMedicineId)
+        } catch {
+            print("Error: \(error)")
+        }
+    }
+    
+    // 약 건강 체크(By ID)
+    func checkHealthRate(healthRate: Int, eatMedicineId: Int) async throws {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = MediCheckAPI.scheme
+        urlComponents.host = MediCheckAPI.host
+        urlComponents.port = 80
+        urlComponents.path = MediCheckAPI.Path.medicine_healthRate.rawValue
+        
+        guard let url = urlComponents.url else {
+            print("[checkHealthRate] Error: cannot create URL")
+            throw ExchangeRateError.cannotCreateURL
+        }
+        print(url)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        var body = Data()
+        
+        // JSON 데이터 추가
+        
+        let jsonString = """
+        {
+            "healthRate": \(healthRate),
+            "eatMedicineId": "\(eatMedicineId)"
+        }
+        """
+        
+        print(jsonString)
+        if let jsonData = jsonString.data(using: .utf8) {
+            body.append(jsonData)
+        }
+        
+        request.httpBody = body
+        
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        print("[checkHealthRate] \(data)")
+        print("[checkHealthRate] \(response)")
+        
+        guard let jsonString = String(data: data, encoding: .utf8) else {
+            print("Error: Failed to convert data to string")
+            throw ExchangeRateError.decodeFailed
+        }
+        print("[checkHealthRate] \(jsonString)")
         
         if let response = response as? HTTPURLResponse,
            !(200..<300).contains(response.statusCode) {
