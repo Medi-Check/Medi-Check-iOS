@@ -11,11 +11,32 @@ struct MedicineSheetView: View {
     var schedule: CheckCalendarViewModel.getScheduleDTO
     @Binding var selectSchedule: CheckCalendarViewModel.getScheduleDTO?
     @ObservedObject var viewModel = MedicineSheetViewModel()
+    @State private var rating = 0
     
     var body: some View {
         VStack {
-            Text("\(schedule.takeMedicineId)")
             Text("\(schedule.medicineName) 약을 복용하셨습니까?\n복용하셨다면 Yes, 하지 않으셨다면 No를 눌러주세요.")
+                .font(.title)
+            
+            VStack {
+                Text("별점을 입력해주세요.")
+                    .font(.title2)
+                HStack {
+                    ForEach(1...5, id: \.self) { index in
+                        Image(systemName: index <= rating ? "star.fill" : "star")
+                            .foregroundColor(index <= rating ? .yellow : .gray)
+                            .onTapGesture {
+                                rating = index
+                            }
+                    }
+                }
+            }
+            .padding(20)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.black, lineWidth: 1)
+            )
+            
             
             HStack {
                 Button {
@@ -25,25 +46,41 @@ struct MedicineSheetView: View {
                     }
                 } label: {
                     Text("Yes")
+                        .font(.title2)
+                        .bold()
+                        .foregroundStyle(Color.white)
+                        .frame(width: 50, height: 30)
+                        .padding(10)
+                        .background(RoundedRectangle(cornerRadius: 10) // 원형 배경
+                            .fill(Color.green) // 원형 배경 색상 설정
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.black, lineWidth: 2)
+                        )
                 }
-                .background(Color.green)
                 
                 Button {
                     Task {
                         await viewModel.fetchCheckTakeMedicineById(takeMedicineId: schedule.takeMedicineId, checked: 0)
+                        await viewModel.fetchHealthRate(healthRate: rating, eatMedicineId: schedule.takeMedicineId)
                         selectSchedule = nil
                     }
                 } label: {
                     Text("No")
+                        .font(.title2)
+                        .bold()
+                        .foregroundStyle(Color.white)
+                        .frame(width: 50, height: 30)
+                        .padding(10)
+                        .background(RoundedRectangle(cornerRadius: 10) // 원형 배경
+                            .fill(Color.red) // 원형 배경 색상 설정
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.black, lineWidth: 2)
+                        )
                 }
-                .background(Color.red)
-            }
-            Button {
-                Task {
-                    await viewModel.fetchHealthRate(healthRate:5, eatMedicineId: schedule.takeMedicineId)
-                }
-            } label: {
-                Text("별점 테러")
             }
             
         }

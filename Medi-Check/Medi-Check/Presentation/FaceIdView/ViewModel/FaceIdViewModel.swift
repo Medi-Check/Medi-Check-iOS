@@ -139,6 +139,24 @@ class FaceIdViewModel: ObservableObject {
                 return
             }
             print("jsonString : \(jsonString)")
+            
+            if let jsonData = jsonString.data(using: .utf8) {
+                do {
+                    if let jsonDictionary = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any],
+                       let name = jsonDictionary["name"] as? String {
+                        DispatchQueue.main.async { [weak self] in
+                            self?.name = name
+                            print("Name: \(name)")
+                        }
+                    } else {
+                        print("사용자의 얼굴을 인식하지 못했습니다.")
+                        return
+                    }
+                } catch {
+                    print("JSON 파싱 오류: \(error)")
+                }
+            }
+            
             completion(.success(true))
         }.resume()
     }

@@ -12,82 +12,116 @@ struct CheckCalendarView: View {
     @EnvironmentObject var userData: UserData
     @State private var isSheetPresented: Bool = false
     @State private var selectWeekDay: String = "월"
-    @State private var weekDictionary: [String: String] = ["월": "MONDAY", "화": "TUESDAY", "수": "WEDNESDAY", "목": "THURSDAY", "금": "FRIDAY", "토": "SATURDAY", "일": "SUNDAY", "매일": "EVERYDAY"]
+    private var weekDictionaryKorToEng: [String: String] = ["월": "MONDAY", "화": "TUESDAY", "수": "WEDNESDAY", "목": "THURSDAY", "금": "FRIDAY", "토": "SATURDAY", "일": "SUNDAY", "매일": "EVERYDAY"]
+    private var weekDictionaryEngToKor: [String: String] = ["MONDAY": "월요일", "TUESDAY": "화요일", "WEDNESDAY": "수요일", "THURSDAY": "목요일", "FRIDAY": "금요일", "SATURDAY": "토요일" , "SUNDAY": "일요일", "EVERYDAY": "매일"]
     @State private var filteringWeekArray: [CheckCalendarViewModel.getScheduleDTO] = []
     @State private var selectSchedule: CheckCalendarViewModel.getScheduleDTO?
     
     let weekdays: [String] = ["월", "화", "수", "목", "금", "토", "일", "매일"]
     
     var body: some View {
-        VStack {
-            HStack {
-                ForEach(weekdays.indices, id: \.self) { index in
-                    let buttonColor = weekdays[index] == selectWeekDay ? Color.gray : Color.white
-                    Button {
-                        selectWeekDay = weekdays[index]
-                        filteringWeekArray = viewModel.schedules.filter { $0.week == weekDictionary[selectWeekDay] }
-                        print("필터링 테스트 : \(filteringWeekArray)")
-                    } label: {
-                        Text(weekdays[index])
-                            .background(buttonColor)
-                    }
-                }
-            }
-            ScrollView(.vertical) {
-                ForEach(filteringWeekArray.indices, id: \.self) { index in
-                    let schedule = filteringWeekArray[index]
-                    let takeMedicineCheckColor = schedule.status ? Color.green : Color.white
-                    HStack {
+        ZStack {
+            FirstBackgroundView()
+            VStack {
+                HStack {
+                    ForEach(weekdays.indices, id: \.self) { index in
+                        //                    let buttonColor = weekdays[index] == selectWeekDay ? Color.gray : Color.white
                         Button {
-                            Task {
-                                await viewModel.changeHStackColor(takeMedicineId: schedule.takeMedicineId)
-                                await viewModel.fetchData(memberName: userData.currnetProfile.nickName)
-                                
-                                filteringWeekArray = viewModel.schedules.filter { $0.week == weekDictionary[selectWeekDay] }
-                            }
-                            selectSchedule = schedule
-//                            isSheetPresented = true
+                            selectWeekDay = weekdays[index]
+                            filteringWeekArray = viewModel.schedules.filter { $0.week == weekDictionaryKorToEng[selectWeekDay] }
+                            print("필터링 테스트 : \(filteringWeekArray)")
                         } label: {
-                            HStack {
-                                AsyncImage(url: URL(string: schedule.medicineImgUrl)) { img in
-                                    img
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                } placeholder: {
-                                    Image("Capsule")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
+                            Text(weekdays[index])
+                                .foregroundStyle(weekdays[index] == selectWeekDay ? Color.white : Color.black)
+                                .font(.title)
+                                .bold()
+                                .padding() // 텍스트 주변에 여유 공간 추가
+                                .background(Circle() // 원형 배경
+                                    .fill(weekdays[index] == selectWeekDay ? Color.gray : Color.white) // 원형 배경 색상 설정
+                                )
+                                .overlay(
+                                    Circle().stroke(Color.black, lineWidth: 2) // 원형 테두리 추가
+                                )
+                        }
+                    }
+                }
+                ScrollView(.vertical) {
+                    ForEach(filteringWeekArray.indices, id: \.self) { index in
+                        let schedule = filteringWeekArray[index]
+                        let takeMedicineCheckColor = schedule.status ? Color.green : Color.clear
+                        HStack {
+                            Button {
+                                Task {
+                                    await viewModel.changeHStackColor(takeMedicineId: schedule.takeMedicineId)
+                                    await viewModel.fetchSchedulesForMemberName(memberName: userData.currnetProfile.nickName)
+                                    
+                                    filteringWeekArray = viewModel.schedules.filter { $0.week == weekDictionaryKorToEng[selectWeekDay] }
                                 }
-                                VStack(alignment: .leading) {
-                                    Text("ID : \(schedule.takeMedicineId)")
-                                    Text("약 이름 : \(schedule.medicineName)")
-                                        .frame(maxWidth: .infinity)
-                                    Text("복용 요일 : \(schedule.week)")
-                                    Text("복용 시간 : \(schedule.hour)시 \(schedule.minute)분")
+                                selectSchedule = schedule
+                                //                            isSheetPresented = true
+                            } label: {
+                                HStack {
+                                    AsyncImage(url: URL(string: schedule.medicineImgUrl)) { img in
+                                        img
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 200)
+                                            .padding(5)
+                                            .background(RoundedRectangle(cornerRadius: 10) // 원형 배경
+                                                .fill(Color.white) // 원형 배경 색상 설정
+                                            )
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 10)
+                                                    .stroke(Color.black, lineWidth: 1)
+                                            )
+                                            .padding(20)
+                                    } placeholder: {
+                                        Image("Capsule")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .padding(5)
+                                    }
+                                    VStack(alignment: .leading, spacing: 5) {
+                                        Text("약 이름 : \(schedule.medicineName)")
+                                        Text("복용 요일 : \(weekDictionaryEngToKor[schedule.week] ?? "?")")
+                                        Text("복용 시간 : \(schedule.hour)시 \(schedule.minute)분")
+                                        Text("1회 복용 개수 : \(schedule.amounts)개")
+                                    }
+                                    .font(.title3)
+                                    .bold()
+                                    .frame(maxWidth: .infinity)
                                 }
                             }
+                            .foregroundStyle(Color.black)
+                            .padding() // 텍스트 주변에 여유 공간 추가
+                            
+                            Spacer()
                         }
-                        .foregroundStyle(Color.black)
+                        .frame(height: 200)
+                        .background(takeMedicineCheckColor)
                         
-                        Spacer()
+                        Rectangle()
+                            .frame(height: 2) // 굵기 설정
+                            .foregroundColor(.gray) // 색상 설정
+                            .padding(.vertical) // 위아래 패딩 추가
+                        
+                        
                     }
-                    .frame(height: 100)
-                    .background(takeMedicineCheckColor)
-                    
+                    .sheet(item: $selectSchedule) { schedule in
+                        MedicineSheetView(schedule: schedule, selectSchedule: $selectSchedule)
+                    }
                 }
-                .sheet(item: $selectSchedule) { schedule in
-                    MedicineSheetView(schedule: schedule, selectSchedule: $selectSchedule)
+            }
+            .onAppear {
+                Task {
+                    await viewModel.fetchSchedulesForMemberName(memberName: userData.currnetProfile.nickName)
+                    filteringWeekArray = viewModel.schedules.filter { $0.week == weekDictionaryKorToEng["월"] }
+                    print("viewModel.schedules: \(viewModel.schedules)")
+                    print("fliteringWeekArray: \(filteringWeekArray)")
                 }
             }
         }
-        .onAppear {
-            Task {
-                await viewModel.fetchData(memberName: userData.currnetProfile.nickName)
-                filteringWeekArray = viewModel.schedules.filter { $0.week == weekDictionary["월"] }
-                print("viewModel.schedules: \(viewModel.schedules)")
-                print("fliteringWeekArray: \(filteringWeekArray)")
-            }
-        }
+        
     }
 }
 
