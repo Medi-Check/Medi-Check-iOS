@@ -20,7 +20,7 @@ struct MedicineSheetView: View {
             HStack {
                 Button {
                     Task {
-                        await viewModel.fetchData(takeMedicineId: schedule.takeMedicineId, checked: 1)
+                        await viewModel.fetchCheckTakeMedicineById(takeMedicineId: schedule.takeMedicineId, checked: 1)
                         selectSchedule = nil
                     }
                 } label: {
@@ -30,13 +30,20 @@ struct MedicineSheetView: View {
                 
                 Button {
                     Task {
-                        await viewModel.fetchData(takeMedicineId: schedule.takeMedicineId, checked: 0)
+                        await viewModel.fetchCheckTakeMedicineById(takeMedicineId: schedule.takeMedicineId, checked: 0)
                         selectSchedule = nil
                     }
                 } label: {
                     Text("No")
                 }
                 .background(Color.red)
+            }
+            Button {
+                Task {
+                    await viewModel.fetchHealthRate(healthRate:5, eatMedicineId: schedule.takeMedicineId)
+                }
+            } label: {
+                Text("별점 테러")
             }
             
         }
