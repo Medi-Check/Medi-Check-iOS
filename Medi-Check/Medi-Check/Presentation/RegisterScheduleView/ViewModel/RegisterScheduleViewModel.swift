@@ -13,7 +13,7 @@ fileprivate enum MediCheckAPI {
     
     enum Path: String {
         case medicine_schedule = "/medicine/schedule"
-//        case member_schedules = "/member/schedules"
+        case eatMedicine_delete = "/eatMedicine/delete"
         case medicine_check_take = "/medicine/check/take"
     }
 }
@@ -81,6 +81,51 @@ class RegisterScheduleViewModel: ObservableObject {
             throw ExchangeRateError.decodeFailed
         }
         print("[registerMedicine] \(jsonString)")
+        
+        if let response = response as? HTTPURLResponse,
+           !(200..<300).contains(response.statusCode) {
+            throw ExchangeRateError.badResponse
+        }
+    }
+    
+    @MainActor
+    func fetchDeleteMedicine(eatMedicineId: Int) async {
+        do {
+            try await deleteMedicine(eatMedicineId: eatMedicineId)
+        } catch {
+            print("Error: \(error)")
+        }
+    }
+    
+    // 등록된 약 삭제
+    func deleteMedicine(eatMedicineId: Int) async throws {
+        var urlComponents = URLComponents()
+        urlComponents.scheme = MediCheckAPI.scheme
+        urlComponents.host = MediCheckAPI.host
+        urlComponents.port = 80
+        urlComponents.path = MediCheckAPI.Path.eatMedicine_delete.rawValue
+        urlComponents.queryItems = [URLQueryItem(name: "eatMedicineId", value: String(eatMedicineId))]
+        
+        guard let url = urlComponents.url else {
+            print("[deleteMedicine] Error: cannot create URL")
+            throw ExchangeRateError.cannotCreateURL
+        }
+        print(url)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        print("[deleteMedicine] \(data)")
+        print("[deleteMedicine] \(response)")
+        
+        guard let jsonString = String(data: data, encoding: .utf8) else {
+            print("Error: Failed to convert data to string")
+            throw ExchangeRateError.decodeFailed
+        }
+        print("[deleteMedicine] \(jsonString)")
         
         if let response = response as? HTTPURLResponse,
            !(200..<300).contains(response.statusCode) {
@@ -230,6 +275,7 @@ extension RegisterScheduleViewModel {
     }
     
     struct MyMedicineDTO: Codable {
+        let medicineId: Int
         let medicineName: String
         let information: String
         let makeDate: String
