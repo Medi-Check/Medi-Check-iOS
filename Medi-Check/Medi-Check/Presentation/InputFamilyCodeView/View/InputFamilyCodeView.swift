@@ -76,6 +76,13 @@ struct InputFamilyCodeView: View {
                 }
             }
         }
+        .onAppear {
+            if userData.familyCode != "" {
+                goToFaceIdView = true
+            } else {
+                goToFaceIdView = false
+            }
+        }
         .onTapGesture {
             self.endTextEditing()
         }

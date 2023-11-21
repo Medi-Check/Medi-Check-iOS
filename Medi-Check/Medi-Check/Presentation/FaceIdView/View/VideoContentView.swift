@@ -43,10 +43,11 @@ struct VideoContentView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             viewModel.preview
+                .scaleEffect(0.7)
+                .offset(x: -100, y: -100)
                 .scaledToFit()
-                .background(Color.red)
-                .rotationEffect(.degrees(rotationAngle))
                 .background(Color.gray)
+                .rotationEffect(.degrees(rotationAngle))
             
             
             // Shutter + button
@@ -61,23 +62,27 @@ struct VideoContentView: View {
                             switch result {
                             case .success(let file):
                                 print(file)
-                                if let videoURL = file.path {
-                                    do {
-                                        print(videoURL.lastPathComponent)
-                                        //                                        networkViewModel.uploadImage(imageData: file.thumbnail.jpegData(compressionQuality: 1.0)!, to: URL(string: "http://yuno.hopto.org:5000/upload")!) { _ in
-                                        //                                            print("사진 성공")
-                                        //                                        }
-                                        
-//                                        let videoData = try Data(contentsOf: videoURL)
-//                                        faceIdViewModel.uploadVideo(videoData: videoData, to: URL(string: "http://yuno.hopto.org:5000/video")!) { _ in
-//                                        }
-                                        //                                                networkViewModel.uploadVideo1(videoURL: file.path!, to: URL(string: "http://yuno.hopto.org:5000/video")!) { _ in
-                                        //
-                                        //                                                }
-                                    } catch {
-                                        print("비디오 데이터 로드 실패: \(error)")
+                                // 오직 가로모드를 위한...
+                                viewModel.rotateVideo(videoURL: file.path!) { url in
+                                    if let videoURL = url {
+                                        do {
+                                            print(videoURL.lastPathComponent)
+                                            //                                        networkViewModel.uploadImage(imageData: file.thumbnail.jpegData(compressionQuality: 1.0)!, to: URL(string: "http://yuno.hopto.org:5000/upload")!) { _ in
+                                            //                                            print("사진 성공")
+                                            //                                        }
+                                            
+    //                                        let videoData = try Data(contentsOf: videoURL)
+    //                                        faceIdViewModel.uploadVideo(videoData: videoData, to: URL(string: "http://yuno.hopto.org:5000/video")!) { _ in
+    //                                        }
+                                            //                                                networkViewModel.uploadVideo1(videoURL: file.path!, to: URL(string: "http://yuno.hopto.org:5000/video")!) { _ in
+                                            //
+                                            //                                                }
+                                        } catch {
+                                            print("비디오 데이터 로드 실패: \(error)")
+                                        }
                                     }
                                 }
+                                
                             case .failure(let error):
                                 print(error)
                             }

@@ -27,7 +27,7 @@ struct FaceIdView: View {
                     VideoContentView(goToSelectProfileView: $goToSelectProfileView, isSuccessFaceId: $isSuccessFaceId, nickname: .constant(""))
                         .cornerRadius(15, corners: .allCorners)
                         .frame(height: CGFloat.adaptiveSize(portraitIPhone: geoHeight * 0.5, landscapeIPhone: geoHeight * 0.5, portraitIPad: geoHeight * 0.7, landscapeIPad: geoHeight * 0.65))
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(.black)
                         .navigationDestination(isPresented: $isSuccessFaceId) {
                             HomeView()
                         }

@@ -38,6 +38,7 @@ struct SelectProfileView: View {
                         }
                         .frame(height: CGFloat.adaptiveSize(portraitIPhone: geoHeight * 0.3, landscapeIPhone: geoHeight * 0.6, portraitIPad: geoHeight * 0.35, landscapeIPad: geoHeight * 0.5))
                     }
+                    .padding(.leading, CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.1, portraitIPad: geoWidth * 0.1, landscapeIPad: geoWidth * 0.03))
                     
                     VStack {
                         Button {
@@ -46,11 +47,11 @@ struct SelectProfileView: View {
                             ZStack {
                                 Circle()
                                     .stroke(lineWidth: 1)
-                                    .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.08, portraitIPad: geoWidth * 0.1, landscapeIPad: geoWidth * 0.1))
+                                    .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.1, landscapeIPhone: geoWidth * 0.08, portraitIPad: 70, landscapeIPad: 70))
                                 Image(systemName: "plus")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: CGFloat.adaptiveSize(portraitIPhone: geoWidth * 0.05, landscapeIPhone: geoWidth * 0.05, portraitIPad: geoWidth * 0.05, landscapeIPad: geoWidth * 0.05))
+                                    .frame(width: CGFloat.adaptiveSize(portraitIPhone: 30, landscapeIPhone: 30, portraitIPad: 30, landscapeIPad: 30))
                             }
                             .foregroundStyle(Color.black)
                             
@@ -61,6 +62,7 @@ struct SelectProfileView: View {
                         Text("프로필 추가")
                             .font(.system(size: CGFloat.adaptiveSize(portraitIPhone: 15, landscapeIPhone: 15, portraitIPad: 40, landscapeIPad: 40), weight: .bold))
                     }
+                    .padding(.top, CGFloat.adaptiveSize(portraitIPhone: 10, landscapeIPhone: 10, portraitIPad: 20, landscapeIPad: 20))
                 }
             }
         }
@@ -73,7 +75,7 @@ struct SelectProfileView: View {
     }
 }
 
-//#Preview {
-//    SelectProfileView()
-//        .environmentObject(UserData())
-//}
+#Preview {
+    SelectProfileView(goToSelectProfileView: .constant(false))
+        .environmentObject(UserData())
+}

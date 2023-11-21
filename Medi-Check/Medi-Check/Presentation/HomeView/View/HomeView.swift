@@ -20,7 +20,7 @@ struct HomeView: View {
                 VStack {
                     TabView(selection: $indexOfView) {
                         
-                        DashboardView(urlToLoad: "https://dashboard-trainingapps-eks004.sa.wise-paas.com/d/MUrqFy4Sk/medicheck?tab=visualization&edit&from=1700049894496&to=1700222694496&orgId=2283")
+                        DashboardView(urlToLoad: "https://dashboard-trainingapps-eks004.sa.wise-paas.com/d/MUrqFy4Sk/medicheck?orgId=2283&from=1700522004891&to=1700565204891")
                             .ignoresSafeArea()
                             .tabItem {
                                 Image(systemName: "chart.bar.xaxis")

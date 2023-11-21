@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 import Foundation
-
+import AVFoundation
 import Aespa
 
 class VideoContentViewModel: ObservableObject {
@@ -97,6 +97,40 @@ class VideoContentViewModel: ObservableObject {
         Task(priority: .utility) {
             let fetchedFiles = await aespaSession.fetchPhotoFiles()
             DispatchQueue.main.async { self.photoFiles = fetchedFiles }
+        }
+    }
+    
+    // 비디오 회전
+    func rotateVideo(videoURL: URL, completion: @escaping (URL?) -> Void) {
+        let asset = AVAsset(url: videoURL)
+        guard let clipVideoTrack = asset.tracks(withMediaType: .video).first else {
+            completion(nil)
+            return
+        }
+
+        let composition = AVMutableComposition()
+        let compositionClipVideoTrack = composition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
+        
+        try? compositionClipVideoTrack?.insertTimeRange(CMTimeRangeMake(start: CMTime.zero, duration: asset.duration), of: clipVideoTrack, at: CMTime.zero)
+        
+        let transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+        compositionClipVideoTrack?.preferredTransform = transform
+
+        guard let exporter = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) else {
+            completion(nil)
+            return
+        }
+
+        let outputFileURL = URL(fileURLWithPath: NSTemporaryDirectory() + UUID().uuidString + ".mov")
+        exporter.outputURL = outputFileURL
+        exporter.outputFileType = .mov
+        exporter.exportAsynchronously {
+            switch exporter.status {
+            case .completed:
+                completion(outputFileURL)
+            default:
+                completion(nil)
+            }
         }
     }
 }
