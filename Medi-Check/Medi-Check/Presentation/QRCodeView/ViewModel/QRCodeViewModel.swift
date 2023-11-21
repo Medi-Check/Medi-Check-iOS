@@ -28,10 +28,12 @@ class QRCodeViewModel: ObservableObject {
                 let expirationDate = medicineInfoDictinoary["expirationDate"] as? String ?? ""
                 let amount = medicineInfoDictinoary["amount"] as? Int ?? 0
                 let information = medicineInfoDictinoary["information"] as? String ?? ""
+                let medicineContainer = medicineInfoDictinoary["medicineContainer"] as? Int ?? 0
                 let medicineCost = medicineInfoDictinoary["medicineCost"] as? Int ?? 0
+                let imgUrl = medicineInfoDictinoary["imgUrl"] as? String ?? ""
                 
                 
-                try await registerMedicine(name: name, makeDate: makeDate, expirationDate: expirationDate, amount: amount, information: information, medicineContainer: medicineContainer, medicineCost: medicineCost)
+                try await registerMedicine(name: name, makeDate: makeDate, expirationDate: expirationDate, amount: amount, information: information, medicineContainer: medicineContainer, medicineCost: medicineCost, imgUrl: imgUrl)
                 medicine.name = name
                 medicine.makeDate = makeDate
                 medicine.expirationDate = expirationDate
@@ -39,6 +41,7 @@ class QRCodeViewModel: ObservableObject {
                 medicine.information = information
                 medicine.medicineContainer = medicineContainer
                 medicine.medicineCost = medicineCost
+                medicine.imgUrl = imgUrl
             } else {
                 print("Error")
                 return
@@ -86,6 +89,16 @@ class QRCodeViewModel: ObservableObject {
                     } else {
                         print("6")
                     }
+                    if let medicineContainer = jsonDictionary["medicineContainer"] as? Int {
+                        print("medicineContainer: \(medicineContainer)")
+                    } else {
+                        print("7")
+                    }
+                    if let imgUrl = jsonDictionary["imgUrl"] as? Int {
+                        print("imgUrl: \(imgUrl)")
+                    } else {
+                        print("8")
+                    }
                     return jsonDictionary
                 } else {
                     print("Error: Failed to parse JSON as Dictionary")
@@ -99,13 +112,13 @@ class QRCodeViewModel: ObservableObject {
         return nil
     }
     
-    func registerMedicine(name: String, makeDate: String, expirationDate: String, amount: Int, information: String, medicineContainer: Int, medicineCost: Int) async throws {
+    func registerMedicine(name: String, makeDate: String, expirationDate: String, amount: Int, information: String, medicineContainer: Int, medicineCost: Int, imgUrl: String) async throws {
         var urlComponents = URLComponents()
         urlComponents.scheme = MediCheckAPI.scheme
         urlComponents.host = MediCheckAPI.host
         urlComponents.port = 80
         urlComponents.path = MediCheckAPI.Path.medicine.rawValue
-        urlComponents.queryItems = [URLQueryItem(name: "medicineContainer", value: String(medicineContainer))]
+//        urlComponents.queryItems = [URLQueryItem(name: "medicineContainer", value: String(medicineContainer))]
         
         guard let url = urlComponents.url else {
             print("[registerMedicine] Error: cannot create URL")
@@ -126,7 +139,9 @@ class QRCodeViewModel: ObservableObject {
             "expirationDate": "\(expirationDate)",
             "amount": "\(amount)",
             "information": "\(information)",
-            "medicineCost": "\(medicineCost)"
+            "medicineContainer": "\(medicineContainer)",
+            "medicineCost": "\(medicineCost)",
+            "imgUrl": "\(imgUrl)"
         }
         """
         

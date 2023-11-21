@@ -17,4 +17,5 @@ struct Medicine: Equatable, Identifiable {
     var information: String = ""
     var medicineContainer: Int = 0
     var medicineCost: Int = 0
+    var imgUrl: String = ""
 }
