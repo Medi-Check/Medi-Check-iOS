@@ -59,7 +59,6 @@ struct CheckCalendarView: View {
                                         .aspectRatio(contentMode: .fit)
                                 }
                                 VStack(alignment: .leading) {
-                                    Text("ID : \(schedule.takeMedicineId)")
                                     Text("약 이름 : \(schedule.medicineName)")
                                         .frame(maxWidth: .infinity)
                                     Text("복용 요일 : \(schedule.week)")

@@ -19,6 +19,7 @@ struct RegisterScheduleView: View {
     @State private var timeString: String = ""
     @State private var amounts: String = ""
     let weekArray: [String] = [ "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "EVERYDAY" ]
+    private var weekDictionary: [String: String] = ["MONDAY": "월", "TUESDAY": "화", "WEDNESDAY": "수", "THURSDAY": "목", "FRIDAY": "금", "SATURDAY": "토" , "SUNDAY": "일", "EVERYDAY": "매일"]
     
     let timeSlots: [String] = (0..<48).map { index in
         let hour = index / 2
@@ -81,7 +82,7 @@ struct RegisterScheduleView: View {
                                 
                                 Button {
                                     Task {
-                                        await viewModel.fetchDeleteMedicine(eatMedicineId: medicineInfo.medicineId)
+                                        await viewModel.fetchDeleteMedicine(medicineId: medicineInfo.medicineId)
                                         viewModel.medicines.remove(at: index)
                                     }
                                 } label: {
@@ -136,6 +137,11 @@ struct RegisterScheduleView: View {
                                             selectWeekDay.removeAll()
                                             selectWeekDay.append(weekArray[index])
                                         } else {
+                                            if selectWeekDay.contains("EVERYDAY") {
+                                                if let everydayIndex = selectWeekDay.firstIndex(where:  { $0 == "EVERYDAY" }) {
+                                                    selectWeekDay.remove(at: everydayIndex)
+                                                }
+                                            }
                                             selectWeekDay.append(weekArray[index])
                                         }
                                     }
@@ -145,7 +151,7 @@ struct RegisterScheduleView: View {
                                 } label: {
 //                                    let textColor: Color = isSelected ? Color.blue : Color.black
                                     
-                                    Text("\(weekArray[index])")
+                                    Text("\(weekDictionary[weekArray[index]]!)")
                                         .foregroundStyle(isSelected ? Color.white : Color.black)
                                         .font(.title3)
                                         .bold()

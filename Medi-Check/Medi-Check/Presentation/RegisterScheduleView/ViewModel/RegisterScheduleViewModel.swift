@@ -13,7 +13,7 @@ fileprivate enum MediCheckAPI {
     
     enum Path: String {
         case medicine_schedule = "/medicine/schedule"
-        case eatMedicine_delete = "/eatMedicine/delete"
+        case medicine_delete = "/medicine/delete"
         case medicine_check_take = "/medicine/check/take"
     }
 }
@@ -89,22 +89,23 @@ class RegisterScheduleViewModel: ObservableObject {
     }
     
     @MainActor
-    func fetchDeleteMedicine(eatMedicineId: Int) async {
+    func fetchDeleteMedicine(medicineId: Int) async {
         do {
-            try await deleteMedicine(eatMedicineId: eatMedicineId)
+            try await deleteMedicine(medicineId: medicineId)
         } catch {
             print("Error: \(error)")
         }
     }
     
     // 등록된 약 삭제
-    func deleteMedicine(eatMedicineId: Int) async throws {
+    func deleteMedicine(medicineId: Int) async throws {
         var urlComponents = URLComponents()
         urlComponents.scheme = MediCheckAPI.scheme
         urlComponents.host = MediCheckAPI.host
         urlComponents.port = 80
-        urlComponents.path = MediCheckAPI.Path.eatMedicine_delete.rawValue
-        urlComponents.queryItems = [URLQueryItem(name: "eatMedicineId", value: String(eatMedicineId))]
+        urlComponents.path = MediCheckAPI.Path.medicine_delete.rawValue
+        urlComponents.queryItems = [URLQueryItem(name: "medicineId", value: String(medicineId))]
+        print(medicineId)
         
         guard let url = urlComponents.url else {
             print("[deleteMedicine] Error: cannot create URL")
