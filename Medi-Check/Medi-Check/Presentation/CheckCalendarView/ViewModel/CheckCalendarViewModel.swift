@@ -138,7 +138,8 @@ class CheckCalendarViewModel: ObservableObject {
 }
 
 extension CheckCalendarViewModel {
-    struct getScheduleDTO: Codable {
+    struct getScheduleDTO: Codable, Identifiable {
+        let id: Int?
         let medicineName: String
         let takeMedicineId: Int
         let week: String
