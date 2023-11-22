@@ -86,6 +86,7 @@ struct CheckCalendarView: View {
                                         Text("복용 요일 : \(weekDictionaryEngToKor[schedule.week] ?? "?")")
                                         Text("복용 시간 : \(schedule.hour)시 \(schedule.minute)분")
                                         Text("1회 복용 개수 : \(schedule.amounts)개")
+                                        Text("약 통 번호 : \(schedule.medicineContainerId)")
                                     }
                                     .font(.title3)
                                     .bold()

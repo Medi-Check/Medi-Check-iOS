@@ -309,7 +309,9 @@ struct RegisterScheduleView: View {
                 Button {
                     Task {
                         await viewModel.fetchData(week: selectWeekDay, medicineName: medicineName, memberName: userData.currnetProfile.nickName, time: selectedTime, takeAmount: Int(amounts) ?? 0)
-                        await viewModel.fetchRegisterContainer(medicineId: medicineId, containerId: Int(selectedContainer) ?? 0)
+                        if selectedContainer != "" {
+                            await viewModel.fetchRegisterContainer(medicineId: medicineId, containerId: Int(selectedContainer) ?? 0)
+                        }
                     }
                 } label: {
                     Text("일정 등록하기")
